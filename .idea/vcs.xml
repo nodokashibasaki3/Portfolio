@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/GameOfLife" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/NodokasValentine" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/assignment calculator/AssignmentCalculator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/assignment calculator/AssignmentCalculator/AssignmentCalculator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/konections/konection" vcs="Git" />
+  </component>
+</project>

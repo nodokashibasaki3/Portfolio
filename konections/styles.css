@@ -1,0 +1,133 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #000;
+  }
+  .container {
+    background-color: #ffffff;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative; /* Establish a positioning context */
+    padding-top: 50px; /* Add some padding to the top to make room for the message */
+  }
+  h1, p {
+    text-align: center;
+  }
+  .words, .groups {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  .word, .group {
+    width: 180px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .selected {
+    background-color: #add8e6; /* Highlight selected words */
+  }
+  #finalizeButton {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  #finalizeButton:disabled {
+    background-color: #cccccc; /* Gray when disabled */
+    cursor: not-allowed;
+  }
+  #finalizeButton:not(:disabled) {
+    background-color: #4CAF50; /* Green when not disabled */
+  }
+  .correctGroup {
+    background-color: #4CAF50; /* Different shades may represent difficulty levels */
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  /* Existing styles... */
+
+/* Styles for answers in a row */
+  .answers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .answer {
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #ddd; /* Add a border or any other style you prefer */
+  }
+  
+  /* Difficulty level colors */
+  .groupContainer.easy .correctGroup {
+    background-color: #2A9D8F; /* Light Green for easy */
+  }
+  
+  .groupContainer.medium .correctGroup {
+    background-color: #E9C46A; /* Yellow for medium */
+  }
+  
+  .groupContainer.hard .correctGroup {
+    background-color: #F4A261; /* Red for hard */
+  }
+
+  .groupContainer.extreme .correctGroup {
+    background-color: #E76F51; /* Purple color for extreme difficulty */
+  }
+  
+  #guessesLeft {
+    text-align: center;
+    color: #bf0000; /* Or any color you prefer */
+    /* Additional styles if needed */
+  }
+
+  .game-over-popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position relative to the viewport */
+    top: 40%; /* Adjusted to appear slightly higher */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the popup */
+    width: 50%; /* Or adjust based on your preference */
+    max-width: 600px; /* Maximum width */
+    padding: 20px;
+    background-color: #ffb6c1; /* Lighter pink background */
+    color: white; /* White text */
+    text-align: center;
+    border-radius: 10px;
+    z-index: 100; /* Ensure it's above other content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for better visibility */
+  }
+  
+  .message {
+    display: none; /* Hidden by default */
+    position: absolute; /* Absolute position */
+    top: 10px; /* Position it 10px from the top of the container */
+    left: 50%; /* Start from the middle of the container */
+    transform: translateX(-50%); /* Center it horizontally */
+    padding: 10px;
+    background-color: #808080; /* Gray background */
+    color: white; /* White text */
+    text-align: center;
+    border-radius: 5px; /* Rounded corners */
+    z-index: 10; /* Ensures it's above other elements but below fixed elements if any */
+    white-space: nowrap; /* Prevent text wrapping */
+  }

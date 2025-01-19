@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>コネクションズゲーム</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+
+  <h1>コネクションズゲーム</h1>
+  <p>適切なグループに含まれる4つの単語をクリックして選択してください。</p>
+
+  <div class="words" id="randomWords">
+    <!-- Words will be inserted here by JavaScript -->
+  </div>
+
+  <button id="finalizeButton" disabled>確認</button>
+
+  <div id="results">
+    <!-- Correct groups will be displayed here -->
+  </div>
+
+  <p id="guessesLeft">Wrong guesses left: 4</p>
+  <div id="message" class="message"></div>
+  <div id="gameOverMessage" class="game-over-message"></div>
+
+</div>
+
+<div id="gameOverPopup" class="game-over-popup">
+  ゲームオーバーです。すみません。<br>💔💔💔
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
