@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYTコネクションゲーム</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <h1>NYTコネクション</h1>
+        <div id="top-row" class="grid top-row"></div> <!-- Top row for confirmed groups -->
+        <div class="grid" id="grid">
+            <div class="tile" data-group="fruit">アップル</div>
+            <div class="tile" data-group="fruit">バナナ</div>
+            <div class="tile" data-group="fruit">オレンジ</div>
+            <div class="tile" data-group="fruit">グレープ</div>
+            <div class="tile" data-group="animal">猫</div>
+            <div class="tile" data-group="animal">犬</div>
+            <div class="tile" data-group="animal">鳥</div>
+            <div class="tile" data-group="animal">魚</div>
+            <div class="tile" data-group="instrument">ギター</div>
+            <div class="tile" data-group="instrument">ピアノ</div>
+            <div class="tile" data-group="instrument">バイオリン</div>
+            <div class="tile" data-group="instrument">ドラム</div>
+            <div class="tile" data-group="color">赤</div>
+            <div class="tile" data-group="color">青</div>
+            <div class="tile" data-group="color">黄色</div>
+            <div class="tile" data-group="color">緑</div>
+        </div>
+        <div class="footer">
+            <p id="message">選択してグループを見つけてください！</p>
+        </div>
+    </div>
+    
+</body>
+</html>
