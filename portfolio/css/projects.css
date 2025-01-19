@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=YourHandCraftedFontName&display=swap');
+
+body, html{
+    height: 100%;
+    margin: 0;
+    justify-content: center;
+    align-items: center; /* Centers content vertically and horizontally */
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+    background-color: #fff;
+}
+
+.project-container{
+    background-color: #fff;
+    margin: 60px;
+}
+
+.video-text {
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40%;
+    color: #000; /* White text color */
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.video-text p {
+    margin: 10px 0;
+}
+
+iframe {
+    width: 100%; /* Responsive width */
+    height: 600px; /* Adjust height as needed */
+    border: 1px solid #000; /* Optional border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.project-item {
+    background-color: #fff; /* Dark background for the project item */
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.project-category {
+    font-weight: bold;
+    color: #00aaff;
+    display: block; /* Makes the category label appear on its own line */
+}
+
+.project-date {
+    color: #000;
+    text-decoration: underline;
+}
+
+.project-title {
+    color: #000;
+    margin: 10px 0;
+}
+
+.project-item p {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.project-item a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+.project-item a:hover {
+    text-decoration: underline;
+}
+
+.square-border {
+    border: 0.5px solid #000; 
+    display: inline-flex;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #000;
+    padding: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 5px; 
+    margin-right: 5px;
+}
+
