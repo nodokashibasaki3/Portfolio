@@ -1,75 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nodoka Shibasaki Portfolio</title>
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
-    </head>  
+<head>
+    <title>CSS Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' type='text/css' href='style.css'>
+</head>
 <body>
-    <!-- <div class="login-container">
-        <h1>Enter Password</h1>
-        <form id="login-form">
-            <input style="text-align: center" type="password" id="password" placeholder="Enter password">
-            <button style="align-items: center" type="submit">Enter</button>
-        </form>
-    </div>     -->
 
-<!-- <div class="dashboard hidden"> -->
-<div class="dashboard">
-    <div class="left-column">
-        <div class="panel about-me">
-            <h2>About Me</h2>
+    <div class="topnav">
+    <a href="index.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Art Gallery</a>
+    </div>
 
-            <div id="aboutInfo">
-                <p>Nodoka Shibasaki is an Electrical and Computer Engineering (ECE) major with an interest in combining hardware and software to solve engineering problems. She focuses on areas like robotics, healthcare, and aerospace, with a particular interest in circuit design, motor control, and system integration. Nodoka enjoys learning through hands-on projects and working with teams to build practical solutions.</p>
-                <p>She has worked on projects such as designing wearable rehabilitation/prosthetic robotics in the healthcare field and using motion sensor technology to collect and study gait movements. She also has researched machine learning in different sectors of engineering---healthcare, biology, and aerospace. These experiences have helped her grow her technical skills while learning the value of collaboration and persistence.</p>
-                <p>In her free time, Nodoka leads runs with the university's women’s running club on Sunday mornings and plays intramural basketball. These activities reflect her enjoyment of staying active and connecting with others. She looks forward to continuing to develop her skills and solving engineering problems that will change lives for the better.</p>
-                <a style="color:green;" href ="mailto:shibasakinodoka@gmail.com">Email Me</a>
+    <div class="content">
+        <h1>Nodoka's Portfolio</h1>
+        <h2>Electrical and Computer Engineering Student at Northeastern University researching AI and Robotics at <a href="https://shepherdlab.sites.northeastern.edu/">Shepherd's Lab</a> and <a href="https://siliconsynapse.sites.northeastern.edu/">Silicon Synapses</a></h2>
+        
+        <a class = "social-icon" href="https://www.linkedin.com/in/nodoka2027/" target="_blank">
+            <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+
+        <a class = "social-icon" href="mailto:shibasaki.n@northeastern.edu" target="_blank">
+            <ion-icon name="mail-outline"></ion-icon>
+        </a>
+
+        <a class = "social-icon" href="https://github.com/nodokashibasaki3" target="_blank">
+            <ion-icon name="logo-github"></ion-icon>
+        </a>
+
+    </div>
+
+    <div class="content">
+        <h3>---Researches---</h3>
+        <div class="project-container">
+            <h2>Ankle Exoskeleton</h2>
+            <p class="project-date" style="color:rgb(201, 80, 80)">ON-GOING: Sep 2024 -</p>
+            <p class="project-description">
+                Research aimed to optimize user preference and energy through using Multi-Task Learning within a Supervised Learning Model. The model improves accuracy by using Leave-one-subject-out Cross Validation Method.
+            </p>
+            <div class="tech-stack">
+                <span>Python</span>
+                <span>RL</span>
+                <span>ML</span>
+                <span>CAD</span>
+                <span>Qualisys MoCap</span>
+                <span>Biomechanics</span>
+            </div>
+            <div class="project-links">
+                <a href="pages/projects/ankleexo.html" class="btn live-demo">Learn More</a>
+                <a href="https://github.com/nodokashibasaki3/ANKLE-EXOBOOT" class="btn view-source"> <ion-icon name="logo-github"></ion-icon> View Source</a>
             </div>
         </div>
 
-        <div class="panel blog">
-            <iframe src="blog.html" frameborder="0" width="100%" height="600px" title="Blog"></iframe>
+        <div class="project-container">
+            <h2>Hip Exoskeleton</h2>
+            <p class="project-date" style="color:rgb(201, 80, 80)">ON-GOING: June 2024 -</p>
+            <p class="project-description">
+                The goal of the exoskeleton is to increase accessibility and mobility for people with mobile disalibities.
+            </p>
+            <div class="tech-stack">
+                <span>TensorFlow</span>
+                <span>RL</span>
+                <span>Circuits Analysis and Testing</span>
+                <span>CAD</span>
+                <span>Biomechanics</span>
+            </div>
+            <div class="project-links">
+                <a href="pages/projects/hipexo.html" class="btn live-demo">Learn More</a>
+                <a href="https://github.com/nodokashibasaki3/EXOBOOT/tree/main" class="btn view-source"> <ion-icon name="logo-github"></ion-icon> View Source</a>
+            </div>
+        </div>    
+        
+        <div class="project-container">
+            <h2>Multi-Modal Locomotion Robot</h2>
+            <p class="project-date" style="color:rgb(201, 80, 80)">ON-GOING: Jan 2025 -</p>
+            <p class="project-description">
+                The goal of this research is to build a robot that makes autonomous decisions navigating on mars.
+            </p>
+            <div class="tech-stack">
+                <span>ML</span>
+                <span>ROS2</span>
+                <span>Gazebo Simulation</span>
+            </div>
+            <div class="project-links">
+                <!-- <a href="#" class="btn live-demo">🚀 Live Demo</a> -->
+                <!-- <a href="https://github.com/nodokashibasaki3/EXOBOOT/tree/main" class="btn view-source"> <ion-icon name="logo-github"></ion-icon> View Source</a> -->
+            </div>
         </div>
 
     </div>
 
-    <div class="system-info">
-        
-        <div class="panel navigation">
-            <h2>Navigation</h2>
-            <ul>
-                <li><a href="index.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="mailto:shibasakinodoka@gmail.com">Contact</a></li>
-            </ul>
-        </div>
+    <div class="content">
+        <h3>---Mini Projects---</h3>
 
-        <div class="panel navigation">
-            <h2 style="margin-left:5px"><b>RECENT WORK</b></h2>
-            <div class="project-item">
-                <span style="color:rgb(255, 59, 75)" class="project-category">Robotics</span>
-                <h3 class="project-title">Ankle Exoskeleton Research</h3>
-                <p>The goal of the ankle exosekeleton was to address the lack of objective gait movement and multi-objective optimization</p>
-                <a style="color:rgb(255, 59, 75)" href="pages/projects/ankleexo.html" target="_blank">View Project</a>
+        <div class="mini-project-container">
+            <div class="mini-project">
+                <h2>
+                    Game of Life
+                </h2>
+                <p>PApplet Graphic Project that uses iteration</p>
+                <div class="tech-stack">
+                    <span>Java</span>
+                    <span>Algorithms</span>
+                </div>
+
+                <div class="project-links" style="font-size: 14px;">
+                    <a href="pages/projects/gameoflife.html" class="btn live-demo" style="background-color:rgb(201, 80, 80); font-size:12px">Learn More</a>
+                </div>
             </div>
-    
-            <div class="project-item">
-                <span style="color:rgb(255, 59, 75)" class="project-category">Robotics</span>
-                <h3 class="project-title">Hip Exoskeleton Research</h3>
-                <p>The goal of the exoskeleton was to increase accessibility and mobility for people with disabilities.</p>
-                <a style="color:rgb(255, 59, 75)" href="pages/projects/hipexo.html" target="_blank">View Project</a>
+
+            <div class="mini-project">
+                <h2>Gait Analysis Device</h2>
+                <p>Analyzes gait of the user and corrects user form</p>
+                <div class="tech-stack">
+                    <span>Candence Orcad</span>
+                    <span>C++</span>
+                </div>
+
+                <div class="project-links" style="font-size: 14px;">
+                    <a href="#" class="btn live-demo" style="background-color:rgb(201, 80, 80); font-size:12px">Learn More</a>
+                </div>
             </div>
-        </div>
-        
+
+            <div class="mini-project">
+                
+                <h2>Konections</h2>
+                
+                <p>Remake of the connections game by New York Times in Japanese.</p>
+                <div class="tech-stack">
+                    <span>HTML/CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+                <div class="project-links" style="font-size: 14px;">
+                    <a href="pages/projects/konections.html" class="btn live-demo" style="background-color:rgb(201, 80, 80); font-size:12px">Learn More</a>
+                </div>
+            </div>
+
+            <div class="mini-project">
+                <h2>Covid Tracker</h2>
+                
+                <p>Software that graphs and predicts COVID cases</p>
+                <div class="tech-stack">
+                    <span>Statistics</span>
+                    <span>Java</span>
+                    <span>UI/UX</span>
+                </div>
+
+                <div class="project-links" style="font-size: 14px;">
+                    <a href="pages/projects/covidtracker.html" class="btn live-demo" style="background-color:rgb(201, 80, 80); font-size:12px">Learn More</a>
+                </div>
+            </div>
+
+            <div class="mini-project">
+                <h2>Koch Curve</h2>
+                
+                <p>Snowflake drawn using recursion</p>
+                <div class="tech-stack">
+                    <span>Algorithms</span>
+                    <span>Java</span>
+                </div>
+
+                <div class="project-links" style="font-size: 14px;">
+                    <a href="pages/projects/kochCurve.html" class="btn live-demo" style="background-color:rgb(201, 80, 80); font-size:12px">Learn More</a>
+                </div>
+            </div>
     </div>
 
-</div>
+    </div>
 
-    <script src="js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

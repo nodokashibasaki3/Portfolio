@@ -1,0 +1,128 @@
+body {
+    background-color: #e6e6e6;
+    box-sizing: border-box;
+    margin: 10px auto;
+    max-width: 700px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Style the content */
+.content {
+  padding: 0px;
+}
+
+h1 {
+  display: block;
+  font-size: 5em;
+  font-weight: bold;
+}
+
+h3{
+    text-align: center;
+    padding: 50px;
+}
+
+p 
+{ 
+   margin:0px; 
+   margin-bottom: 20px;
+   padding: 5px;
+} 
+
+.social-icon{
+    margin: 0 10px;
+    color: #343434;
+    text-decoration: none;
+}
+
+.project-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.project-date {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tech-stack span {
+    padding: 8px 12px;
+    border: 2px solid #4caf50;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #4caf50;
+}
+
+.project-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.live-demo {
+    background-color: #7b65df;
+    color: white;
+}
+
+.view-source {
+    background-color: #f8f9fa;
+    color: #7b65df;
+    border: 2px solid #7b65df;
+}
+
+.mini-project-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.mini-project {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
