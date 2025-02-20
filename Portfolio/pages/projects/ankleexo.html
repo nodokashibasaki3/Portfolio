@@ -8,10 +8,38 @@
 </head>
 <body>
     <h1>Ankle Exoskeleton Research</h1>
-    <p>For the ankle exoskeleton research, I focused on enhancing and extending the functionality of machine learning algorithms for gait analysis. I coded in Python to debug and optimize pre-existing code, which had significant inefficiencies and errors, improving its computational performance and reliability. Initially limited to offline data processing, I restructured and adapted the code to support real-time online data streams, enabling seamless integration of both pre-recorded and live data analysis. To facilitate user control, I implemented a robust configuration file system, allowing researchers to switch effortlessly between offline and online analysis modes.</p>
-    <p>In addition to software development, I contributed to the hardware design by creating a custom electronics mounting plate. This design integrated key components, including the NVIDIA Jetson Nano and Raspberry Pi for on-board data processing, alongside a battery pack for power management. The plate was engineered to optimize spatial efficiency and maintain secure connections, ensuring reliable operation during dynamic exoskeleton use.</p>
-    <p>By bridging hardware and software, I enhanced the exoskeleton’s capabilities for real-time data analysis and operational flexibility. This work not only improved the system’s efficiency but also refined its usability for rehabilitation and research applications. Through this experience, I developed advanced skills in <b>Python</b>, <b>machine learning adaptation</b>, <b>hardware design</b>, and <b>wearable robotics</b>.</p>
 
+    <h2>🏁Goal</h2>
+    <p>The primary goal of this project was to develop an intelligent torque control system for an <b>ankle exoskeleton</b> aimed at simultaneously minimizing user metabolic cost and maximizing user-perceived comfort and natural movement. This objective addresses a critical challenge in wearable robotics: achieving efficient and personalized assistance that seamlessly integrates with the user's biomechanics, preferences and uses the least energy of user. Effective torque control is crucial for <b>extending battery life in mobile devices, reducing user fatigue, and for adopting assistive robotic technologies.</b> This goal aligns with broader engineering principles of efficiency, optimization, and human-centered design, relevant across various technology domains, including <b>robotics, autonomous systems, and human-machine interfaces. </b></p>    
+    
+    <h2>Problem Statement</h2>
+    <p>The core challenge encountered was significant machine learning overfitting during the development of the torque control model. Initially, the model demonstrated high accuracy on the training dataset, exhibiting a strong ability to predict optimal torque based on input features. However, this performance drastically degraded when evaluated on unseen data, indicating a lack of generalization. This overfitting issue was critical because <b>it would lead to unreliable torque predictions in real-world scenarios, resulting in suboptimal metabolic cost reduction, inconsistent user comfort, or potentially unsafe or unpredictable device behavior.</b> Overfitting stemmed from <b>the complexity of the model relative to the dataset size.</b> Addressing this overfitting was paramount to ensure the model's practical applicability and reliability in diverse user conditions.</p>    
+
+    <h2>Skills Applied</h2>
+    <p>This project leveraged a robust skillset encompassing: <br>
+        🌟<b>Machine Learning Evaluation Models:</b> Proficiency in utilizing and interpreting various evaluation metrics to diagnose model performance, specifically focusing on metrics relevant to regression tasks and generalization ability, such as <b>Mean Squared Error (MSE), R-squared, metrics for assessing overfitting like validation curve analysis, and learning curve analysis.</b> Experience in selecting and applying appropriate cross-validation techniques to rigorously assess model generalization. <br>
+        🌟<b>Python Programming:</b> Extensive use of Python for <b>data preprocessing and manipulation using libraries like Pandas and NumPy, model development and training with libraries like TensorFlow and Scikit, and data visualization using Matplotlib.</b> <br>
+        🌟<b>MATLAB</b>: Utilization of MATLAB for <b>expected result dataset creation.</b></p>
+        
+    <h2>My Contribution</h2>
+    <p>My primary contribution was the critical implementation of <b>leave-one-subject-out cross-validation (LOSO CV)</b> to rigorously address the overfitting issue. Recognizing the limitations of traditional train-test splits in this context, particularly the risk of subject-specific biases influencing model evaluation, I strategically chose LOSO CV. This involved <b>partitioning the dataset by subject, iteratively training the model on data from N-1 subjects and validating on the held-out subject, systematically repeating this process for all subjects, and aggregating performance metrics across all folds to obtain a robust estimate of generalization performance.</b> This methodology ensured that the model's performance was evaluated on data completely independent from the training set, providing a far more realistic assessment of its ability to generalize to new users and conditions. The selection of LOSO CV was driven by <b>the need to minimize subject-specific variability</b> and the fact that the dataset we are dealing with are small. If the dataset was larger, LOSO CV would not be a good choice since it takes too much time and energy.</p>
+    
+    <div style="text-align: center;">
+        <img src="../../assets/ankleexo_mlstructure.png" alt="Score Improvement Data" style="width: 100%; margin: 10px;">
+        <p style="font-size:12px"><i>Structure of the Ankle Exoskeleton Learning Algorithm</i></p>
+    </div>
+    
+    <h2>Result + Next Steps</h2>
+    <p><b>Results:</b> The implementation of leave-one-subject-out cross-validation demonstrably <b>mitigated the overfitting issue. Validation performance, as measured by Mean Squared Error, improved by 28% during LOSO CV compared to previous validation methods. The gap between training and validation performance was significantly reduced, indicating improved generalization. </b><br>
+        The model now exhibits a more consistent and reliable performance across different subjects during cross-validation, suggesting a significantly enhanced ability to generalize to new users and conditions.</p>
+    <p><b>Next Steps:</b> While overfitting was effectively addressed, future work focuses on enhancing the model's robustness to potential <b>outlier offline datasets.</b> This includes:
+        🚀Outlier Detection and Preprocessing: Implementing systematic methods for identifying and handling outlier data points within the offline datasets. This may involve statistical outlier detection methods (e.g., Z-score, IQR-based methods), visual inspection of data distributions, or domain-specific outlier detection techniques related to biomechanics or sensor data.
+        🚀Real-World Validation: Crucially, transitioning to real-world validation with online data collection and testing to assess model performance in dynamic and less controlled environments, which may uncover new types of outliers or challenges not present in offline datasets.</p>
+    
+    <div style="text-align: center;">
+        <img src="../../assets/ankleexo_data.jpg" alt="Score Improvement Data" style="width: 50%; margin: 10px;">
+        <p style="font-size:12px"><i>Score Improvement Data created by MATLAB</i></p>
+    </div>
     <a style="color:rgb(255, 59, 75)" href="https://github.com/nodokashibasaki3/ANKLE-EXOBOOT" target="_blank"><b>View Code on Github</b></a>
 
 </body>
