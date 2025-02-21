@@ -48,6 +48,7 @@ p
     margin: 0 10px;
     color: #343434;
     text-decoration: none;
+    font-size: 30px;
 }
 
 .project-container {
@@ -112,7 +113,7 @@ p
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     justify-content: center;
-    margin-top: 40px;
+    /* Add these new classes to your existing CSS */
 }
 
 .mini-project {
@@ -125,4 +126,24 @@ p
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 5px;
+    justify-content: flex-start; /* Changed from space-between */
+    max-width: 700px;
+    width: 100%; /* Ensures it takes full available width */
+}
+
+.profile-image {
+    max-width: 50%;
+    height: auto;
+    margin-left: auto; /* Pushes image to the far right */
+}
+
+.profile-text {
+    flex: 1;
 }
