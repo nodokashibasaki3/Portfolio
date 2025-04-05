@@ -1,7 +1,9 @@
-// Particle animation for the header
+// Animation script
 document.addEventListener("DOMContentLoaded", function() {
+    console.log("Animation script loaded");
+    
+    // Define emoji set for floating particles
     const emojis = ["💻", "🤖", "🧠", "⚡", "🔬", "🚀", "🔋", "🛠️", "🧮", "🧪"];
-    const profileContainer = document.querySelector('.profile-container');
     
     // Create floating emoji particles
     function createParticle() {
@@ -14,15 +16,13 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // Random position
         const startX = Math.random() * 100;
-        const startOpacity = 0.1 + Math.random() * 0.5;
         
         // Set styles
         particle.style.left = `${startX}%`;
-        particle.style.opacity = startOpacity;
         particle.style.animationDuration = `${8 + Math.random() * 12}s`;
-        particle.style.animationDelay = `${Math.random() * 5}s`;
+        particle.style.animationDelay = `${Math.random() * 2}s`;
         
-        // Append to container
+        // Append to body
         document.body.appendChild(particle);
         
         // Remove after animation
@@ -31,57 +31,20 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 20000);
     }
     
-    // Create particles periodically
-    setInterval(createParticle, 2000);
-    
     // Create initial particles
     for (let i = 0; i < 8; i++) {
         setTimeout(createParticle, i * 300);
     }
     
-    // Project card hover effects
+    // Create particles periodically
+    setInterval(createParticle, 2000);
+    
+    // Project card hover effects - removed star emoji animation
     const projectCards = document.querySelectorAll('.project-container, .mini-project');
-    projectCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            const emoji = document.createElement('div');
-            emoji.classList.add('reaction-emoji');
-            emoji.textContent = "✨";
-            this.appendChild(emoji);
-            
-            setTimeout(() => {
-                emoji.remove();
-            }, 1000);
-        });
-    });
+    // (Hover effect removed as requested)
     
-    // Add typing effect to the main title
-    const title = document.querySelector('h1');
-    const originalText = title.textContent;
-    title.textContent = '';
-    
-    let i = 0;
-    const typeTitle = setInterval(() => {
-        if (i < originalText.length) {
-            title.textContent += originalText.charAt(i);
-            i++;
-        } else {
-            clearInterval(typeTitle);
-            // Add blinking cursor at the end
-            const cursor = document.createElement('span');
-            cursor.classList.add('typing-cursor');
-            cursor.textContent = '|';
-            title.appendChild(cursor);
-            
-            // Remove cursor after a few seconds
-            setTimeout(() => {
-                cursor.remove();
-            }, 3000);
-        }
-    }, 100);
-    
-    // Add interactive effect for profile pic
+    // Add profile pic interaction
     const profilePic = document.getElementById('profile-pic');
-    
     if (profilePic) {
         profilePic.addEventListener('mouseenter', function() {
             this.style.transition = 'transform 0.5s ease';
@@ -95,7 +58,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     const reaction = document.createElement('div');
                     reaction.classList.add('profile-reaction');
                     reaction.textContent = emoji;
-                    reaction.style.animationDelay = `${index * 0.2}s`;
                     
                     // Position around the image
                     const angle = (index * 120) * (Math.PI / 180);
@@ -103,10 +65,17 @@ document.addEventListener("DOMContentLoaded", function() {
                     const x = Math.cos(angle) * radius;
                     const y = Math.sin(angle) * radius;
                     
-                    reaction.style.left = `calc(50% + ${x}px)`;
-                    reaction.style.top = `calc(50% + ${y}px)`;
+                    // Get the position relative to the viewport
+                    const rect = this.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
                     
-                    this.parentElement.appendChild(reaction);
+                    // Position the emoji relative to center of profile pic
+                    reaction.style.position = 'fixed';
+                    reaction.style.top = `${centerY + y}px`;
+                    reaction.style.left = `${centerX + x}px`;
+                    
+                    document.body.appendChild(reaction);
                     
                     setTimeout(() => {
                         reaction.remove();
@@ -130,8 +99,15 @@ document.addEventListener("DOMContentLoaded", function() {
             const indicator = document.createElement('div');
             indicator.classList.add('tech-indicator');
             indicator.textContent = "🔍";
-            indicator.style.top = `${this.offsetTop - 20}px`;
-            indicator.style.left = `${this.offsetLeft + this.offsetWidth / 2}px`;
+            
+            // Get the position relative to the viewport
+            const rect = this.getBoundingClientRect();
+            
+            // Position the indicator above the tech span
+            indicator.style.position = 'fixed';
+            indicator.style.top = `${rect.top - 20}px`;
+            indicator.style.left = `${rect.left + rect.width / 2}px`;
+            
             document.body.appendChild(indicator);
             
             setTimeout(() => {

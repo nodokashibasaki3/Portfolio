@@ -5,20 +5,838 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game of Life</title>
     <link rel="stylesheet" href="../../style.css">
+    <style>
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        canvas {
+            border: 1px solid #333;
+            margin-bottom: 10px;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .game-btn {
+            padding: 8px 16px;
+            background-color: #7b65df;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .game-btn:hover {
+            background-color: #6a57c7;
+        }
+        
+        .patterns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        
+        .pattern-btn {
+            background-color: #4caf50;
+            padding: 8px 16px;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .pattern-btn:hover {
+            background-color: #3d8b40;
+        }
+        
+        .algorithm-explanation {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        
+        .code-section {
+            margin: 20px 0;
+        }
+        
+        .code-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .tab-container {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            border-radius: 5px 5px 0 0;
+            margin-right: 5px;
+        }
+        
+        .tab.active {
+            background-color: #7b65df;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .speed-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-
-        <h1>Game Of Life</h1>
-        <p>This project is java coded game. Learned and derived an algorithm for game of life interface.</p>
-        
-        <h2>Main.java</h2>
-        <iframe src="../../../GameOfLife/src/Main.java" style="border:0px; width:100%; height:300px;" title="Java Source Code"></iframe>
+    <h1>Game Of Life</h1>
+    <p>This project is a Java-coded implementation of Conway's Game of Life. I developed an algorithm that follows the rules of cellular automaton to create interesting emergent patterns.</p>
     
-        <h2>Life.java</h2>
-        <iframe src="../../../GameOfLife/src/Life.java" style="border:0px; width:100%; height:600px;" title="Java Source Code"></iframe>
+    <!-- Interactive Game Demo -->
+    <h2>Interactive Demo</h2>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        
+        <div class="controls">
+            <button class="game-btn" id="startBtn">Start</button>
+            <button class="game-btn" id="stepBtn">Step</button>
+            <button class="game-btn" id="clearBtn">Clear</button>
+            <button class="game-btn" id="randomBtn">Random</button>
+        </div>
+        
+        <div class="speed-container">
+            <label for="speedSlider">Speed:</label>
+            <input type="range" id="speedSlider" min="50" max="1000" value="200">
+        </div>
+        
+        <p>Click on the grid to toggle cells between alive and dead states.</p>
+        
+        <div class="patterns">
+            <button class="pattern-btn" id="gliderBtn">Glider</button>
+            <button class="pattern-btn" id="blinkerBtn">Blinker</button>
+            <button class="pattern-btn" id="gliderGunBtn">Gosper Glider Gun</button>
+            <button class="pattern-btn" id="pulsarBtn">Pulsar</button>
+        </div>
+    </div>
+    
+    <!-- Algorithm Explanation -->
+    <h2>Algorithm Explanation</h2>
+    <div class="algorithm-explanation">
+        <p>Conway's Game of Life operates on a grid of cells, each of which is either alive or dead. The state of each cell in the next generation is determined by these rules:</p>
+        
+        <ol>
+            <li><strong>Underpopulation:</strong> A live cell with fewer than 2 live neighbors dies</li>
+            <li><strong>Survival:</strong> A live cell with 2 or 3 live neighbors survives</li>
+            <li><strong>Overpopulation:</strong> A live cell with more than 3 live neighbors dies</li>
+            <li><strong>Reproduction:</strong> A dead cell with exactly 3 live neighbors becomes alive</li>
+        </ol>
+        
+        <p>The core algorithm from my implementation that calculates the next generation is:</p>
+        
+        <pre><code>public void step() {
+    boolean[][] gen = new boolean[grid.length][grid[0].length];
+    
+    for(int x = 1; x < grid.length -1; x ++) {
+        for(int y = 1; y < grid[0].length - 1; y ++) {
+            
+            int neighbors = 0;
+            
+            // Count the 8 surrounding neighbors
+            for(int i = -1; i <= 1; i++) {
+                for(int j = -1; j <= 1; j++) {
+                    if(grid[x+i][y+j]) {
+                        neighbors ++;
+                    }
+                }
+            }
+            
+            // Don't count the cell itself
+            if(grid[x][y]) {
+                neighbors --;
+            }
+            
+            // Apply the Game of Life rules
+            if(neighbors < 2 && grid[x][y]) {
+                gen[x][y] = false;              // Rule 1: Underpopulation
+            } else if(neighbors > 3 && grid[x][y]) {
+                gen[x][y] = false;              // Rule 3: Overpopulation
+            } else if(neighbors == 3 && !grid[x][y]) {
+                gen[x][y] = true;               // Rule 4: Reproduction
+            } else {
+                gen[x][y] = grid[x][y];         // Rule 2: Survival or remain dead
+            }
+        }
+    }
+    
+    // Update the grid to the new generation
+    grid = gen;
+}</code></pre>
+        
+        <p>This algorithm works by creating a new grid for the next generation, calculating the state of each cell based on its neighbors, and then replacing the current grid with the new one.</p>
+    </div>
+    
+    <!-- Source Code Tabs -->
+    <h2>Source Code</h2>
+    
+    <div class="tab-container">
+        <div class="tab active" data-tab="main">Main.java</div>
+        <div class="tab" data-tab="life">Life.java</div>
+        <div class="tab" data-tab="drawing">DrawingSurface.java</div>
+    </div>
+    
+    <div class="code-container">
+        <div class="tab-content active" id="main">
+            <pre><code>import processing.core.PApplet;
 
-        <h2>DrawingSurface.java</h2>
-        <iframe src="../../../GameOfLife/src/DrawingSurface.java" style="border:0px; width:100%; height:600px;" title="Java Source Code"></iframe>
+public class Main {
 
+    public static void main(String[] args) {
+        DrawingSurface drawing = new DrawingSurface();
+        PApplet.runSketch(new String[]{""}, drawing);
+    }
+
+}</code></pre>
+        </div>
+        
+        <div class="tab-content" id="life">
+            <pre><code>import java.awt.Point;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+import processing.core.PApplet;
+
+/**
+
+Represents a Game Of Life grid.
+
+Coded by: Nodoka Shibasaki
+Modified on: 3.29.2021
+
+*/
+
+public class Life {
+
+    // Add a 2D array field to represent the Game Of Life grid.
+    
+    boolean[][] grid;
+    
+    
+    /**
+     * Initialized the Game of Life grid to an empty 20x20 grid.
+     */
+    public Life() {
+        grid = new boolean[20][20];
+    }
+
+    
+    
+    /**
+     * Initializes the Game of Life grid to a 20x20 grid and fills it with data from the file given.
+     * 
+     * @param filename The path to the text file.
+     */
+    public Life(String filename) {
+        grid = new boolean[20][20];
+        readData(filename, grid);
+    }
+    
+    /**
+     * Runs a single step within the Game of Life by applying the Game of Life rules on
+     * the grid.
+     */
+    public void step() {
+        
+        boolean[][] gen = new boolean[grid.length][grid[0].length];
+        
+        for(int x = 1; x < grid.length -1; x ++) {
+            for(int y = 1; y < grid[0].length - 1; y ++) {
+                
+                int neighbors = 0;
+                
+                for(int i = -1; i <= 1; i++) {
+                    for(int j = -1; j <= 1; j++) {
+                        if(grid[x+i][y+j]) {
+                            neighbors ++;
+                        }
+                    }
+                }
+                
+                if(grid[x][y]) {
+                    neighbors --;
+                }
+                
+                if(neighbors < 2 && grid[x][y]) {
+                    gen[x][y] = false;
+                }else if(neighbors > 3 && grid[x][y]) {
+                    gen[x][y] = false;
+                }else if(neighbors == 3 && !grid[x][y]) {
+                    gen[x][y] = true;
+                }else {
+                    gen[x][y] = grid[x][y];
+                }
+                
+            }
+        }
+        
+        grid = gen;
+    }
+
+    
+    
+    /**
+     * Runs n steps within the Game of Life.
+     * @param n The number of steps to run.
+     */
+    public void step(int n) {
+        for(int i = n; i > 0; i--) {
+            step();        
+        }
+    }
+    
+    
+    
+    /**
+     * Formats this Life grid as a String to be printed (one call to this method returns the whole multi-line grid)
+     * 
+     * @return The grid formatted as a String.
+     */
+    public String toString() {
+        
+        String output = "";
+        
+        for(int i = 0; i < grid.length; i++) {
+            for(int j = 0; j < grid[i].length; j++) {
+                if(grid[i][j]) {
+                    output += "*";
+                }else {
+                    output += "-";
+                }
+            }
+            output += '\n';
+        }
+        
+        return output;
+    }
+    
+    
+    
+    /**
+     * (Graphical UI)
+     * Draws the grid on a PApplet.
+     * The specific way the grid is depicted is up to the coder.
+     * 
+     * @param marker The PApplet used for drawing.
+     * @param x The x pixel coordinate of the upper left corner of the grid drawing. 
+     * @param y The y pixel coordinate of the upper left corner of the grid drawing.
+     * @param width The pixel width of the grid drawing.
+     * @param height The pixel height of the grid drawing.
+     */
+    public void draw(PApplet marker, float x, float y, float width, float height) {
+        marker.noFill();
+        for(int i = 0; i < grid.length; i++) {
+            for(int j = 0; j < grid[0].length; j++) {
+                float w = width/grid[0].length;
+                float h = height/grid.length;
+                float dx = x + j * w;
+                float dy = y + i * h;
+                if(grid[i][j]) {
+                    marker.fill(0);
+                }else {
+                    marker.fill(255);
+                }
+                marker.rect(dx, dy, w, h);
+            }
+        }
+    }
+    
+    
+    
+    /**
+     * (Graphical UI)
+     * Determines which element of the grid matches with a particular pixel coordinate.
+     * This supports interaction with the grid using mouse clicks in the window.
+     * 
+     * @param p A Point object containing a graphical pixel coordinate.
+     * @param x The x pixel coordinate of the upper left corner of the grid drawing. 
+     * @param y The y pixel coordinate of the upper left corner of the grid drawing.
+     * @param width The pixel width of the grid drawing.
+     * @param height The pixel height of the grid drawing.
+     * @return A Point object representing a coordinate within the game of life grid.
+     */
+    public Point clickToIndex(Point p, float x, float y, float width, float height) {
+        
+        double px = p.getX();
+        double py = p.getY();
+        
+        double w = width/grid[0].length;
+        double h = height/grid.length;
+        double dx = (int)((px-x)/w);
+        double dy = (int)((py-y)/h);
+                
+        if(dx >= 0 && dx < grid.length && dy >= 0 && dy < grid[0].length) {
+             Point p2 = new Point();
+             p2.setLocation(dy, dx);
+             return p2;
+        }
+                
+        return null;
+    }
+    
+    /**
+     * (Graphical UI)
+     * Toggles a cell in the game of life grid between alive and dead.
+     * This allows the user to modify the grid.
+     * 
+     * @param i The x coordinate of the cell in the grid.
+     * @param j The y coordinate of the cell in the grid.
+     */
+    public void toggleCell(int i, int j) {
+        grid[i][j] = !grid[i][j];
+    }
+
+    
+
+    // Reads in array data from a simple text file containing asterisks (*)
+    public void readData (String filename, boolean[][] gameData) {
+        File dataFile = new File(filename);
+
+        if (dataFile.exists()) {
+            int count = 0;
+
+            FileReader reader = null;
+            Scanner in = null;
+            try {
+                reader = new FileReader(dataFile);
+                in = new Scanner(reader);
+
+                while (in.hasNext()) {
+                    String line = in.nextLine();
+                    for(int i = 0; i < line.length(); i++)
+                        if (count < gameData.length && i < gameData[count].length && line.charAt(i)=='*')
+                            gameData[count][i] = true;
+
+                    count++;
+                }
+            } catch (IOException ex) {
+                throw new IllegalArgumentException("Data file " + filename + " cannot be read.");
+            } finally {
+                if (in != null)
+                    in.close();
+            }
+
+        } else {
+            throw new IllegalArgumentException("Data file " + filename + " does not exist.");
+        }
+    }
+}
+</code></pre>
+        </div>
+        
+        <div class="tab-content" id="drawing">
+            <pre><code>import java.awt.Point;
+import java.awt.event.KeyEvent;
+
+import processing.core.PApplet;
+
+public class DrawingSurface extends PApplet {
+	
+	private Life board;
+	private int runCount;
+	private int speed;
+	private Point lastToggle;
+	
+	private final int MAX_SPEED = 480;
+	private final int MIN_SPEED = 15;
+	
+	public DrawingSurface() {
+		board = new Life();
+		runCount = -1;
+		speed = 120;
+		lastToggle = null;
+	}
+	
+	// The statements in the setup() function 
+	// execute once when the program begins
+	public void setup() {
+		//size(0,0,PApplet.P3D);
+	}
+	
+	// The statements in draw() are executed until the 
+	// program is stopped. Each statement is executed in 
+	// sequence and after the last line is read, the first 
+	// line is executed again.
+	public void draw() {
+		background(255);   // Clear the screen with a white background
+		
+		textAlign(CENTER);
+		fill(0);
+		text("Game of Life simulation. Press space to start/pause.", width/2, 20);
+		text("Click on a cell to toggle whether it is alive.", width/2, 40);
+		text("Press 'c' to clear the board.", width/2, 60);
+		text("Press 'g' to create a glider.", width/2, 80);
+		
+		
+		if (runCount == 0) {
+			board.step();
+		}
+		
+		if (runCount >= 0 && frameCount % speed == 0)
+			runCount++;
+
+		stroke(0);
+		
+		board.draw(this, 0, 100, width, height-100);
+		
+	}
+	
+	
+	public void mousePressed() {
+		if (mouseButton == LEFT) {
+			Point click = new Point(mouseX,mouseY);
+			Point cellCoord = board.clickToIndex(click,0,100,width,height-100);
+			if (cellCoord != null) {
+				board.toggleCell((int)cellCoord.getX(), (int)cellCoord.getY());
+				lastToggle = cellCoord;
+			}
+		}
+	}
+	
+	
+	public void mouseDragged() {
+		if (mouseButton == LEFT) {
+			Point click = new Point(mouseX,mouseY);
+			Point cellCoord = board.clickToIndex(click,0,100,width,height-100);
+			if (cellCoord != null && !cellCoord.equals(lastToggle)) {
+				board.toggleCell((int)cellCoord.getX(), (int)cellCoord.getY());
+				lastToggle = cellCoord;
+			}
+		}
+	}
+	
+	
+	public void keyPressed() {
+		if (keyCode == 32) { // SPACE
+			if (runCount <= 0)
+				runCount = 0;
+			else
+				runCount = -1;
+		} else if (keyCode == KeyEvent.VK_DOWN) {
+			speed = Math.min(MAX_SPEED, speed*2);
+		} else if (keyCode == KeyEvent.VK_UP) {
+			speed = Math.max(MIN_SPEED, speed/2);
+		} else if (keyCode == KeyEvent.VK_C) {
+			board = new Life();
+		} else if (keyCode == KeyEvent.VK_G) {
+			board = new Life();
+			// make a glider
+			board.toggleCell(1, 1);
+			board.toggleCell(2, 2);
+			board.toggleCell(2, 3);
+			board.toggleCell(1, 3);
+			board.toggleCell(0, 3);
+		}
+	}
+
+}
+</code></pre>
+        </div>
+    </div>
+    
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Hide all tab content
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show the corresponding tab content
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Game of Life Implementation
+        const gridSize = 20;
+        const cellSize = 20;
+        let grid = [];
+        let isRunning = false;
+        let animationId = null;
+        let speed = 200;
+        
+        // DOM elements
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const startBtn = document.getElementById('startBtn');
+        const stepBtn = document.getElementById('stepBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const randomBtn = document.getElementById('randomBtn');
+        const speedSlider = document.getElementById('speedSlider');
+        const gliderBtn = document.getElementById('gliderBtn');
+        const blinkerBtn = document.getElementById('blinkerBtn');
+        const gliderGunBtn = document.getElementById('gliderGunBtn');
+        const pulsarBtn = document.getElementById('pulsarBtn');
+        
+        // Initialize grid
+        function initGrid() {
+            grid = createEmptyGrid();
+            drawGrid();
+        }
+        
+        function createEmptyGrid() {
+            return Array(gridSize).fill().map(() => Array(gridSize).fill(false));
+        }
+        
+        // Draw grid on canvas
+        function drawGrid() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw cells
+            for (let i = 0; i < gridSize; i++) {
+                for (let j = 0; j < gridSize; j++) {
+                    if (grid[i][j]) {
+                        ctx.fillStyle = '#000';
+                    } else {
+                        ctx.fillStyle = '#fff';
+                    }
+                    ctx.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
+                    
+                    // Draw cell border
+                    ctx.strokeStyle = '#ccc';
+                    ctx.strokeRect(j * cellSize, i * cellSize, cellSize, cellSize);
+                }
+            }
+        }
+        
+        // Count neighbors for a cell
+        function countNeighbors(x, y) {
+            let count = 0;
+            
+            for (let i = -1; i <= 1; i++) {
+                for (let j = -1; j <= 1; j++) {
+                    const newX = x + i;
+                    const newY = y + j;
+                    
+                    // Skip if out of bounds or checking the cell itself
+                    if (newX < 0 || newY < 0 || newX >= gridSize || newY >= gridSize) continue;
+                    if (i === 0 && j === 0) continue;
+                    
+                    // Count live neighbors
+                    if (grid[newX][newY]) count++;
+                }
+            }
+            
+            return count;
+        }
+        
+        // Calculate next generation
+        function nextGeneration() {
+            const next = createEmptyGrid();
+            
+            for (let i = 0; i < gridSize; i++) {
+                for (let j = 0; j < gridSize; j++) {
+                    let neighbors = countNeighbors(i, j);
+                    
+                    // Apply Game of Life rules
+                    if (grid[i][j] && (neighbors < 2 || neighbors > 3)) {
+                        next[i][j] = false; // Cell dies
+                    } else if (!grid[i][j] && neighbors === 3) {
+                        next[i][j] = true;  // Cell becomes alive
+                    } else {
+                        next[i][j] = grid[i][j]; // State stays the same
+                    }
+                }
+            }
+            
+            grid = next;
+            drawGrid();
+        }
+        
+        // Game loop
+        function runGame() {
+            if (!isRunning) return;
+            
+            nextGeneration();
+            animationId = setTimeout(runGame, speed);
+        }
+        
+        // Toggle cell state when clicked
+        canvas.addEventListener('click', (event) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = Math.floor((event.clientY - rect.top) / cellSize);
+            const y = Math.floor((event.clientX - rect.left) / cellSize);
+            
+            if (x >= 0 && x < gridSize && y >= 0 && y < gridSize) {
+                grid[x][y] = !grid[x][y];
+                drawGrid();
+            }
+        });
+        
+        // Button handlers
+        startBtn.addEventListener('click', () => {
+            isRunning = !isRunning;
+            startBtn.textContent = isRunning ? 'Stop' : 'Start';
+            
+            if (isRunning) {
+                runGame();
+            } else {
+                clearTimeout(animationId);
+            }
+        });
+        
+        stepBtn.addEventListener('click', () => {
+            nextGeneration();
+        });
+        
+        clearBtn.addEventListener('click', () => {
+            isRunning = false;
+            startBtn.textContent = 'Start';
+            clearTimeout(animationId);
+            initGrid();
+        });
+        
+        randomBtn.addEventListener('click', () => {
+            for (let i = 0; i < gridSize; i++) {
+                for (let j = 0; j < gridSize; j++) {
+                    grid[i][j] = Math.random() > 0.7;
+                }
+            }
+            drawGrid();
+        });
+        
+        // Speed slider
+        speedSlider.addEventListener('input', () => {
+            speed = 1050 - speedSlider.value;
+            
+            if (isRunning) {
+                clearTimeout(animationId);
+                runGame();
+            }
+        });
+        
+        // Pattern: Glider
+        gliderBtn.addEventListener('click', () => {
+            initGrid();
+            grid[1][2] = true;
+            grid[2][3] = true;
+            grid[3][1] = true;
+            grid[3][2] = true;
+            grid[3][3] = true;
+            drawGrid();
+        });
+        
+        // Pattern: Blinker
+        blinkerBtn.addEventListener('click', () => {
+            initGrid();
+            grid[10][9] = true;
+            grid[10][10] = true;
+            grid[10][11] = true;
+            drawGrid();
+        });
+        
+        // Pattern: Gosper Glider Gun
+        gliderGunBtn.addEventListener('click', () => {
+            initGrid();
+            
+            // Simplified Gosper Glider Gun (adapted for 20x20 grid)
+            grid[5][1] = true;
+            grid[5][2] = true;
+            grid[6][1] = true;
+            grid[6][2] = true;
+            
+            grid[5][11] = true;
+            grid[6][11] = true;
+            grid[7][11] = true;
+            grid[4][12] = true;
+            grid[8][12] = true;
+            grid[3][13] = true;
+            grid[9][13] = true;
+            
+            drawGrid();
+        });
+        
+        // Pattern: Pulsar
+        pulsarBtn.addEventListener('click', () => {
+            initGrid();
+            
+            // Create a smaller version of pulsar for 20x20 grid
+            const coords = [
+                [2, 4], [2, 5], [2, 6], 
+                [4, 2], [4, 7], 
+                [5, 2], [5, 7], 
+                [6, 2], [6, 7], 
+                [7, 4], [7, 5], [7, 6],
+                
+                [2, 10], [2, 11], [2, 12],
+                [4, 9], [4, 14],
+                [5, 9], [5, 14],
+                [6, 9], [6, 14],
+                [7, 10], [7, 11], [7, 12]
+            ];
+            
+            for (const [i, j] of coords) {
+                grid[i][j] = true;
+            }
+            
+            drawGrid();
+        });
+        
+        // Initialize the game
+        initGrid();
+    </script>
 </body>
 </html>

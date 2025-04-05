@@ -262,62 +262,33 @@ p {
 /* Animation Styles */
 .emoji-particle {
     position: fixed;
-    font-size: 20px;
+    font-size: 30px;
     pointer-events: none;
-    z-index: -1;
+    z-index: 1000;
     animation: floatUp 15s linear forwards;
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
+    text-shadow: 0 0 5px rgba(123, 101, 223, 0.5);
 }
 
 @keyframes floatUp {
     0% {
-        transform: translateY(100vh) rotate(0deg);
+        transform: translateY(110vh) rotate(0deg) scale(0.7);
         opacity: 0;
     }
-    10% {
-        opacity: 1;
+    5% {
+        opacity: 0.9;
+        transform: translateY(100vh) rotate(20deg) scale(1);
     }
-    90% {
-        opacity: 0.5;
+    80% {
+        opacity: 0.8;
     }
     100% {
-        transform: translateY(-10vh) rotate(360deg);
+        transform: translateY(-50px) rotate(360deg) scale(0.7);
         opacity: 0;
     }
 }
 
-.reaction-emoji {
-    position: absolute;
-    top: -20px;
-    right: 10px;
-    font-size: 24px;
-    animation: popAndFade 1s forwards;
-    pointer-events: none;
-}
-
-@keyframes popAndFade {
-    0% {
-        transform: scale(0) rotate(-10deg);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.5) rotate(10deg);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1) translateY(-20px) rotate(0deg);
-        opacity: 0;
-    }
-}
-
-.typing-cursor {
-    animation: blink 0.7s infinite;
-    font-weight: bold;
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
+/* Star emoji reaction animation removed as requested */
 
 .tech-hover {
     transform: scale(1.1) translateY(-3px);
@@ -327,10 +298,10 @@ p {
 
 .tech-indicator {
     position: absolute;
-    font-size: 16px;
+    font-size: 20px;
     animation: popUp 1s forwards;
     pointer-events: none;
-    z-index: 10;
+    z-index: 1001;
 }
 
 @keyframes popUp {
@@ -361,6 +332,7 @@ p {
     border: 2px solid #7b65df;
     animation: pulse 1.5s infinite;
     pointer-events: none;
+    z-index: 10;
 }
 
 @keyframes pulse {
@@ -380,10 +352,10 @@ p {
 
 .profile-reaction {
     position: absolute;
-    font-size: 24px;
+    font-size: 30px;
     animation: circleAndFade 1.5s ease-out forwards;
     pointer-events: none;
-    z-index: 10;
+    z-index: 1001;
 }
 
 @keyframes circleAndFade {
@@ -392,16 +364,26 @@ p {
         opacity: 0;
     }
     20% {
-        transform: scale(1.2) rotate(10deg);
+        transform: scale(1.3) rotate(15deg);
         opacity: 1;
     }
     100% {
-        transform: scale(0.8) translateY(-30px) rotate(0deg);
+        transform: scale(0.8) translateY(-40px) rotate(0deg);
         opacity: 0;
     }
 }
 
+/* Project container styling for animation */
+.project-container, .mini-project {
+    position: relative;
+    overflow: visible !important; /* Changed from hidden to visible for emoji */
+}
+
 /* Custom cursor */
+body {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%237b65df' stroke-width='2'><circle cx='12' cy='12' r='10'/><circle cx='12' cy='12' r='2'/></svg>") 12 12, auto;
+}
+
 a, button, .btn, .project-container, .mini-project, .social-icon {
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%237b65df' stroke-width='2'><circle cx='12' cy='12' r='10'/><path d='M8 12h8'/><path d='M12 8v8'/></svg>") 12 12, pointer;
 }
