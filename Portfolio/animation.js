@@ -38,11 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Create particles periodically
     setInterval(createParticle, 2000);
-    
-    // Project card hover effects - removed star emoji animation
-    const projectCards = document.querySelectorAll('.project-container, .mini-project');
-    // (Hover effect removed as requested)
-    
+        
     // Add profile pic interaction
     const profilePic = document.getElementById('profile-pic');
     if (profilePic) {

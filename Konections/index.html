@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NYTコネクションゲーム</title>
+    <title>コネクション</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
     <div class="game-container">
-        <h1>NYTコネクション</h1>
-        <div id="top-row" class="grid top-row"></div> <!-- Top row for confirmed groups -->
+        <header>
+            <h1>コネクション</h1>
+            <p class="subtitle">関連する言葉をグループにまとめよう！</p>
+        </header>
+
+        <div class="progress-bar">
+            <div class="progress-indicator">
+                <span class="progress-text">0/4</span>
+            </div>
+        </div>
+
+        <div id="top-row" class="grid top-row">
+            <!-- Completed groups will be moved here -->
+        </div>
+        
         <div class="grid" id="grid">
             <div class="tile" data-group="fruit">アップル</div>
             <div class="tile" data-group="fruit">バナナ</div>
@@ -30,10 +46,27 @@
             <div class="tile" data-group="color">黄色</div>
             <div class="tile" data-group="color">緑</div>
         </div>
+
+        <div class="selection-counter">
+            <span id="counter">0/4</span> 選択済み
+        </div>
+        
         <div class="footer">
-            <p id="message">選択してグループを見つけてください！</p>
+            <div id="message" class="message">選択してグループを見つけてください！</div>
+            <button id="reset-button" class="reset-button">リセット</button>
+        </div>
+
+        <div class="instructions">
+            <details>
+                <summary>ゲームの遊び方</summary>
+                <ol>
+                    <li>16個の単語から同じカテゴリーに属する4つの単語を見つけよう。</li>
+                    <li>単語をタップして4つ選択すると、グループチェックが行われます。</li>
+                    <li>正解すれば、そのグループは上部に移動します。</li>
+                    <li>全4グループを見つけたらゲームクリアです！</li>
+                </ol>
+            </details>
         </div>
     </div>
-    
 </body>
 </html>
