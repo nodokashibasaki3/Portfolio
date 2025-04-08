@@ -3,51 +3,464 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Gallery</title>
+    <title>Art Gallery - Nodoka Shibasaki</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='stylesheet' type='text/css' href='style.css'>
     <style>
+        /* Override body styles for the gallery */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
-            padding: 20px;
-            text-align: center;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: none;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="14" cy="14" r="8" fill="none" stroke="%23000" stroke-width="2"/><line x1="20" y1="20" x2="28" y2="28" stroke="%23000" stroke-width="2"/></svg>') 16 16, auto;
         }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            padding: 20px;
-            justify-items: center;
+        
+        /* Keep the topnav consistent with main style */
+        .topnav {
+            position: relative;
+            z-index: 100;
+            background: transparent !important;
+            overflow: hidden;
+            margin-bottom: 0;
+            box-shadow: none !important;
+            margin: 10px auto;
+            max-width: 1200px; /* Match the max-width of your About page content */
         }
-        img, video {
+        
+        /* Gallery specific styles */
+        #game-container {
+            position: absolute; /* Change to absolute to overlay the entire viewport */
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            margin-top: 0;
+            z-index: 1; /* Place below the navigation */
+        }
+        
+        .floor {
+            display: none;
+        }
+        
+        .wall {
+            position: absolute;
+            height: 100%;
             width: 100%;
-            height: auto;
-            border-radius: 5px;
+            background: linear-gradient(to bottom, #e8e8e8, #f5f5f5);
+            border-bottom: none;
+            z-index: 1;
+        }
+        
+        .wall::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+        
+        .painting {
+            position: absolute;
+            background-color: white;
+            border: none;
+            box-shadow: 
+                0 15px 30px rgba(0,0,0,0.3);
+            z-index: 3;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .painting:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 
+                0 20px 40px rgba(0,0,0,0.4);
+        }
+        
+        .painting::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        .painting img, 
+        .painting video {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .painting:hover img,
+        .painting:hover video {
+            transform: scale(1.05);
+        }
+        
+        .name-plate {
+            display: none; /* Hide the name plate completely */
+        }
+        
+        .controls {
+            position: absolute;
+            top: 70px; /* Adjusted to account for fixed navigation */
+            left: 20px;
+            z-index: 20;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 16px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            font-weight: 500;
+            color: #333;
+            transition: opacity 0.3s;
+        }
+        
+        .controls:hover {
+            opacity: 0.8;
+        }
+        
+        /* Magnifying glass effect */
+        .magnifier {
+            position: fixed;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            pointer-events: none;
+            z-index: 1000;
+            overflow: hidden;
+            display: none;
+        }
+        
+        .magnifier-content {
+            width: 100%;
+            height: 100%;
+            background-size: 300%;
+            background-position: center;
+            transform: scale(2);
         }
     </style>
 </head>
 <body>
-    <h1>Coming soon...</h1>
-    <!-- <h1>Art Gallery</h1>
-    <div class="gallery">
-        <img src="assets/art1.png" alt="Artwork 1">
-        <img src="assets/art2.png" alt="Artwork 2">
-        <video controls>
-            <source src="assets/backyardfestcalifornia.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <img src="assets/art3.jpg" alt="Artwork 2">
-        <video controls>
-            <source src="assets/backyardfestparis.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video controls>
-            <source src="assets/parisprotest.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div> -->
+    <div class="topnav">
+        <a href="index.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="gallery.html">Art Gallery</a>
+    </div>
+
+    <div id="game-container">
+        <div class="controls">
+            Use mouse pad scroll to navigate through the gallery
+        </div>
+        <div class="wall"></div>
+        <div class="floor"></div>
+    </div>
+    
+    <div class="magnifier">
+        <div class="magnifier-content"></div>
+    </div>
+
+    <script>
+        // Game elements
+        const gameContainer = document.getElementById('game-container');
+        const magnifier = document.querySelector('.magnifier');
+        const magnifierContent = document.querySelector('.magnifier-content');
+        
+        // Game state
+        let gameWidth = window.innerWidth;
+        let gameHeight = window.innerHeight;
+        let backgroundPosition = 0;
+        let isMovingLeft = false;
+        let isMovingRight = false;
+        let movementSpeed = 2.5;
+        let isMagnifierActive = false;
+
+        // Artwork data
+        const artworkData = [
+            {
+                type: 'image',
+                src: 'assets/art1.png',
+                width: 300,
+                height: 375,
+                title: 'Digital Artwork',
+                description: 'A piece exploring digital expression'
+            },
+            {
+                type: 'image',
+                src: 'assets/art2.png',
+                width: 330,
+                height: 420,
+                title: 'Digital Composition',
+                description: 'Exploring digital art techniques'
+            },
+            {
+                type: 'video',
+                src: 'assets/backyardfestcalifornia.mp4',
+                width: 360,
+                height: 270,
+                title: 'Backyard Festival - California',
+                description: 'Cinematography capturing the essence of California\'s backyard culture'
+            },
+            {
+                type: 'image',
+                src: 'assets/art3.jpg',
+                width: 300,
+                height: 375,
+                title: 'Digital Artwork',
+                description: 'Exploring digital expression'
+            },
+            {
+                type: 'video',
+                src: 'assets/backyardfestparis.mp4',
+                width: 360,
+                height: 270,
+                title: 'Backyard Festival - Paris',
+                description: 'Documenting the vibrant backyard scene in Paris'
+            },
+            {
+                type: 'video',
+                src: 'assets/parisprotest.mp4',
+                width: 360,
+                height: 270,
+                title: 'Paris Protest Cinematography',
+                description: 'Capturing the energy and emotion of Paris protests'
+            },
+            {
+                type: 'image',
+                src: 'assets/schwarzeweltcomposition.jpg',
+                width: 330,
+                height: 420,
+                title: 'Schwarze Welt Composition',
+                description: 'An exploration of composition and form'
+            }
+        ];
+
+        // Initialize game
+        function initGame() {
+            createArtwork();
+            setupControls();
+            setupMagnifier();
+            requestAnimationFrame(gameLoop);
+            
+            window.addEventListener('resize', function() {
+                gameWidth = window.innerWidth;
+                gameHeight = window.innerHeight;
+            });
+        }
+        
+        function createArtwork() {
+            const spaceBetween = 350;
+            
+            // Create a duplicate set of artworks at the end for seamless looping
+            const totalArtworks = artworkData.length;
+            const artworksToCreate = totalArtworks * 2; // Double the artworks for seamless looping
+            
+            for (let i = 0; i < artworksToCreate; i++) {
+                const artworkIndex = i % totalArtworks; // Use modulo to cycle through original artworks
+                const artwork = artworkData[artworkIndex];
+                
+                const painting = document.createElement('div');
+                painting.className = 'painting';
+                
+                painting.style.width = artwork.width + 'px';
+                painting.style.height = artwork.height + 'px';
+                
+                const verticalOffset = (artworkIndex % 3) * 120 - 120;
+                painting.style.top = (gameHeight - artwork.height - 50) / 2 + verticalOffset + 'px';
+                
+                // Position the second set of artworks right after the first set
+                const leftPos = i * (spaceBetween + artwork.width/2) + 300;
+                painting.style.left = leftPos + 'px';
+                painting.setAttribute('data-original-left', leftPos);
+                
+                if (artwork.type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = artwork.src;
+                    img.alt = artwork.title;
+                    painting.appendChild(img);
+                } else if (artwork.type === 'video') {
+                    const video = document.createElement('video');
+                    video.controls = true;
+                    const source = document.createElement('source');
+                    source.src = artwork.src;
+                    source.type = 'video/mp4';
+                    video.appendChild(source);
+                    painting.appendChild(video);
+                }
+                
+                gameContainer.appendChild(painting);
+            }
+        }
+        
+        function setupControls() {
+            // Use a different approach for Mac trackpad compatibility
+            let isScrolling = false;
+            let lastScrollTime = 0;
+            let scrollVelocity = 0;
+            
+            // Handle both wheel and gesture events for better Mac compatibility
+            document.addEventListener('wheel', function(e) {
+                // Prevent default scrolling behavior
+                e.preventDefault();
+                
+                // For Mac trackpad, deltaX is used for horizontal scrolling
+                if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+                    // Horizontal scroll detected (Mac trackpad)
+                    backgroundPosition -= e.deltaX * 0.5;
+                } else {
+                    // Vertical scroll (use as horizontal for consistency)
+                    backgroundPosition -= e.deltaY * 0.5;
+                }
+                
+                // Update immediately
+                updateBackgroundPosition();
+                
+                // Set scrolling state for momentum
+                isScrolling = true;
+                lastScrollTime = Date.now();
+                scrollVelocity = e.deltaX || e.deltaY;
+            }, { passive: false });
+            
+            // Add momentum scrolling for a more natural feel
+            function applyMomentum() {
+                if (isScrolling) {
+                    const now = Date.now();
+                    const timeDiff = now - lastScrollTime;
+                    
+                    // Apply deceleration
+                    if (timeDiff < 300) {
+                        scrollVelocity *= 0.95;
+                        backgroundPosition -= scrollVelocity * 0.1;
+                        updateBackgroundPosition();
+                        requestAnimationFrame(applyMomentum);
+                    } else {
+                        isScrolling = false;
+                    }
+                }
+            }
+            
+            // Start momentum after each scroll event
+            document.addEventListener('wheel', function() {
+                requestAnimationFrame(applyMomentum);
+            }, { passive: true });
+            
+            // Add keyboard controls as a fallback
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    backgroundPosition -= 10;
+                    updateBackgroundPosition();
+                } else if (e.key === 'ArrowRight') {
+                    backgroundPosition += 10;
+                    updateBackgroundPosition();
+                }
+            });
+            
+            // Touch controls for mobile
+            let touchStartX = 0;
+            let lastTouchX = 0;
+            
+            document.addEventListener('touchstart', function(e) {
+                touchStartX = e.touches[0].clientX;
+                lastTouchX = touchStartX;
+            });
+            
+            document.addEventListener('touchmove', function(e) {
+                const touchX = e.touches[0].clientX;
+                const diff = lastTouchX - touchX;
+                
+                backgroundPosition -= diff * 0.5;
+                updateBackgroundPosition();
+                
+                lastTouchX = touchX;
+            });
+            
+            document.addEventListener('touchend', function() {
+                // No need to reset anything for touch
+            });
+        }
+        
+        function setupMagnifier() {
+            document.addEventListener('mousemove', function(e) {
+                if (isMagnifierActive) {
+                    magnifier.style.left = (e.clientX - 75) + 'px';
+                    magnifier.style.top = (e.clientY - 75) + 'px';
+                    
+                    // Get the background image from the element under the cursor
+                    const element = document.elementFromPoint(e.clientX, e.clientY);
+                    if (element && (element.tagName === 'IMG' || element.tagName === 'VIDEO')) {
+                        const rect = element.getBoundingClientRect();
+                        const x = (e.clientX - rect.left) / rect.width;
+                        const y = (e.clientY - rect.top) / rect.height;
+                        
+                        magnifierContent.style.backgroundImage = `url(${element.src || element.currentSrc})`;
+                        magnifierContent.style.backgroundPosition = `${x * 100}% ${y * 100}%`;
+                    }
+                }
+            });
+            
+            document.addEventListener('mousedown', function(e) {
+                if (e.target.tagName === 'IMG') {
+                    isMagnifierActive = true;
+                    magnifier.style.display = 'block';
+                }
+            });
+            
+            document.addEventListener('mouseup', function() {
+                isMagnifierActive = false;
+                magnifier.style.display = 'none';
+            });
+        }
+        
+        function updateBackgroundPosition() {
+            const paintings = document.querySelectorAll('.painting');
+            
+            // Calculate the total width of the gallery (for the first set of artworks)
+            const totalGalleryWidth = artworkData.length * (350 + 300); // spaceBetween + average width
+            
+            // Implement seamless looping
+            if (backgroundPosition < -totalGalleryWidth) {
+                // If we've scrolled past the end of the first set, jump back to the beginning
+                // This will be seamless because we have a duplicate set of artworks
+                backgroundPosition = 0;
+            } else if (backgroundPosition > 0) {
+                // If we've scrolled past the beginning, jump to the end of the first set
+                backgroundPosition = -totalGalleryWidth;
+            }
+            
+            paintings.forEach(function(painting) {
+                const originalLeft = parseFloat(painting.getAttribute('data-original-left') || 0);
+                const newLeft = originalLeft + backgroundPosition;
+                painting.style.left = newLeft + 'px';
+                
+                // Show all paintings since we're looping
+                painting.style.display = '';
+            });
+        }
+        
+        function gameLoop() {
+            // Keep the game loop for potential future animations
+            requestAnimationFrame(gameLoop);
+        }
+        
+        window.addEventListener('load', initGame);
+    </script>
 </body>
 </html>
