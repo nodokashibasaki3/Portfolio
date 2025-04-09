@@ -241,6 +241,31 @@
                 size: "wide"
             },
             {
+                title: "How to change my life",
+                description: "A poem about searching for meaning",
+                type: "text",
+                content: `"How to change my life"
+						
+I typed this into Google today,
+Because it knows the answer to everything. 
+Even one of philosophy's biggest conundrums.
+				
+And yes, exactly 0.40 seconds after hitting return on my keyboard 
+I have nine billion four hundred thirty million results
+						
+On how to transform my life...completely and permanently 
+We're all looking for that
+
+Book                       Hobby
+               Smile			
+			
+And in all that searching 
+Not one person has found it`,
+                category: "digital",
+                size: "wide",
+                id: "poem"
+            },
+            {
                 title: "Backyard Festival - California",
                 description: "Cinematography capturing the essence of California's backyard culture",
                 src: "assets/backyardfestcalifornia.mp4",
@@ -281,6 +306,10 @@
                 galleryItem.className = `gallery-item ${artwork.size}`;
                 galleryItem.setAttribute('data-category', artwork.category);
                 
+                if (artwork.id) {
+                    galleryItem.id = artwork.id;
+                }
+                
                 if (artwork.type === 'image') {
                     const img = document.createElement('img');
                     img.src = artwork.src;
@@ -294,6 +323,26 @@
                     source.type = 'video/mp4';
                     video.appendChild(source);
                     galleryItem.appendChild(video);
+                } else if (artwork.type === 'text') {
+                    const textContainer = document.createElement('div');
+                    textContainer.className = 'text-artwork';
+                    textContainer.style.padding = '20px';
+                    textContainer.style.backgroundColor = '#f9f9f9';
+                    textContainer.style.height = '100%';
+                    textContainer.style.display = 'flex';
+                    textContainer.style.alignItems = 'center';
+                    textContainer.style.justifyContent = 'center';
+                    
+                    const poemText = document.createElement('pre');
+                    poemText.style.fontFamily = 'serif';
+                    poemText.style.whiteSpace = 'pre-wrap';
+                    poemText.style.textAlign = 'left';
+                    poemText.style.fontSize = '1.1rem';
+                    poemText.style.lineHeight = '1.6';
+                    poemText.textContent = artwork.content;
+                    
+                    textContainer.appendChild(poemText);
+                    galleryItem.appendChild(textContainer);
                 }
                 
                 const info = document.createElement('div');
@@ -399,6 +448,23 @@
                     source.type = 'video/mp4';
                     video.appendChild(source);
                     modalMedia.appendChild(video);
+                } else if (artwork.type === 'text') {
+                    const textContainer = document.createElement('div');
+                    textContainer.style.padding = '30px';
+                    textContainer.style.backgroundColor = '#f9f9f9';
+                    textContainer.style.maxWidth = '800px';
+                    textContainer.style.margin = '0 auto';
+                    
+                    const poemText = document.createElement('pre');
+                    poemText.style.fontFamily = 'serif';
+                    poemText.style.whiteSpace = 'pre-wrap';
+                    poemText.style.textAlign = 'left';
+                    poemText.style.fontSize = '1.5rem';
+                    poemText.style.lineHeight = '1.8';
+                    poemText.textContent = artwork.content;
+                    
+                    textContainer.appendChild(poemText);
+                    modalMedia.appendChild(textContainer);
                 }
                 
                 modal.style.display = 'flex';
