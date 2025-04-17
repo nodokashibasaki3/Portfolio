@@ -59,6 +59,38 @@
         .blog-post-content .diary-entry {
             white-space: pre-line;
         }
+
+        .challenge-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .challenge-entry {
+            background-color: #f8f8f8;
+            border-left: 4px solid #7b65df;
+            border-radius: 6px;
+            padding: 12px 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .challenge-entry:hover {
+            background-color: #f0f0f0;
+        }
+
+        .challenge-day {
+            font-weight: bold;
+            color: #7b65df;
+            margin-bottom: 5px;
+        }
+
+        .challenge-summary {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
     </style>
 </head>
 <body>
@@ -68,8 +100,33 @@
         <a href="gallery.html">Gallery</a>
     </div>
 
+
     <div class="blog-container">
         <h1 class="blog-title">Blog</h1>
+
+        <!-- 100日チャレンジ Series -->
+        <div class="blog-post">
+            <h2 class="blog-post-title">#100日チャレンジ: Creating Every Day</h2>
+            <div class="blog-post-date">Ongoing Series</div>
+            <div class="blog-post-content">
+                <p>This is a running log of my <strong>#100日チャレンジ</strong> – inspired by Ami Otsuka’s book <b><em><a href="https://x.com/amiotsuka_se/status/1910096066487488595?s=46">「#100日チャレンジ 毎日連続100本アプリを作ったら人生が変わった」</a></em></b>. The goal: to build or create something every single day. It doesn't have to be big – just something that keeps momentum alive.</p>
+                
+                <div class="challenge-grid">
+                    <div class="challenge-entry">
+                        <div class="challenge-day">Day 1</div>
+                        <div class="challenge-summary">
+                            For Day 1, I started building a to-do list app that works with ChatGPT. The idea is simple: you type in what you need to do, and it helps you figure out what to tackle first. I’ve always struggled with knowing what’s “most important” when everything feels urgent — so I thought, why not offload some of that stress to AI?     
+                            <p>
+                                <a href="https://github.com/nodokashibasaki3/100DAY/tree/main/public" class="btn view-source" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background-color: #24292e; color: white; border-radius: 6px; text-decoration: none; font-weight: bold;">
+                                    <i class="fa fa-github"></i> View Source
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                                                            
+                </div>
+            </div>
+        </div>
         
         <div class="blog-post">
             <h2 class="blog-post-title">The Search for Happiness in a Digital Age</h2>
