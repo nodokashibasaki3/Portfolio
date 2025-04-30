@@ -116,3 +116,53 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+// Experience Slider Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const list = document.getElementById('experience-list');
+    if (!list) return; // Exit if the element doesn't exist
+
+    const items = Array.from(list.children);
+    const itemHeight = 50;
+    const visibleCenterIndex = Math.floor(300 / itemHeight / 2);
+    let focusIndex = Math.floor(items.length / 2);
+
+    // Update data-type attributes to be more descriptive
+    items.forEach(item => {
+        const type = item.getAttribute('data-type');
+        if (type === 'leadership') {
+            item.setAttribute('data-type', 'Leadership');
+        } else if (type === 'engineering') {
+            item.setAttribute('data-type', 'Engineering');
+        } else if (type === 'life') {
+            item.setAttribute('data-type', 'Life Transition');
+        }
+    });
+
+    function updateFocus(newIndex) {
+        items.forEach((item, i) => {
+            item.classList.toggle('focused', i === newIndex);
+        });
+
+        const offset = (300 / 2) - (newIndex * itemHeight + itemHeight / 2);
+        list.style.transform = `translateY(${offset}px)`;
+        focusIndex = newIndex;
+    }
+
+    items.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            updateFocus(index);
+        });
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown' && focusIndex < items.length - 1) {
+            updateFocus(focusIndex + 1);
+        }
+        if (e.key === 'ArrowUp' && focusIndex > 0) {
+            updateFocus(focusIndex - 1);
+        }
+    });
+
+    updateFocus(focusIndex);
+});
