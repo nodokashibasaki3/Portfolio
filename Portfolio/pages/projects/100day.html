@@ -6,12 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../style.css">
     <style>
+        .content {
+            padding: 0px;
+            margin-bottom: 40px;
+            position: relative; /* For positioning animations */
+        }
+            
         .project-container {
             background-color: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-container:hover {
+            transform: translateY(-5px);
         }
 
         .projects-table {
@@ -36,15 +47,21 @@
             background-color: #f8f9fa;
         }
 
-        .project-link {
-            color: #4caf50;
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #4caf50;
+            color: white;
             text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            font-size: 12px;
         }
 
-        .project-link:hover {
-            text-decoration: underline;
+        .btn:hover {
+            background-color: #45a049;
         }
-
+        
         .tech-tag {
             display: inline-block;
             padding: 2px 8px;
@@ -54,27 +71,46 @@
             font-size: 12px;
             color: #495057;
         }
-
-        .content {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
+        
+        .skill-highlight {
+            font-weight: bold;
+            color: #4caf50;
         }
-
-        .btn {
+        
+        .impact-tag {
             display: inline-block;
-            padding: 8px 16px;
-            background-color: #4caf50;
-            color: white;
-            text-decoration: none;
+            padding: 2px 8px;
+            background-color: #d1e7dd;
             border-radius: 4px;
-            margin-right: 10px;
-            transition: background-color 0.3s;
+            margin: 2px;
             font-size: 12px;
+            color: #0f5132;
         }
-
-        .btn:hover {
-            background-color: #45a049;
+        
+        .category-badge {
+            display: inline-block;
+            font-size: 11px;
+            border-radius: 3px;
+            padding: 1px 5px;
+            margin-right: 5px;
+            background-color: #f0f0f0;
+            color: #666;
+            margin-bottom: 3px;
+        }
+        
+        /* Pulse animation from original CSS */
+        .project-container:hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 10px;
+            border: 2px solid #7b65df;
+            animation: pulse 1.5s infinite;
+            pointer-events: none;
+            z-index: 10;
         }
     </style>
 </head>
@@ -86,27 +122,32 @@
     </div>
 
     <div class="content">
-            <h1>100 Projects</h1>
-            <p style="color: #666; margin-bottom: 20px;">A collection of projects completed during my 100-day coding challenge</p>
+        <h1>100 Projects</h1>
+        <p style="color: #666; margin-bottom: 20px;">A collection of projects completed during my 100-day coding challenge</p>
         <div class="project-container">
             <table class="projects-table">
                 <thead>
                     <tr>
                         <th>Day</th>
                         <th>Project</th>
+                        <th>Skills Developed</th>
                         <th>Description</th>
-                        <th>Technologies</th>
                         <th>Links</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>04/27</td>
-                        <td>[Productivity] <b>AI-Powered To-Do List</b></td>
-                        <td>Smart task prioritization using ChatGPT integration</td>
                         <td>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">OpenAI API</span>
+                            <span class="category-badge">Web App</span>
+                            <b><br>AI-Powered To-Do List</b>
+                        </td>
+                        <td>
+                            <span class="tech-tag"><span class="skill-highlight">React</span></span>
+                            <span class="tech-tag"><span class="skill-highlight">OpenAI API</span></span>
+                        </td>
+                        <td>
+                            prioritizes tasks with AI
                         </td>
                         <td>
                             <a href="https://github.com/nodokashibasaki3/100DAY_DAY1" class="btn">View Source</a>
@@ -114,12 +155,16 @@
                     </tr>
                     <tr>
                         <td>04/28</td>
-                        <td>[Game] <b>CodeTrace</b></td>
-                        <td>Speedrun challenge game for code output prediction</td>
                         <td>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Game Development</span>
+                            <span class="category-badge">Web Game</span>
+                            <br><b>CodeTrace</b>
+                        </td>
+                        <td>
+                            <span class="tech-tag"><span class="skill-highlight">JavaScript</span></span>
+                            <span class="tech-tag"><span class="skill-highlight">Python</span></span>
+                        </td>
+                        <td>
+                            Tests your coding speed
                         </td>
                         <td>
                             <a href="day2_zetamacnew.html" class="btn">Try Demo</a>
@@ -127,12 +172,17 @@
                     </tr>
                     <tr>
                         <td>04/29</td>
-                        <td>[Management] <b>Tutor Management App</b></td>
-                        <td>Full-featured dashboard for tutor scheduling and tracking</td>
                         <td>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Tailwind CSS</span>
-                            <span class="tech-tag">React Router</span>
+                            <span class="category-badge">Web Dashboard</span>
+                            <b><br>Tutor Management App</b>
+                        </td>
+                        <td>
+                            <span class="tech-tag"><span class="skill-highlight">React</span></span>
+                            <span class="tech-tag"><span class="skill-highlight">Tailwind CSS</span></span>
+                            <span class="tech-tag"><span class="skill-highlight">React Router</span></span>
+                        </td>
+                        <td>
+                            Admin, student and tutor dashboard
                         </td>
                         <td>
                             <a href="https://github.com/nodokashibasaki3/100DAY_DAY3" class="btn">View Source</a>
@@ -140,11 +190,16 @@
                     </tr>
                     <tr>
                         <td>04/30</td>
-                        <td>[Productivity] <b>Smart Task Logger</b></td>
-                        <td>One-click task tracking with AI-generated titles</td>
                         <td>
-                            <span class="tech-tag">OpenAI API</span>
-                            <span class="tech-tag">Pandas</span>
+                            <span class="category-badge">Dashboard App</span>
+                            <b><br>Smart Task Logger</b>
+                        </td>
+                        <td>
+                            <span class="tech-tag"><span class="skill-highlight">OpenAI API</span></span>
+                            <span class="tech-tag"><span class="skill-highlight">Pandas</span></span>
+                        </td>
+                        <td>
+                            Logs tasks from open apps with AI prompting
                         </td>
                         <td>
                             <a href="https://github.com/nodokashibasaki3/100DAY_DAY4" class="btn">View Source</a>
@@ -152,12 +207,17 @@
                     </tr>
                     <tr>
                         <td>05/01</td>
-                        <td>[Automation] <b>Canvas to Notion Assignment Importer</b></td>
-                        <td>Automated assignment importer from Canvas to Notion using Canvas API</td>
                         <td>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Canvas API</span>
-                            <span class="tech-tag">Notion API</span>
+                            <span class="category-badge">Python Script</span>
+                            <b><br>Canvas to Notion Importer</b>
+                        </td>
+                        <td>
+                            <span class="tech-tag"><span class="skill-highlight">Python</span></span>
+                            <span class="tech-tag"><span class="skill-highlight">Canvas API</span></span>
+                            <span class="tech-tag"><span class="skill-highlight">Notion API</span></span>
+                        </td>
+                        <td>
+                            Imports Canvas assignments to Notion automatically
                         </td>
                         <td>
                             <a href="https://github.com/nodokashibasaki3/100DAY_DAY5" class="btn">View Source</a>
@@ -168,4 +228,4 @@
         </div>
     </div>
 </body>
-</html> 
+</html>
