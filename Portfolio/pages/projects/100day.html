@@ -7,18 +7,19 @@
     <link rel="stylesheet" href="../../style.css">
     <style>
         .content {
-            padding: 0px;
-            margin-bottom: 40px;
-            position: relative; /* For positioning animations */
+            padding: 0;
+            margin: 0;
+            position: relative;
+            width: 100%;
         }
             
         .project-container {
             background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
+            padding: 10px;
+            border-radius: 0;
+            box-shadow: none;
+            margin: 0;
+            width: 100%;
         }
         
         .project-container:hover {
@@ -28,11 +29,11 @@
         .projects-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin: 10px 0;
         }
 
         .projects-table th, .projects-table td {
-            padding: 12px 15px;
+            padding: 8px 10px;
             text-align: left;
             border-bottom: 1px solid #eee;
         }
@@ -139,15 +140,15 @@
                     <tr>
                         <td>04/27</td>
                         <td>
-                            <span class="category-badge">Web App</span>
+                            <span class="category-badge">Productivity</span>
                             <b><br>AI-Powered To-Do List</b>
                         </td>
                         <td>
-                            <span class="tech-tag"><span class="skill-highlight">React</span></span>
-                            <span class="tech-tag"><span class="skill-highlight">OpenAI API</span></span>
+                            <span class="tech-tag"><span class="skill-highlight">React</span> components</span>
+                            <span class="tech-tag"><span class="skill-highlight">OpenAI API</span> integration</span>
                         </td>
                         <td>
-                            prioritizes tasks with AI
+                            A Web App that prioritizes tasks with AI
                         </td>
                         <td>
                             <a href="https://github.com/nodokashibasaki3/100DAY_DAY1" class="btn">View Source</a>
@@ -156,15 +157,16 @@
                     <tr>
                         <td>04/28</td>
                         <td>
-                            <span class="category-badge">Web Game</span>
+                            <span class="category-badge">Game</span>
                             <br><b>CodeTrace</b>
                         </td>
                         <td>
-                            <span class="tech-tag"><span class="skill-highlight">JavaScript</span></span>
-                            <span class="tech-tag"><span class="skill-highlight">Python</span></span>
+                            <span class="tech-tag"><span class="skill-highlight">JavaScript</span> game logic</span>
+                            <span class="tech-tag"><span class="skill-highlight">Python</span> execution</span>
+                            <span class="tech-tag">Game design</span>
                         </td>
                         <td>
-                            Tests your coding speed
+                            A Web Game that tests your coding speed
                         </td>
                         <td>
                             <a href="day2_zetamacnew.html" class="btn">Try Demo</a>
@@ -173,16 +175,16 @@
                     <tr>
                         <td>04/29</td>
                         <td>
-                            <span class="category-badge">Web Dashboard</span>
+                            <span class="category-badge">Management</span>
                             <b><br>Tutor Management App</b>
                         </td>
                         <td>
-                            <span class="tech-tag"><span class="skill-highlight">React</span></span>
-                            <span class="tech-tag"><span class="skill-highlight">Tailwind CSS</span></span>
+                            <span class="tech-tag"><span class="skill-highlight">React</span> state management</span>
+                            <span class="tech-tag"><span class="skill-highlight">Tailwind CSS</span> UI</span>
                             <span class="tech-tag"><span class="skill-highlight">React Router</span></span>
                         </td>
                         <td>
-                            Admin, student and tutor dashboard
+                            A Web Dashboard for administrators, tutors, and students at one-on-one tutoring organizations
                         </td>
                         <td>
                             <a href="https://github.com/nodokashibasaki3/100DAY_DAY3" class="btn">View Source</a>
@@ -191,15 +193,15 @@
                     <tr>
                         <td>04/30</td>
                         <td>
-                            <span class="category-badge">Dashboard App</span>
+                            <span class="category-badge">Productivity</span>
                             <b><br>Smart Task Logger</b>
                         </td>
                         <td>
-                            <span class="tech-tag"><span class="skill-highlight">OpenAI API</span></span>
-                            <span class="tech-tag"><span class="skill-highlight">Pandas</span></span>
+                            <span class="tech-tag"><span class="skill-highlight">OpenAI API</span> prompting</span>
+                            <span class="tech-tag"><span class="skill-highlight">Pandas</span> analysis</span>
                         </td>
                         <td>
-                            Logs tasks from open apps with AI prompting
+                            A Desktop App that logs tasks from open apps with AI prompting
                         </td>
                         <td>
                             <a href="https://github.com/nodokashibasaki3/100DAY_DAY4" class="btn">View Source</a>
@@ -208,20 +210,103 @@
                     <tr>
                         <td>05/01</td>
                         <td>
-                            <span class="category-badge">Python Script</span>
+                            <span class="category-badge">Automation</span>
                             <b><br>Canvas to Notion Importer</b>
                         </td>
                         <td>
-                            <span class="tech-tag"><span class="skill-highlight">Python</span></span>
-                            <span class="tech-tag"><span class="skill-highlight">Canvas API</span></span>
-                            <span class="tech-tag"><span class="skill-highlight">Notion API</span></span>
+                            <span class="tech-tag"><span class="skill-highlight">Python</span> automation</span>
+                            <span class="tech-tag"><span class="skill-highlight">Canvas API</span> & <span class="skill-highlight">Notion API</span></span>
                         </td>
                         <td>
-                            Imports Canvas assignments to Notion automatically
+                            A Python Script that imports Canvas assignments to Notion automatically
                         </td>
                         <td>
                             <a href="https://github.com/nodokashibasaki3/100DAY_DAY5" class="btn">View Source</a>
                         </td>
+                    </tr>
+                    <tr>
+                        <td>05/02</td>
+                        <td><span class="category-badge">Web Game</span><b><br>Emoji Memory Game</b></td>
+                        <td><span class="tech-tag">HTML</span> <span class="tech-tag">CSS</span> <span class="tech-tag">JavaScript</span></td>
+                        <td>A timed matching game that challenges the player to pair emojis before the timer runs out, with confetti animations for winning.</td>
+                        <td><a href="day6_colormatching.html" class="btn">Launch Web Game</a></td>
+                    </tr>                    
+                    <tr>
+                        <td>05/03</td>
+                        <td><span class="category-badge">Game</span><b><br>Tetris Game</b></td>
+                        <td><span class="tech-tag">Pygame</span></td>
+                        <td>A copy paste of Tetris</td>
+                        <td><a href="day7_tetris.py" class="btn">Launch Python Game</a></td>
+                    </tr>
+                    <tr class="project-row">
+                        <td class="date-cell">05/04</td>
+                        <td class="project-title-cell">
+                            <span class="category-badge">Data Analysis</span>
+                            <h3 class="project-title">Stock Market Analyzer</h3>
+                            <p class="project-description">
+                                A comprehensive tool for analyzing stock market data, calculating technical indicators, and visualizing long-term market trends. Features include moving averages, RSI, MACD, and performance metrics.
+                            </p>
+                        </td>
+                        <td class="tech-stack-cell">
+                            <span class="tech-tag">Python</span> 
+                            <span class="tech-tag">Pandas</span> 
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">yfinance</span>
+                            <span class="tech-tag">NumPy</span>
+                        </td>
+                        <td class="actions-cell">
+                            <a href="https://github.com/nodokashibasaki3/100DAY_DAY7" class="btn btn-primary">View Source</a>
+                            <a href="projects/day8_stockanalyzer.py" class="btn btn-secondary">View Code</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>05/05</td>
+                        <td><span class="category-badge">Web App</span><b><br>Weather Dashboard</b></td>
+                        <td><span class="tech-tag">React</span> <span class="tech-tag">Weather API</span></td>
+                        <td>Real-time weather information with forecasts based on location.</td>
+                        <td><a href="https://github.com/nodokashibasaki3/100DAY_DAY9" class="btn">View Source</a></td>
+                    </tr>
+                    <tr>
+                        <td>05/06</td>
+                        <td><span class="category-badge">Mobile App</span><b><br>Fitness Tracker</b></td>
+                        <td><span class="tech-tag">React Native</span> <span class="tech-tag">Firebase</span></td>
+                        <td>Mobile app for tracking workouts and progress.</td>
+                        <td><a href="https://github.com/nodokashibasaki3/100DAY_DAY10" class="btn">View Source</a></td>
+                    </tr>
+                    <tr>
+                        <td>05/07</td>
+                        <td><span class="category-badge">AI</span><b><br>Image Classifier</b></td>
+                        <td><span class="tech-tag">Python</span> <span class="tech-tag">TensorFlow</span></td>
+                        <td>A deep learning model for image classification using neural networks.</td>
+                        <td><a href="https://github.com/nodokashibasaki3/100DAY_DAY11" class="btn">View Source</a></td>
+                    </tr>
+                    <tr>
+                        <td>05/08</td>
+                        <td><span class="category-badge">Finance</span><b><br>Expense Tracker</b></td>
+                        <td><span class="tech-tag">React</span> <span class="tech-tag">Context API</span></td>
+                        <td>An app for tracking daily expenses and managing budgets.</td>
+                        <td><a href="https://github.com/nodokashibasaki3/100DAY_DAY12" class="btn">View Source</a></td>
+                    </tr>
+                    <tr>
+                        <td>05/09</td>
+                        <td><span class="category-badge">Game</span><b><br>Memory Game</b></td>
+                        <td><span class="tech-tag">JavaScript</span> <span class="tech-tag">HTML</span> <span class="tech-tag">CSS</span></td>
+                        <td>A classic memory game with varying difficulty levels.</td>
+                        <td><a href="https://github.com/nodokashibasaki3/100DAY_DAY13" class="btn">View Source</a></td>
+                    </tr>
+                    <tr>
+                        <td>05/10</td>
+                        <td><span class="category-badge">Data Science</span><b><br>Simple Language Model</b></td>
+                        <td><span class="tech-tag">Python</span> <span class="tech-tag">TensorFlow</span></td>
+                        <td>A neural network that generates text based on training data, demonstrating language model basics.</td>
+                        <td><a href="https://github.com/nodokashibasaki3/100DAY_DAY14" class="btn">View Source</a></td>
+                    </tr>
+                    <tr>
+                        <td>05/11</td>
+                        <td><span class="category-badge">Web App</span><b><br>Interactive Quiz Platform</b></td>
+                        <td><span class="tech-tag">React</span> <span class="tech-tag">Node.js</span> <span class="tech-tag">MongoDB</span></td>
+                        <td>A quiz platform that adapts question difficulty based on user performance.</td>
+                        <td><a href="https://github.com/nodokashibasaki3/100DAY_DAY15" class="btn">View Source</a></td>
                     </tr>
                 </tbody>
             </table>
