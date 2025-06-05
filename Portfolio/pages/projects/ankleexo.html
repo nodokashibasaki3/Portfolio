@@ -13,14 +13,33 @@
     <p>The primary goal of this project was to develop an intelligent torque control system for an <b>ankle exoskeleton</b> aimed at simultaneously minimizing user metabolic cost and maximizing user-perceived comfort and natural movement. This objective addresses a critical challenge in wearable robotics: achieving efficient and personalized assistance that seamlessly integrates with the user's biomechanics, preferences and uses the least energy of user. Effective torque control is crucial for <b>extending battery life in mobile devices, reducing user fatigue, and for adopting assistive robotic technologies.</b> This goal aligns with broader engineering principles of efficiency, optimization, and human-centered design, relevant across various technology domains, including <b>robotics, autonomous systems, and human-machine interfaces. </b></p>    
     
     <h2>Problem Statement</h2>
+    <p>The original electronics board was bulky, uncomfortable, and chaotic—wires dangled everywhere, and the setup lacked modularity.</p>
+
+    <h2>Skills Applied</h2>
+    <ul>
+        <li>CAD Modeling</li>
+        <li>3D Printing (Prusa)</li>
+    </ul>
+
+    <h2>My Contribution</h2>
+    <p>I led the redesign of the electronics board, transforming it into a sleek, modular, and wearable system.</p>
+    <ul>
+        <li>Engineered a custom-fit Raspberry Pi mount—no more Velcro, just precision design</li>
+        <li>Integrated built-in wire routing channels to keep cables clean and organized</li>
+        <li>Designed and installed a detachable back hip plate to support expanded functionality</li>
+        <li>Made every component modular for seamless upgrades and repairs</li>
+    </ul>
+    
+    <h2>Problem Statement</h2>
     <p>The core challenge encountered was significant machine learning overfitting during the development of the torque control model. Initially, the model demonstrated high accuracy on the training dataset, exhibiting a strong ability to predict optimal torque based on input features. However, this performance drastically degraded when evaluated on unseen data, indicating a lack of generalization. This overfitting issue was critical because <b>it would lead to unreliable torque predictions in real-world scenarios, resulting in suboptimal metabolic cost reduction, inconsistent user comfort, or potentially unsafe or unpredictable device behavior.</b> Overfitting stemmed from <b>the complexity of the model relative to the dataset size.</b> Addressing this overfitting was paramount to ensure the model's practical applicability and reliability in diverse user conditions.</p>    
 
     <h2>Skills Applied</h2>
-    <p>This project leveraged a robust skillset encompassing: <br>
-        🌟<b>Machine Learning Evaluation Models:</b> Proficiency in utilizing and interpreting various evaluation metrics to diagnose model performance, specifically focusing on metrics relevant to regression tasks and generalization ability, such as <b>Mean Squared Error (MSE), R-squared, metrics for assessing overfitting like validation curve analysis, and learning curve analysis.</b> Experience in selecting and applying appropriate cross-validation techniques to rigorously assess model generalization. <br>
-        🌟<b>Python Programming:</b> Extensive use of Python for <b>data preprocessing and manipulation using libraries like Pandas and NumPy, model development and training with libraries like TensorFlow and Scikit, and data visualization using Matplotlib.</b> <br>
-        🌟<b>MATLAB</b>: Utilization of MATLAB for <b>expected result dataset creation.</b></p>
-        
+    <ul>
+        <li>Machine Learning Evaluation Models</li>
+        <li>Python</li>
+        <li>MATLAB</li>
+    </ul>
+ 
     <h2>My Contribution</h2>
     <p>My primary contribution was the critical implementation of <b>leave-one-subject-out cross-validation (LOSO CV)</b> to rigorously address the overfitting issue. Recognizing the limitations of traditional train-test splits in this context, particularly the risk of subject-specific biases influencing model evaluation, I strategically chose LOSO CV. This involved <b>partitioning the dataset by subject, iteratively training the model on data from N-1 subjects and validating on the held-out subject, systematically repeating this process for all subjects, and aggregating performance metrics across all folds to obtain a robust estimate of generalization performance.</b> This methodology ensured that the model's performance was evaluated on data completely independent from the training set, providing a far more realistic assessment of its ability to generalize to new users and conditions. The selection of LOSO CV was driven by <b>the need to minimize subject-specific variability</b> and the fact that the dataset we are dealing with are small. If the dataset was larger, LOSO CV would not be a good choice since it takes too much time and energy.</p>
     
