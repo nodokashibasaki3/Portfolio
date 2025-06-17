@@ -1,12 +1,12 @@
 /* Base styles */
 body {
-    background-color: #f0f8ff;  /* Light blue background */
+    background-color: #ffffff;  /* White background */
     box-sizing: border-box;
     margin: 10px auto;
     max-width: 700px;
     font-family: Arial, Helvetica, sans-serif;
     padding: 0 15px;
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a90e2' stroke-width='2'><circle cx='12' cy='12' r='10'/><circle cx='12' cy='12' r='2'/></svg>") 12 12, auto;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2'><circle cx='12' cy='12' r='10'/><circle cx='12' cy='12' r='2'/></svg>") 12 12, auto;
     overflow-x: hidden; /* Prevent horizontal scroll from animations */
 }
 
@@ -26,17 +26,18 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    transition: all 0.3s ease;
 }
 
+/* Remove hover effect */
 .topnav a:hover {
-    background-color: #e6f3ff;
-    color: #4a90e2;
+    background-color: transparent;
+    color: #000000;
 }
 
 /* Style the content */
 .content {
     padding: 0px;
+    margin-top: 40px;  /* Added margin-top for spacing */
     margin-bottom: 40px;
     position: relative; /* For positioning animations */
 }
@@ -47,10 +48,11 @@ h1 {
     font-weight: bold;
     margin-top: 0;
     margin-bottom: 10px;
+    color: #000000;
 }
 
 h2 {
-    color: #333;
+    color: #333333;
     margin-top: 30px;
     margin-bottom: 15px;
 }
@@ -59,6 +61,7 @@ h3 {
     text-align: center;
     padding: 30px;
     margin: 0;
+    color: #333333;
 }
 
 p {
@@ -66,11 +69,12 @@ p {
     margin-bottom: 20px;
     padding: 5px;
     line-height: 1.5;
+    color: #444444;
 }
 
 .social-icon {
     margin: 0 10px;
-    color: #4a90e2;
+    color: #333333;
     text-decoration: none;
     font-size: 30px;
     transition: color 0.3s ease;
@@ -78,8 +82,9 @@ p {
     overflow: hidden;
 }
 
+/* Remove hover effect from social icons */
 .social-icon:hover {
-    color: #2d6da3;
+    color: #333333;
 }
 
 .social-icon::after {
@@ -92,31 +97,34 @@ p {
     transition: all 0.3s ease;
 }
 
+/* Remove hover effect from social icons */
 .social-icon:hover::after {
-    opacity: 1;
-    transform: scale(1.2);
+    opacity: 0;
+    transform: none;
 }
 
 .project-container {
-    background: white;
+    background: #ffffff;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     max-width: 600px;
     margin: 30px auto;
-    box-shadow: 0 2px 5px rgba(74, 144, 226, 0.1);
+    box-shadow: 0 2px 5px rgba(51, 51, 51, 0.1);
     transition: transform 0.3s ease;
     position: relative;
     overflow: visible !important;
+    border: 1px solid #333333;
 }
 
+/* Remove hover effects from project containers */
 .project-container:hover {
-    transform: translateY(-5px);
+    transform: none;
 }
 
 .project-date {
     font-size: 14px;
-    color: #777;
+    color: #666666;
     margin-bottom: 10px;
     font-weight: bold;
 }
@@ -136,10 +144,10 @@ p {
 
 .tech-stack span {
     padding: 8px 12px;
-    border: 2px solid #4a90e2;
+    border: 2px solid #333333;
     border-radius: 5px;
     font-size: 14px;
-    color: #4a90e2;
+    color: #333333;
     transition: all 0.3s ease;
 }
 
@@ -148,9 +156,10 @@ p {
     font-size: 12px;
 }
 
+/* Remove hover effects from tech stack */
 .tech-stack span:hover {
-    background-color: #4a90e2;
-    color: white;
+    background-color: transparent;
+    color: #333333;
 }
 
 .project-links {
@@ -170,25 +179,26 @@ p {
 }
 
 .live-demo {
-    background-color: #4a90e2;
+    background-color: #333333;
     color: white;
 }
 
+/* Remove hover effects from buttons */
 .live-demo:hover {
-    background-color: #2d6da3;
-    transform: translateY(-2px);
+    background-color: #333333;
+    transform: none;
 }
 
 .view-source {
-    background-color: #f8f9fa;
-    color: #4a90e2;
-    border: 2px solid #4a90e2;
+    background-color: #ffffff;
+    color: #333333;
+    border: 2px solid #333333;
 }
 
 .view-source:hover {
-    background-color: #4a90e2;
-    color: white;
-    transform: translateY(-2px);
+    background-color: #ffffff;
+    color: #333333;
+    transform: none;
 }
 
 .mini-project-container {
@@ -201,7 +211,7 @@ p {
 }
 
 .mini-project {
-    background: white;
+    background: #ffffff;
     padding: 15px;
     border-radius: 10px;
     text-align: center;
@@ -211,20 +221,23 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(74, 144, 226, 0.1);
+    box-shadow: 0 2px 5px rgba(51, 51, 51, 0.1);
     transition: transform 0.3s ease;
     overflow: visible !important;
     position: relative;
+    border: 1px solid #333333;
 }
 
+/* Remove hover effects from project containers */
 .mini-project:hover {
-    transform: translateY(-5px);
+    transform: none;
 }
 
 .mini-project h2 {
     font-size: 1.5em;
     margin-top: 10px;
     margin-bottom: 10px;
+    color: #333333;
 }
 
 .profile-container {
@@ -363,7 +376,7 @@ p {
 
 /* Custom cursor */
 a, button, .btn, .project-container, .mini-project, .social-icon {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a90e2' stroke-width='2'><circle cx='12' cy='12' r='10'/><path d='M8 12h8'/><path d='M12 8v8'/></svg>") 12 12, pointer;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2'><circle cx='12' cy='12' r='10'/><path d='M8 12h8'/><path d='M12 8v8'/></svg>") 12 12, pointer;
 }
 
 /* Project Page Specific Styles */
@@ -627,5 +640,39 @@ pre {
     .tab {
         margin-bottom: 5px;
     }
+}
+
+.blog-post {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(51, 51, 51, 0.1);
+    padding: 30px;
+    margin-bottom: 40px;
+    border: 1px solid #333333;  /* Added border to match project containers */
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #333333;  /* Added border to match other containers */
+    box-shadow: 0 4px 8px rgba(51, 51, 51, 0.1);  /* Updated shadow to match */
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.experience-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 1px solid #333333;  /* Added border to match other containers */
+    box-shadow: 0 2px 5px rgba(51, 51, 51, 0.1);  /* Updated shadow to match */
 }
 
