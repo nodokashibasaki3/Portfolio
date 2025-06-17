@@ -7,59 +7,58 @@
     <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
+    <div class="topnav">
+        <a href="../../index.html">About</a>
+        <a href="../../blog.html">Blog</a>
+        <a href="../../gallery.html">Art Gallery</a>
+    </div>
+
     <h1>Ankle Exoskeleton Research</h1>
 
-    <h2>🏁Goal</h2>
-    <p>The primary goal of this project was to develop an intelligent torque control system for an <b>ankle exoskeleton</b> aimed at simultaneously minimizing user metabolic cost and maximizing user-perceived comfort and natural movement. This objective addresses a critical challenge in wearable robotics: achieving efficient and personalized assistance that seamlessly integrates with the user's biomechanics, preferences and uses the least energy of user. Effective torque control is crucial for <b>extending battery life in mobile devices, reducing user fatigue, and for adopting assistive robotic technologies.</b> This goal aligns with broader engineering principles of efficiency, optimization, and human-centered design, relevant across various technology domains, including <b>robotics, autonomous systems, and human-machine interfaces. </b></p>    
-    
-    <h2>Problem Statement</h2>
-    <p>The original electronics board was bulky, uncomfortable, and chaotic—wires dangled everywhere, and the setup lacked modularity.</p>
-
-    <h2>Skills Applied</h2>
-    <ul>
-        <li>CAD Modeling</li>
-        <li>3D Printing (Prusa)</li>
-    </ul>
-
-    <h2>My Contribution</h2>
-    <p>I led the redesign of the electronics board, transforming it into a sleek, modular, and wearable system.</p>
-    <ul>
-        <li>Engineered a custom-fit Raspberry Pi mount—no more Velcro, just precision design</li>
-        <li>Integrated built-in wire routing channels to keep cables clean and organized</li>
-        <li>Designed and installed a detachable back hip plate to support expanded functionality</li>
-        <li>Made every component modular for seamless upgrades and repairs</li>
-    </ul>
-    
-    <h2>Problem Statement</h2>
-    <p>The core challenge encountered was significant machine learning overfitting during the development of the torque control model. Initially, the model demonstrated high accuracy on the training dataset, exhibiting a strong ability to predict optimal torque based on input features. However, this performance drastically degraded when evaluated on unseen data, indicating a lack of generalization. This overfitting issue was critical because <b>it would lead to unreliable torque predictions in real-world scenarios, resulting in suboptimal metabolic cost reduction, inconsistent user comfort, or potentially unsafe or unpredictable device behavior.</b> Overfitting stemmed from <b>the complexity of the model relative to the dataset size.</b> Addressing this overfitting was paramount to ensure the model's practical applicability and reliability in diverse user conditions.</p>    
-
-    <h2>Skills Applied</h2>
-    <ul>
-        <li>Machine Learning Evaluation Models</li>
-        <li>Python</li>
-        <li>MATLAB</li>
-    </ul>
- 
-    <h2>My Contribution</h2>
-    <p>My primary contribution was the critical implementation of <b>leave-one-subject-out cross-validation (LOSO CV)</b> to rigorously address the overfitting issue. Recognizing the limitations of traditional train-test splits in this context, particularly the risk of subject-specific biases influencing model evaluation, I strategically chose LOSO CV. This involved <b>partitioning the dataset by subject, iteratively training the model on data from N-1 subjects and validating on the held-out subject, systematically repeating this process for all subjects, and aggregating performance metrics across all folds to obtain a robust estimate of generalization performance.</b> This methodology ensured that the model's performance was evaluated on data completely independent from the training set, providing a far more realistic assessment of its ability to generalize to new users and conditions. The selection of LOSO CV was driven by <b>the need to minimize subject-specific variability</b> and the fact that the dataset we are dealing with are small. If the dataset was larger, LOSO CV would not be a good choice since it takes too much time and energy.</p>
-    
-    <div style="text-align: center;">
-        <img src="../../assets/ankleexo_mlstructure.png" alt="Score Improvement Data" style="width: 100%; margin: 10px;">
-        <p style="font-size:12px"><i>Structure of the Ankle Exoskeleton Learning Algorithm</i></p>
+    <h2 style="text-align: center;">Hardware Redesign</h2>
+        <div style="text-align: center;">
+        <img src="../../assets/ankleexo_cad2.jpg" alt="Ankle Exoskeleton CAD" style="width: 100%; max-width: 400px; margin: 10px 0;">
+    <p style="margin: 4px 0; line-height: 1.4;"><i>Prototype 2: Custom electronics mount integrated for JETSON and Raspberry Pi</i></p>
     </div>
-    
-    <h2>Result + Next Steps</h2>
-    <p><b>Results:</b> The implementation of leave-one-subject-out cross-validation demonstrably <b>mitigated the overfitting issue. Validation performance, as measured by Mean Squared Error, improved by 28% during LOSO CV compared to previous validation methods. The gap between training and validation performance was significantly reduced, indicating improved generalization. </b><br>
-        The model now exhibits a more consistent and reliable performance across different subjects during cross-validation, suggesting a significantly enhanced ability to generalize to new users and conditions.</p>
-    <p><b>Next Steps:</b> While overfitting was effectively addressed, future work focuses on enhancing the model's robustness to potential <b>outlier offline datasets.</b> This includes:
-        🚀Outlier Detection and Preprocessing: Implementing systematic methods for identifying and handling outlier data points within the offline datasets. This may involve statistical outlier detection methods (e.g., Z-score, IQR-based methods), visual inspection of data distributions, or domain-specific outlier detection techniques related to biomechanics or sensor data.
-        🚀Real-World Validation: Crucially, transitioning to real-world validation with online data collection and testing to assess model performance in dynamic and less controlled environments, which may uncover new types of outliers or challenges not present in offline datasets.</p>
-    
-    <div style="text-align: center;">
-        <img src="../../assets/ankleexo_data.jpg" alt="Score Improvement Data" style="width: 50%; margin: 10px;">
-        <p style="font-size:12px"><i>Score Improvement Data created by MATLAB</i></p>
+
+    <div style="text-align: left;">
+    <p style="margin: 4px 0; line-height: 1.4;"><b>Goal:</b> Develop a compact, modular electronics board for on-body deployment during exoskeleton-assisted walking.</p>
+    <p style="margin: 4px 0; line-height: 1.4;"><b>Challenge:</b> Original setup was bulky and unstable, with dangling wires and poor component integration.</p>
+    <p style="margin: 4px 0; line-height: 1.4;"><b>My Contribution:</b> Designed a 3D-printed backplate with embedded cable channels and modular Pi/Jetson mounts for system stability and upgrade flexibility.</p>
+    <p style="margin: 4px 0; line-height: 1.4;"><b>Skills Used:</b> CAD (Solidworks), 3D Printing (Prusa), Embedded System Integration.</p>
+    <p style="margin: 4px 0; line-height: 1.4;"><b>Outcome:</b> Enabled safe, wearable deployment with organized layout and modularity for field testing.</p>
     </div>
-    <a style="color:rgb(255, 59, 75)" href="https://github.com/nodokashibasaki3/ANKLE-EXOBOOT" target="_blank"><b>View Code on Github</b></a>
+
+    <h2 style="text-align: center;">Machine Learning Optimization</h2>
+    <div style="text-align: left;">
+    <p style="margin: 4px 0; line-height: 1.4;"><b>Goal:</b> Create a torque prediction model that generalizes across users to minimize metabolic cost during walking.</p>
+    <p style="margin: 4px 0; line-height: 1.4;"><b>Challenge:</b> Initial model overfit to individual training subjects and failed to generalize to unseen data.</p>
+    <p style="margin: 4px 0; line-height: 1.4;"><b>My Contribution:</b> Implemented leave-one-subject-out cross-validation (LOSO CV) to evaluate generalization across participants, using subject-independent training-validation splits.</p>
+    <p style="margin: 4px 0; line-height: 1.4;"><b>Skills Used:</b> Python (Scikit-learn), MATLAB, Model Validation, Statistical Evaluation.</p>
+    <p style="margin: 4px 0; line-height: 1.4;"><b>Outcome:</b> Reduced MSE by 28%, narrowed the training-validation gap, and increased robustness to user variance.</p>
+    </div>
+
+    <div style="text-align: center;">
+    <img src="../../assets/ankleexo_mlstructure.png" alt="ML Structure" style="width: 100%; margin: 10px;">
+    <p style="font-size:12px"><i>Structure of the Ankle Exoskeleton Torque Prediction Pipeline</i></p>
+    </div>
+
+    <h2 style="text-align: center;">Next Steps</h2>
+    <div style="text-align: left;">
+    <p style="margin: 4px 0; line-height: 1.4;"><b>Outlier Mitigation:</b> Integrate offline data preprocessing for anomaly detection using Z-score and domain-specific gait metrics.</p>
+    <p style="margin: 4px 0; line-height: 1.4;"><b>Real-World Deployment:</b> Transition to online testing with live gait data to validate robustness under dynamic conditions and varied terrains.</p>
+    </div>
+
+    <div style="text-align: center;">
+    <img src="../../assets/ankleexo_data.jpg" alt="Validation Performance" style="width: 50%; margin: 10px;">
+    <p style="font-size:12px"><i>Validation Improvement (MSE) from LOSO CV — plotted in MATLAB</i></p>
+    </div>
+
+    <p style="text-align: left; margin-top: 10px;">
+    <a href="https://github.com/nodokashibasaki3/ANKLE-EXOBOOT" target="_blank" style="text-decoration: none; font-weight: bold;">
+        View Code on GitHub
+    </a>
+    </p>
 
 </body>
 </html>

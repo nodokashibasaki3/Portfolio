@@ -1,12 +1,12 @@
 /* Base styles */
 body {
-    background-color: #e6e6e6;
+    background-color: #f0f8ff;  /* Light blue background */
     box-sizing: border-box;
     margin: 10px auto;
     max-width: 700px;
     font-family: Arial, Helvetica, sans-serif;
     padding: 0 15px;
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%237b65df' stroke-width='2'><circle cx='12' cy='12' r='10'/><circle cx='12' cy='12' r='2'/></svg>") 12 12, auto;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a90e2' stroke-width='2'><circle cx='12' cy='12' r='10'/><circle cx='12' cy='12' r='2'/></svg>") 12 12, auto;
     overflow-x: hidden; /* Prevent horizontal scroll from animations */
 }
 
@@ -30,8 +30,8 @@ body {
 }
 
 .topnav a:hover {
-    background-color: #f0f0f0;
-    color: #7b65df;
+    background-color: #e6f3ff;
+    color: #4a90e2;
 }
 
 /* Style the content */
@@ -70,7 +70,7 @@ p {
 
 .social-icon {
     margin: 0 10px;
-    color: #343434;
+    color: #4a90e2;
     text-decoration: none;
     font-size: 30px;
     transition: color 0.3s ease;
@@ -79,7 +79,7 @@ p {
 }
 
 .social-icon:hover {
-    color: #7b65df;
+    color: #2d6da3;
 }
 
 .social-icon::after {
@@ -104,7 +104,7 @@ p {
     text-align: center;
     max-width: 600px;
     margin: 30px auto;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(74, 144, 226, 0.1);
     transition: transform 0.3s ease;
     position: relative;
     overflow: visible !important;
@@ -136,10 +136,10 @@ p {
 
 .tech-stack span {
     padding: 8px 12px;
-    border: 2px solid #4caf50;
+    border: 2px solid #4a90e2;
     border-radius: 5px;
     font-size: 14px;
-    color: #4caf50;
+    color: #4a90e2;
     transition: all 0.3s ease;
 }
 
@@ -149,7 +149,7 @@ p {
 }
 
 .tech-stack span:hover {
-    background-color: #4caf50;
+    background-color: #4a90e2;
     color: white;
 }
 
@@ -170,23 +170,23 @@ p {
 }
 
 .live-demo {
-    background-color: #7b65df;
+    background-color: #4a90e2;
     color: white;
 }
 
 .live-demo:hover {
-    background-color: #6a57c7;
+    background-color: #2d6da3;
     transform: translateY(-2px);
 }
 
 .view-source {
     background-color: #f8f9fa;
-    color: #7b65df;
-    border: 2px solid #7b65df;
+    color: #4a90e2;
+    border: 2px solid #4a90e2;
 }
 
 .view-source:hover {
-    background-color: #7b65df;
+    background-color: #4a90e2;
     color: white;
     transform: translateY(-2px);
 }
@@ -211,7 +211,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(74, 144, 226, 0.1);
     transition: transform 0.3s ease;
     overflow: visible !important;
     position: relative;
@@ -363,7 +363,7 @@ p {
 
 /* Custom cursor */
 a, button, .btn, .project-container, .mini-project, .social-icon {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%237b65df' stroke-width='2'><circle cx='12' cy='12' r='10'/><path d='M8 12h8'/><path d='M12 8v8'/></svg>") 12 12, pointer;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a90e2' stroke-width='2'><circle cx='12' cy='12' r='10'/><path d='M8 12h8'/><path d='M12 8v8'/></svg>") 12 12, pointer;
 }
 
 /* Project Page Specific Styles */

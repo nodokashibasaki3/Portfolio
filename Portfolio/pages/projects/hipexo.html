@@ -1,61 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hip Exoskeleton Research</title>
-    <link rel="stylesheet" href="../../style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hip Exoskeleton Research</title>
+  <link rel="stylesheet" href="../../style.css"/>
 </head>
 <body>
-        <h1>Hip Exoskeleton Research</h1>
-        
-        <h2>Goal: Biomechanically-Informed Torque Control for Hip Exoskeleton Performance Enhancement</h2>
-        <p>The overarching goal of this research is to develop a highly effective torque control strategy for a hip exoskeleton. This strategy aims to achieve a dual objective: first, to <b>minimize the metabolic cost </b>for the user during locomotion, thereby improving energy efficiency and reducing user exertion; and second, to <b>maximize user preference</b> by ensuring the exoskeleton assistance feels natural, comfortable, and effectively supports their intended movements. Achieving this balance is crucial for creating wearable robotic systems that are not only energy-efficient but also seamlessly integrated and accepted by users, promoting wider adoption and real-world impact in areas such as <b>rehabilitation, mobility assistance for elderly or individuals with disabilities, or even human performance augmentation in industrial/logistics settings</b>. This goal necessitates a deep understanding of biomechanics, robust data acquisition, and advanced control algorithms.</p>
+  <div class="topnav">
+    <a href="../../index.html">About</a>
+    <a class="active" href="../../blog.html">Blog</a>
+    <a href="../../gallery.html">Art Gallery</a>
+  </div>
 
-        <h2>Problem Statement:</h2>
-        <p>Data was not properly labeled and downloaded in the format needed by the model.</p>
+  <h1>Hip Exoskeleton Research</h1>
 
-       <h2>Skills Applied</h2>
-        <ul>
-            <li>Python</li>
-            <li>Sorting and Labeling Algorithms</li>
-            <li>Feature Engineering</li>
-        </ul>
+<h2 style="text-align: center;">Hardware Optimization</h2>
+<div style="text-align: center;">
+  <img src="../../assets/CAN_TRANCEIVER.png" alt="CAN Transceiver" style="width: 100%; max-width: 400px; margin: 10px 0;">
+  <p style="margin: 4px 0; line-height: 1.4;"><i>CAN transceiver interfacing Jetson microcontroller with T-motor drivers via Dupont connectors</i></p>
 
-        <h2>My Contribution: Optimizing Motion Capture Data Quality through Marker Placement Refinement and Algorithmic Data Cleaning</h2>
-        <p>Recognizing the limitations imposed by the initial marker placement, my primary contribution was to <b>address the suboptimal marker configuration proactively.</b> This involved two key actions: <br><br>
-            <b>Development of a Data Sorting and Cleaning Algorithm:</b> To further enhance data quality and address potential artifacts or noise inherent in motion capture data, I <b>designed and implemented a custom data sorting and cleaning algorithm.</b> This algorithm coded in Python interpolation methods, filtering techniques, outlier detection methods within the algorithm]. This algorithm ensured that the motion capture data was of sufficient quality for subsequent biomechanical analysis and model training.</p>
-        
-        <br><br><br>
+  <img src="../../assets/WIRING_HIPEXO.PNG" alt="Wiring Harness" style="width: 100%; max-width: 500px; margin: 10px 0;">
+  <p style="margin: 4px 0; line-height: 1.4;"><i>Redesigned internal wiring architecture for reduced weight and better integration</i></p>
+</div>
 
-        <h2>Goal2: Minimize Circuits</h2>
-        <p>Enhanced Hip Exoskeleton Efficiency through Electrical System Optimization.</p>
+<div style="text-align: left;">
+  <p style="margin: 4px 0; line-height: 1.4;"><b>Goal:</b> Enhance user mobility by optimizing embedded wiring systems for lower inertia and improved cable management.</p>
+  <p style="margin: 4px 0; line-height: 1.4;"><b>Challenge:</b> Excessive cable weight and disorganized routing interfered with joint articulation and device responsiveness.</p>
+  <p style="margin: 4px 0; line-height: 1.4;"><b>My Contribution:</b> Designed and fabricated a custom harness with minimized wire length, secured connector interfaces, and optimized distribution, resulting in a 30% reduction in wiring mass.</p>
+  <p style="margin: 4px 0; line-height: 1.4;"><b>Skills Used:</b> Embedded Systems Wiring, Electrical CAD, Soldering, Connector Crimping, Harness Prototyping.</p>
+  <p style="margin: 4px 0; line-height: 1.4;"><b>Outcome:</b> Improved mechanical freedom, reduced cable fatigue, and enhanced real-time responsiveness during dynamic motion.</p>
+</div>
 
-        <h2>Problem Statement</h2>
-        <p>Excessive Circuit Wiring Weight Limiting Exoskeleton Mobility and Efficiency.</p>
+<h2 style="text-align: center;">Torque Control for Hip Exoskeleton</h2>
+<div style="text-align: left;">
+  <p style="margin: 4px 0; line-height: 1.4;"><b>Goal:</b> Reduce metabolic cost and improve joint coordination using real-time torque control informed by lower-limb biomechanics.</p>
+  <p style="margin: 4px 0; line-height: 1.4;"><b>Challenge:</b> Motion capture datasets were inconsistently labeled and incompatible with the model’s input structure, hindering supervised learning approaches.</p>
+  <p style="margin: 4px 0; line-height: 1.4;"><b>My Contribution:</b> Refined marker placement protocol based on anatomical landmarks and developed a Python pipeline for interpolating missing frames, filtering sensor noise, and automatically labeling gait events.</p>
+  <p style="margin: 4px 0; line-height: 1.4;"><b>Skills Used:</b> Biomechanics Data Preprocessing, Motion Capture Calibration, Python (SciPy, NumPy, Pandas), Gait Phase Detection.</p>
+  <p style="margin: 4px 0; line-height: 1.4;"><b>Outcome:</b> Generated high-fidelity labeled datasets enabling phase-specific torque estimation for real-time control model training.</p>
+</div>
 
-        <h2>Skills Applied</h2>
-        <ul>
-            <li>Circuit Design & Analysis</li>
-            <li>Electrical System Optimization</li>
-            <li>Soldering & Crimping (Prototyping)</li>
-        </ul>
-
-        <h2>My Contribution</h2>
-        <p>Redesigned and simplified exoskeleton wiring harness, achieving a 30% circuit weight reduction through optimized routing and component selection.</p>
-
-        <h2>Result</h2>
-        <p>Significantly Improved Exoskeleton Mobility and Responsiveness.</p>
-            
-        <div style="text-align: center;">
-            <div>
-                <img src="../../assets/CAN_TRANCEIVER.png" alt="Connection with CAN Transceiver" style="width: 40%; margin: 10px;">
-                <p style="font-size:12px"><i>Connection between the JETSON and the T-motors with CAN transceiver using Dupont Connectors</i>Connection with CAN transceiver.</p>
-            </div>
-            <div>
-                <img src="../../assets/WIRING_HIPEXO.PNG" alt="Connection of the Body" style="width: 50%; margin: 10px;">
-                <p style="font-size:12px"><i>Connection of the body wiring in the hip exoskeleton.</i></p>
-            </div>
-        </div>
+  
 </body>
 </html>
