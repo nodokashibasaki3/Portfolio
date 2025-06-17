@@ -28,10 +28,20 @@ body {
     text-decoration: none;
 }
 
+/* Style for Projects link */
+.topnav a[href="projects.html"] {
+    color: rgb(201, 80, 80);
+}
+
 /* Remove hover effect */
 .topnav a:hover {
     background-color: transparent;
     color: #000000;
+}
+
+/* Keep Projects link red on hover */
+.topnav a[href="projects.html"]:hover {
+    color: rgb(201, 80, 80);
 }
 
 /* Style the content */
@@ -270,7 +280,7 @@ p {
     z-index: 1000;
     animation: floatUp 15s linear forwards;
     filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
-    text-shadow: 0 0 5px rgba(123, 101, 223, 0.5);
+    text-shadow: 0 0 5px rgb(233, 153, 153);
 }
 
 @keyframes floatUp {
@@ -484,7 +494,7 @@ pre {
 }
 
 .tab.active {
-    background-color: #7b65df;
+    background-color: #e67272;
     color: white;
 }
 
