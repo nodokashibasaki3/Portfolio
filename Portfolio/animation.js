@@ -2,6 +2,12 @@
 document.addEventListener("DOMContentLoaded", function() {
     console.log("Animation script loaded");
     
+    // Hide leadership experiences by default
+    const leadershipItems = document.querySelectorAll('.timeline-item[data-category="leadership"]');
+    leadershipItems.forEach(item => {
+        item.classList.add('hidden');
+    });
+    
     // Define emoji set for floating particles
     const emojis = ["💻", "🤖", "🧠", "⚡", "🔬", "🚀", "🔋", "🛠️", "🧮", "🧪"];
     
@@ -166,3 +172,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateFocus(focusIndex);
 });
+
+function toggleLeadership() {
+    const leadershipItems = document.querySelectorAll('.timeline-item[data-category="leadership"]');
+    const toggleButton = document.getElementById('leadership-toggle');
+    
+    // Check if leadership items are currently hidden
+    const isHidden = leadershipItems[0]?.classList.contains('hidden');
+    
+    if (isHidden) {
+        // Show leadership items
+        leadershipItems.forEach(item => {
+            item.classList.remove('hidden');
+        });
+        toggleButton.textContent = 'Hide Leadership';
+        toggleButton.classList.add('active');
+    } else {
+        // Hide leadership items
+        leadershipItems.forEach(item => {
+            item.classList.add('hidden');
+        });
+        toggleButton.textContent = 'Show Leadership';
+        toggleButton.classList.remove('active');
+    }
+} 

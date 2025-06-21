@@ -6,54 +6,35 @@
     <title>Gallery - Nodoka Shibasaki</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Gallery specific styles */
-        .gallery-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .gallery-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-            color: #333;
-        }
-        
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            grid-gap: 20px;
-            margin-bottom: 50px;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         .gallery-item {
-            position: relative;
+            border: 1px solid #f0f0f0;
+            border-radius: 6px;
             overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: border-color 0.2s ease;
         }
         
         .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-color: #e0e0e0;
         }
         
         .gallery-item img, 
         .gallery-item video {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
             display: block;
         }
         
         .gallery-item.large {
-            grid-column: span 2;
-            grid-row: span 2;
-        }
-        
-        .gallery-item.medium {
             grid-column: span 2;
         }
         
@@ -61,76 +42,79 @@
             grid-column: span 2;
         }
         
-        .gallery-item.tall {
-            grid-row: span 2;
+        .gallery-item.medium {
+            grid-column: span 2;
         }
         
         .gallery-item-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 10px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .gallery-item:hover .gallery-item-info {
-            opacity: 1;
+            padding: 20px;
+            background: white;
         }
         
         .gallery-item-title {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
+            font-size: 18px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
         }
         
         .gallery-item-description {
-            font-size: 0.9rem;
-            opacity: 0.8;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
         }
         
-        .gallery-controls {
+        .text-artwork {
+            padding: 40px 20px;
+            background-color: #f8f8f8;
+            min-height: 200px;
             display: flex;
+            align-items: center;
             justify-content: center;
-            margin-bottom: 30px;
+        }
+        
+        .text-artwork pre {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            white-space: pre-wrap;
+            text-align: left;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
         }
         
         .filter-buttons {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
         }
         
         .filter-btn {
-            background: #f5f5f5;
-            border: 2px solid #e0e0e0;
-            padding: 10px 20px;
-            border-radius: 30px;
+            font-size: 13px;
+            color: #666;
+            background: none;
+            border: 1px solid #e5e5e5;
+            padding: 8px 16px;
+            border-radius: 3px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            font-size: 1rem;
-            color: #555;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease;
+            font-weight: 400;
         }
         
         .filter-btn:hover {
-            background: #e8e8e8;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333;
+            border-color: #ccc;
         }
         
         .filter-btn.active {
-            background: #333;
+            background-color: #333;
             color: white;
             border-color: #333;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         
-        /* Modal for enlarged view */
         .modal {
             display: none;
             position: fixed;
@@ -184,10 +168,10 @@
             right: 20px;
         }
         
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
             
             .gallery-item.large,
@@ -196,36 +180,42 @@
                 grid-column: span 1;
             }
             
-            .gallery-item.tall {
-                grid-row: span 1;
+            .filter-buttons {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                font-size: 12px;
+                padding: 6px 12px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="topnav">
+    <nav class="topnav">
         <a href="index.html">About</a>
         <a href="blog.html">Blog</a>
         <a href="projects.html">Projects</a>
-        <a class="active" href="gallery.html">Art Gallery</a>
-    </div>
+        <a href="gallery.html">Art Gallery</a>
+    </nav>
 
-    <div class="gallery-container">
-        <h1 class="gallery-title">Art Gallery</h1>
-        
-        <div class="gallery-controls">
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="digital">Digital Art</button>
-                <button class="filter-btn" data-filter="video">Videos</button>
-                <button class="filter-btn" data-filter="poem">Poems</button>
-            </div>
+    <section class="hero">
+        <h1>Art Gallery</h1>
+        <p>Digital art, cinematography, and creative writing exploring themes of connection, memory, and human experience.</p>
+    </section>
+
+    <main class="content">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="digital">Digital Art</button>
+            <button class="filter-btn" data-filter="video">Videos</button>
+            <button class="filter-btn" data-filter="poem">Poems</button>
         </div>
         
         <div class="gallery-grid" id="gallery-grid">
             <!-- Gallery items will be added here dynamically -->
         </div>
-    </div>
+    </main>
     
     <!-- Modal for enlarged view -->
     <div class="modal" id="gallery-modal">
@@ -238,8 +228,31 @@
     </div>
 
     <script>
-        // Artwork data
         const artworkData = [
+            {
+                title: "Blur",
+                description: "A poem about memory, presence, and haunting absence",
+                type: "text",
+                content: `"Blur"
+
+There she was, a blur.
+You've never seen her
+There, she was a blur.
+And now you'll always see her.
+
+In the library 'tween the shelves
+In a room you kept to yourself
+In the fall and in the snow
+You hold onto every "hello."
+
+She'll appear reappear then disappear
+As oil leaves canvas with a smear.
+She'll appear reappear then disappear
+Was she ever there? It's unclear.`,
+                category: "poem",
+                size: "wide",
+                id: "blur"
+            },
             {
                 title: "Entangled Connections",
                 description: "A visual exploration of how people and relationships are entangled - we are all connected in ways that can both hurt and help others",
@@ -346,19 +359,8 @@ Not one person has found it`,
                 } else if (artwork.type === 'text') {
                     const textContainer = document.createElement('div');
                     textContainer.className = 'text-artwork';
-                    textContainer.style.padding = '20px';
-                    textContainer.style.backgroundColor = '#f9f9f9';
-                    textContainer.style.height = '100%';
-                    textContainer.style.display = 'flex';
-                    textContainer.style.alignItems = 'center';
-                    textContainer.style.justifyContent = 'center';
                     
                     const poemText = document.createElement('pre');
-                    poemText.style.fontFamily = 'serif';
-                    poemText.style.whiteSpace = 'pre-wrap';
-                    poemText.style.textAlign = 'left';
-                    poemText.style.fontSize = '1.1rem';
-                    poemText.style.lineHeight = '1.6';
                     poemText.textContent = artwork.content;
                     
                     textContainer.appendChild(poemText);

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Nodoka Shibasaki - Portfolio</title>
@@ -22,12 +21,12 @@
             <img src="assets/PortraitPhoto.png" alt="Nodoka Shibasaki" class="profile-image" id="profile-pic">
             <div class="profile-text">
                 <h1>Nodoka Shibasaki</h1>
-                <h2 style="font-size: 20px;">Electrical and Computer Engineering Student at Northeastern University researching AI and Robotics at <a href="https://shepherdlab.sites.northeastern.edu/">Shepherd's Lab</a> and <a href="https://siliconsynapse.sites.northeastern.edu/">Silicon Synapses</a></h2>
+                <h2 style="font-size: 20px;">Electrical and Computer Engineering Student at Northeastern University researching AI and Robotics at <a href="https://www.omron.com/sinicx/en/">OMRON SINIC X</a></h2>
                 <h2 style="font-size: 13px;">Avid Runner, Cinematographer, and Classical Pianist</h2>
                 <a class="social-icon" href="https://www.linkedin.com/in/nodoka2027/" target="_blank">
                     <ion-icon name="logo-linkedin"></ion-icon>
                 </a>
-                <a class="social-icon" href="mailto:shibasaki.n@northeastern.edu" target="_blank">
+                <a class="social-icon" href="#" id="email-copy-link">
                     <ion-icon name="mail-outline"></ion-icon>
                 </a>
                 <a class="social-icon" href="https://github.com/nodokashibasaki3" target="_blank">
@@ -39,65 +38,300 @@
         <div class="content">
             <h3>--- Bio ---</h3>
           
-            <div class="experience-container" style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <div class="experience-container" style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 10px 0;">
                 <div class="experience-list">
-                    <p style="color: #666; font-size: 14px; margin-bottom: 10px; font-style: italic;">Highlighted items are my current activities</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <p style="color: #666; font-size: 14px; font-style: italic; margin: 0;">Highlighted items are my current activities</p>
+                        <button class="filter-btn" id="leadership-toggle" onclick="toggleLeadership()">Show Leadership</button>
+                    </div>
+                    
                     <h4 style="color: #666; margin: 20px 0 10px 0;">Before College</h4>
-                    <div class="experience-item">2004 – Born in Tokyo, Japan</div>
-                    <div class="experience-item">2015 – Moved to Cupertino, CA; began running + basketball 🏃‍♀️⛹️‍♀️</div>
-                    <div class="experience-item">2020–23 – 💪 ML + Biomechanics Intern @ Stanford</div>
-                    <div class="experience-item">2020–23 – Founder & Exec Dir @ JTutor</div>
+                    <div class="experience-item">
+                        <span class="duration">2004</span>
+                        <span class="position">Born in Tokyo, Japan</span>
+                    </div>
+                    <div class="experience-item">
+                        <span class="duration">2015</span>
+                        <span class="position">Moved to Cupertino, CA; began running + basketball 🏃‍♀️⛹️‍♀️</span>
+                    </div>
+                    <div class="experience-item">
+                        <span class="duration">2020–23</span>
+                        <span class="position">💪 ML + Biomechanics Intern @ Stanford</span>
+                    </div>
+                    <div class="experience-item" data-category="leadership">
+                        <span class="duration">2020–23</span>
+                        <span class="position">Founder & Exec Dir @ JTutor</span>
+                    </div>
                     
                     <div style="border-top: 1px solid #666; margin: 20px 0;"></div>
                     
                     <h4 style="color: #666; margin: 20px 0 10px 0;">1st Year (Abroad)</h4>
-                    <div class="experience-item">Fall 2023 – Founded ASA @ Northeastern Oakland</div>
-                    <div class="experience-item">Winter 2024 – RA @ LSBU | Student @ Northeastern London</div>
+                    <div class="experience-item" data-category="leadership">
+                        <span class="duration">Fall 2023</span>
+                        <span class="position">Founded ASA @ Northeastern Oakland</span>
+                    </div>
+                    <div class="experience-item">
+                        <span class="duration">Winter 2024</span>
+                        <span class="position">SWE Intern @ London South Bank University</span>
+                    </div>
                     
                     <div style="border-top: 1px solid #666; margin: 20px 0;"></div>
 
                     <h4 style="color: #666; margin: 20px 0 10px 0;">2nd Year</h4>
-                    <div class="experience-item highlight">Summer 2024 – 🤖 Robotics Engineering @ Shepherd Lab</div>
-                    <div class="experience-item highlight">Winter 2025 – 🚗 Control & Simulations @ Silicon Synapses</div>
-                    <div class="experience-item">Winter 2025 – Service Director @ Phi Sigma Rho</div>
-                    <div class="experience-item highlight">Winter 2025 – CTO @ Auxa</div>
-                    <div class="experience-item highlight">Summer 2025 – Operations @ Boston Hack BeanPot</div>    
+                    <div class="experience-item">
+                        <span class="duration">Summer 2024–2025</span>
+                        <span class="position">Robotics Engineering Intern @ Shepherd Lab</span>
+                    </div>
+                    <div class="experience-item">
+                        <span class="duration">Winter–Summer 2025</span>
+                        <span class="position">Control & Simulations Intern @ Silicon Synapses</span>
+                    </div>
+                    <div class="experience-item" data-category="leadership">
+                        <span class="duration">Winter 2025</span>
+                        <span class="position">Service Director @ Phi Sigma Rho</span>
+                    </div>
+                    <div class="experience-item highlight" data-category="leadership">
+                        <span class="duration">Winter 2025</span>
+                        <span class="position">CTO @ Auxa</span>
+                    </div>
+                    <div class="experience-item highlight" data-category="leadership">
+                        <span class="duration">Summer 2025</span>
+                        <span class="position">Operations @ Boston Hack BeanPot</span>
+                    </div>
+                    
                     <div style="border-top: 1px solid #666; margin: 20px 0;"></div>
 
                     <h4 style="color: #666; margin: 20px 0 10px 0;">3rd Year (Half Abroad)</h4>
-                    <div class="experience-item highlight">Summer 2025 – Student @ Matsu-Iwasawa Lab UTokyo</div>
-                    <div class="experience-item highlight">Fall 2025 – 👩‍💻 Robotics & AI Co-op @ OMRON SINIC X</div>
+                    <div class="experience-item highlight">
+                        <span class="duration">Summer 2025</span>
+                        <span class="position">Student @ Matsu-Iwasawa Lab UTokyo</span>
+                    </div>
+                    <div class="experience-item highlight">
+                        <span class="duration">Summer–Fall 2025</span>
+                        <span class="position">Control Manipulation Intern @ OMRON SINIC X</span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <style>
             .experience-container {
-                margin: 20px 0;
+                margin: 10px 0;
             }
 
             .experience-list {
-                max-width: 600px;
+                max-width: 800px;
                 margin: 0 auto;
             }
 
             .experience-item {
-                padding: 10px 0;
+                display: flex;
+                align-items: baseline;
+                padding: 12px 0;
                 font-size: 16px;
                 color: #555;
                 text-align: left;
             }
 
+            .duration {
+                font-weight: 600;
+                color: #333;
+                min-width: 140px;
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            .position {
+                flex: 1;
+                margin-left: 20px;
+                line-height: 1.4;
+            }
+
             .experience-item.highlight {
                 background-color: rgb(255, 231, 231);
-                padding: 10px;
+                padding: 12px 16px;
+                border-radius: 0px;
+                margin: 8px 0;
+            }
+
+            .experience-item.highlight .duration {
+                color: #d32f2f;
+            }
+
+            .filter-btn {
+                background: #333;
+                color: white;
+                border: none;
+                padding: 8px 16px;
+                font-size: 12px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
                 border-radius: 4px;
+            }
+
+            .filter-btn:hover {
+                background: #555;
+            }
+
+            .experience-item.hidden {
+                display: none;
+            }
+
+            @media (max-width: 600px) {
+                .experience-item {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                
+                .duration {
+                    min-width: auto;
+                    margin-bottom: 4px;
+                }
+                
+                .position {
+                    margin-left: 0;
+                }
             }
         </style>
     </div>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        // Hide leadership experiences by default when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const leadershipItems = document.querySelectorAll('.experience-item[data-category="leadership"]');
+            const toggleButton = document.getElementById('leadership-toggle');
+            
+            // Hide leadership items by default
+            leadershipItems.forEach(item => {
+                item.classList.add('hidden');
+            });
+            
+            // Update button text to reflect hidden state
+            toggleButton.textContent = 'Show Leadership';
+            
+            // Add email copy functionality
+            const emailLink = document.getElementById('email-copy-link');
+            if (emailLink) {
+                emailLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Email link clicked!'); // Debug log
+                    copyEmail();
+                });
+            } else {
+                console.log('Email link not found!'); // Debug log
+            }
+        });
+
+        function toggleLeadership() {
+            const leadershipItems = document.querySelectorAll('.experience-item[data-category="leadership"]');
+            const toggleButton = document.getElementById('leadership-toggle');
+            
+            // Check if leadership items are currently hidden
+            const isHidden = leadershipItems[0]?.classList.contains('hidden');
+            
+            if (isHidden) {
+                // Show leadership items
+                leadershipItems.forEach(item => {
+                    item.classList.remove('hidden');
+                });
+                toggleButton.textContent = 'Hide Leadership';
+            } else {
+                // Hide leadership items
+                leadershipItems.forEach(item => {
+                    item.classList.add('hidden');
+                });
+                toggleButton.textContent = 'Show Leadership';
+            }
+        }
+
+        function copyEmail() {
+            console.log('copyEmail function called!'); // Debug log
+            const email = 'shibasaki.n@northeastern.edu';
+            
+            // Show custom popup message
+            showPopupMessage(`${email} copied!`);
+            
+            // Try to copy to clipboard
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(email)
+                    .then(() => {
+                        console.log('Email copied successfully!');
+                    })
+                    .catch((err) => {
+                        console.error('Clipboard API failed:', err);
+                    });
+            } else {
+                console.log('Clipboard API not available, using fallback');
+                // Fallback method
+                const textArea = document.createElement('textarea');
+                textArea.value = email;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    console.log('Fallback copy successful!');
+                } catch (err) {
+                    console.error('Fallback copy failed:', err);
+                }
+                document.body.removeChild(textArea);
+            }
+        }
+
+        function showPopupMessage(message) {
+            // Remove any existing popup
+            const existingPopup = document.getElementById('email-popup');
+            if (existingPopup) {
+                existingPopup.remove();
+            }
+            
+            // Create popup element
+            const popup = document.createElement('div');
+            popup.id = 'email-popup';
+            popup.textContent = message;
+            popup.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 20px 30px;
+                border-radius: 8px;
+                font-size: 16px;
+                font-weight: 500;
+                z-index: 10000;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                text-align: center;
+                min-width: 200px;
+            `;
+            
+            document.body.appendChild(popup);
+            
+            // Fade in
+            setTimeout(() => {
+                popup.style.opacity = '1';
+            }, 10);
+            
+            // Fade out and remove after 2 seconds
+            setTimeout(() => {
+                popup.style.opacity = '0';
+                setTimeout(() => {
+                    if (popup.parentNode) {
+                        popup.remove();
+                    }
+                }, 300);
+            }, 2000);
+        }
+    </script>
 
 </body>
 </html>

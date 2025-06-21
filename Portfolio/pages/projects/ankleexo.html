@@ -18,15 +18,27 @@
 
     <h2 style="text-align: center;">Hardware Redesign</h2>
         <div style="text-align: center;">
-        <img src="../../assets/ankleexo_cad2.jpg" alt="Ankle Exoskeleton CAD" style="width: 100%; max-width: 400px; margin: 10px 0;">
+        <img src="../../assets/ankleexo_cad2.jpg" alt="Ankle Exoskeleton CAD" style="width: 100%; max-width: 300px; margin: 10px 0;">
     <p style="margin: 4px 0; line-height: 1.4;"><i>Prototype 2: Custom electronics mount integrated for JETSON and Raspberry Pi</i></p>
+    </div>
+
+    <div style="text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <div>
+            <img src="../../assets/ankleexo_cad_3_1.jpg" alt="Ankle Exoskeleton CAD Prototype 3 - Top View" style="width: 100%; max-width: 300px; margin: 10px 0;">
+            <p style="margin: 4px 0; line-height: 1.4;"><i>Prototype 3 - Top View: Modular design with detachable Jetson, Raspberry Pi, and hip back plate using M3 and M4 screws</i></p>
+        </div>
+
+        <div>
+            <img src="../../assets/ankleexo_cad_3_2.jpg" alt="Ankle Exoskeleton CAD Prototype 3 - Side View" style="width: 100%; max-width: 300px; margin: 10px 0;">
+            <p style="margin: 4px 0; line-height: 1.4;"><i>Prototype 3 - Side View: Hip back plate visible, showing complete modular assembly with M3/M4 screw integration</i></p>
+        </div>
     </div>
 
     <div style="text-align: left;">
     <p style="margin: 4px 0; line-height: 1.4;"><b>Goal:</b> Develop a compact, modular electronics board for on-body deployment during exoskeleton-assisted walking.</p>
-    <p style="margin: 4px 0; line-height: 1.4;"><b>Challenge:</b> Original setup was bulky and unstable, with dangling wires and poor component integration.</p>
-    <p style="margin: 4px 0; line-height: 1.4;"><b>My Contribution:</b> Designed a 3D-printed backplate with embedded cable channels and modular Pi/Jetson mounts for system stability and upgrade flexibility.</p>
-    <p style="margin: 4px 0; line-height: 1.4;"><b>Skills Used:</b> CAD (Solidworks), 3D Printing (Prusa), Embedded System Integration.</p>
+    <p style="margin: 4px 0; line-height: 1.4;"><b>Challenge:</b> Original setup was bulky and unstable, with dangling wires and poor component integration. Initial PLA material (Prototype 2) was too brittle and had low temperature resistance, limiting flexibility and durability for wearable applications.</p>
+    <p style="margin: 4px 0; line-height: 1.4;"><b>My Contribution:</b> Designed a 3D-printed backplate with embedded cable channels and modular Pi/Jetson mounts for system stability and upgrade flexibility. Evolved from PLA to PETG material for improved ductility, stress resistance, and higher glass transition temperature, enabling better vapour smoothing and reduced printing failures.</p>
+    <p style="margin: 4px 0; line-height: 1.4;"><b>Skills Used:</b> CAD (Solidworks), 3D Printing (Prusa), Embedded System Integration, Material Science.</p>
     <p style="margin: 4px 0; line-height: 1.4;"><b>Outcome:</b> Enabled safe, wearable deployment with organized layout and modularity for field testing.</p>
     </div>
 
@@ -34,8 +46,8 @@
     <div style="text-align: left;">
     <p style="margin: 4px 0; line-height: 1.4;"><b>Goal:</b> Create a torque prediction model that generalizes across users to minimize metabolic cost during walking.</p>
     <p style="margin: 4px 0; line-height: 1.4;"><b>Challenge:</b> Initial model overfit to individual training subjects and failed to generalize to unseen data.</p>
-    <p style="margin: 4px 0; line-height: 1.4;"><b>My Contribution:</b> Implemented leave-one-subject-out cross-validation (LOSO CV) to evaluate generalization across participants, using subject-independent training-validation splits.</p>
-    <p style="margin: 4px 0; line-height: 1.4;"><b>Skills Used:</b> Python (Scikit-learn), MATLAB, Model Validation, Statistical Evaluation.</p>
+    <p style="margin: 4px 0; line-height: 1.4;"><b>My Contribution:</b> Implemented leave-one-subject-out cross-validation (LOSO CV) to evaluate generalization across participants, using subject-independent training-validation splits. Developed comprehensive feature engineering pipeline including gait phase detection, biomechanical feature extraction, and temporal signal processing.</p>
+    <p style="margin: 4px 0; line-height: 1.4;"><b>Skills Used:</b> Python (Scikit-learn), MATLAB, Model Validation, Statistical Evaluation, Feature Engineering, Signal Processing.</p>
     <p style="margin: 4px 0; line-height: 1.4;"><b>Outcome:</b> Reduced MSE by 28%, narrowed the training-validation gap, and increased robustness to user variance.</p>
     </div>
 

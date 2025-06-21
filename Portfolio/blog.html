@@ -3,175 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel='stylesheet' type='text/css' href='style.css'>
+    <link rel="stylesheet" href="style.css">
     <title>Blog - Nodoka Shibasaki</title>
-    <style>
-        .blog-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .blog-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-            color: #333;
-        }
-        
-        .blog-post {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .blog-post-title {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        
-        .blog-post-date {
-            color: #777;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-        
-        .blog-post-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #444;
-        }
-        
-        .blog-post-content p {
-            margin-bottom: 20px;
-        }
-        
-        .blog-post-content .signature {
-            font-style: italic;
-            margin-top: 30px;
-            text-align: right;
-        }
-        
-        .blog-post-content .diary-entry {
-            white-space: pre-line;
-        }
-
-        .challenge-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .challenge-entry {
-            background-color: #f8f8f8;
-            border-left: 4px solid #7b65df;
-            border-radius: 6px;
-            padding: 12px 16px;
-            transition: background-color 0.3s ease;
-        }
-
-        .challenge-entry:hover {
-            background-color: #f0f0f0;
-        }
-
-        .challenge-day {
-            font-weight: bold;
-            color: #7b65df;
-            margin-bottom: 5px;
-        }
-
-        .challenge-summary {
-            color: #333;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-    </style>
 </head>
 <body>
-    <div class="topnav">
+    <nav class="topnav">
         <a href="index.html">About</a>
-        <a class="active" href="blog.html">Blog</a>
+        <a href="blog.html">Blog</a>
         <a href="projects.html">Projects</a>
         <a href="gallery.html">Art Gallery</a>
-    </div>
+    </nav>
 
+    <section class="hero">
+        <h1>Blog</h1>
+        <p>Thoughts on technology, personal growth, and the intersection of engineering and human experience.</p>
+    </section>
 
-    <div class="blog-container">
-        <h1 class="blog-title">Blog</h1>
-
-        <div class="blog-post">
-            <h2 class="blog-post-title">Discord Bot for Hackathon</h2>
-            <p class="blog-post-date">June 15th, 2025</p>
-            <div class="blog-post-content">
-                <p>Did something cool for my hackathon today—</p>
-                <p>I learned how to deploy a Discord bot!</p>
-                <p>It sorts users into their cabin groups and gives them access to group-specific text chats. Cabin leaders get added to a separate leader chat too.</p>
-                <p>Along the way, I figured out how to use <b>discord.py</b>, set things up on <b>GitHub</b>, and deploy with <b>Railway</b>. Learned a lot, and honestly, it was pretty fun.</p>
-                <div class="project-links">
-                    <a href="https://github.com/nodokashibasaki3/discordbot" class="btn live-demo" target="_blank">View Project</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- <div class="blog-post">
-            <h2 class="blog-post-title">Great things ahead!</h2>
-            <p class="blog-post-date">Started: June 2024</p>
-            <p>I'm undertaking a 100-day coding challenge to build my skills and create interesting projects. Each day, I'll be working on a new project or feature, focusing on different technologies and concepts.</p>
+    <main class="content">
+        <!-- <article class="project-container">
+            <h2>Blur</h2>
+            <p class="project-date">June 18, 2025</p>
+            <p class="project-description">
+                I used to think that the more I understood, the more things would make sense. That if I kept asking the right questions, life would eventually give me a clear answer. But it doesn't work like that. Strangely, the closer I get to something that feels like purpose, the more uncertain I become. Like chasing something in the fog—the shape is there, but the moment you reach out, it slips away.
+            </p>
+            <p class="project-description">
+                Still, I don't think that's a bad thing. Maybe we're not meant to arrive anywhere too quickly. Maybe it's enough to notice the moments that feel right, even if we can't explain them. I wrote a poem about that feeling of quiet, flickering sense of direction that never quite stays still.
+            </p>
             <div class="project-links">
-                <a href="pages/projects/100day.html" class="btn live-demo">View Projects</a>
+                <a href="gallery.html#blur" class="btn live-demo">Read Poem</a>
             </div>
-        </div> -->
-        
-        <!-- <div class="blog-post">
-            <h2 class="blog-post-title">100-Day Challenge</h2>
-            <p class="blog-post-date">Started: March 2024</p>
-            <p>I'm undertaking a 100-day coding challenge to build my skills and create interesting projects. Each day, I'll be working on a new project or feature, focusing on different technologies and concepts.</p>
+        </article> -->
+
+        <article class="project-container">
+            <h2>Discord Bot for Hackathon</h2>
+            <p class="project-date">June 15, 2025</p>
+            <p class="project-description">
+                Built a Discord bot that sorts users into cabin groups and gives them access to group-specific text chats. Cabin leaders get added to a separate leader chat. Learned discord.py, GitHub workflows, and Railway deployment along the way.
+            </p>
+            <div class="tech-stack">
+                <span>Python</span>
+                <span>Discord API</span>
+                <span>Railway</span>
+            </div>
             <div class="project-links">
-                <a href="pages/projects/100day.html" class="btn live-demo">View Projects</a>
+                <a href="https://github.com/nodokashibasaki3/discordbot" class="btn view-source">View Project</a>
             </div>
-        </div> -->
+        </article>
 
-        <!-- <div class="blog-post">
-            <h2 class="blog-post-title">How an internship interview changed my perspective</h2>
-            <div class="blog-post-date">April 29th, 2025</div>
-            <div class="blog-post-content">
-                <div class="diary-entry">I'm feeling really grateful after completing the interview process with Microsoft Japan, where I made it to the final round and received an offer. More than the outcome, I've been thinking a lot about how much I learned from the experience and how I want to grow moving forward.
-
-                    From the very first conversation, I was encouraged to reflect on my passions and goals. I spoke about robotics, especially soft robotics, and how exciting it is to explore technology that adapts to the human body in new, non-rigid ways. That discussion reminded me how powerful it is to stay curious and speak from genuine interest.
-                    
-                    What stood out most during the process wasn't just the technical side, but the people. Between interviews, Microsoft hosted a prep session where employees shared their stories and values. They spoke about Microsoft's mission (insert mission here) with such honesty and pride that it made me realize how much I value working in a place where purpose and people matter as much as innovation.
-                    
-                    In the final interviews, I met two incredibly experienced managers from the AI group. They emphasized the importance of initiative, trust, and the ability to work across cultures and time zones. It was a reminder that strong teams aren't just built on skill but on mutual respect and openness.
-                    
-                    In my last interview with the director, something shifted. She talked about leadership as something rooted in humility—recognizing your teammates' strengths, asking questions without fear, and building trust that allows everyone to succeed together. It made me realize that being a good engineer isn't only about what you know; it's about how you grow alongside others.
-                    
-                    I left the process with a deeper understanding of what kind of teammate, engineer, and person I want to be. I want to lead with humility, stay open to learning, and always prioritize the people behind the work. I'm incredibly thankful for the conversations I had and for the opportunity to rethink the kind of impact I hope to have, not just in tech but in the way I show up for those around me.
-                    
-                    </div>
+        <!-- <article class="project-container">
+            <h2>The Search for Happiness in a Digital Age</h2>
+            <p class="project-date">February 9, 2023</p>
+            <p class="project-description">
+                Reflections on how social media creates unachievable requirements for contentment and the realization that happiness is less about reaching a destination and more about embracing our unique paths and detours.
+            </p>
+            <div class="project-links">
+                <a href="gallery.html#poem" class="btn live-demo">Related Poem</a>
             </div>
-        </div> -->
-        
-        <div class="blog-post">
-            <h2 class="blog-post-title">The Search for Happiness in a Digital Age</h2>
-            <div class="blog-post-date">February 9th, 2023</div>
-            <div class="blog-post-content">
-                <div class="diary-entry">I had a dream today about being a billionaire so I followed the purportedly reliable "how to be successful" steps on Wiki-How (an open source website instructing step-by-step directions). Surprisingly, it did NOT work. But, if conquering the inexplicable in our lives were that simple, then (unrelated but) we could hypothetically snap the US's thirty-one trillion debt away, or engineer compact human wings. So I suppose the result is sensible.
+        </article>
+    </main> -->
 
-	My foolish dreams aside, I feel as if today's internet, especially social media, shares the "needs" of individual success as a to-do list, as it did for me on Wiki-How. Then our minds subconsciously begin implementing unachievable requirements to meet to be content.
-
-	As I scrolled through TikTok between my Psychology and Biology class today in the Library, all I would see is well-dressed fit women in mansions and smiles. With their fifty-million followers, and a good-looking boyfriend, she seems...happy?  "I want that," I would think as I lay down on my bed at 11pm in my dorm with still ten things on my to-do list I could not get to that day. In my mind, I have always believed that happiness of fulfilled individuals stems from their achievements. Yet, such accomplishments feel unreachable to someone struggling in simple freshman courses, as me.
-
-	Despite all the resources available to us— two-hundred petabytes of information loaded onto Google everyday— a definitive guide to happiness remains elusive (for reference two-hundred petabytes is one hundred trillion pages of standard printed text). Perhaps this is a wake-up call for me. That life journey, apparent but overlooked, is not mapped out on a universal blueprint, but is individually designed. As I come to my final sentence, I realize that maybe, the pursuit of happiness is less about reaching the destination but more about embracing our unique paths and our detours. 
-
-For more thoughts on searching for answers, check out my poem <a href="gallery.html#poem">"How to change my life"</a> in my gallery.
-            </div>
-        </div>
-    </div>
 </body>
 </html>
