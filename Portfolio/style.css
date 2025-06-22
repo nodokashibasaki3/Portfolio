@@ -340,7 +340,7 @@ p {
     right: 0;
     bottom: 0;
     border-radius: 10px;
-    border: 2px solid #7b65df;
+    border: 2px solid rgb(201, 80, 80);
     animation: pulse 1.5s infinite;
     pointer-events: none;
     z-index: 10;
