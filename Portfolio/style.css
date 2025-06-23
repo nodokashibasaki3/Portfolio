@@ -179,6 +179,42 @@ p {
     flex-wrap: wrap;
 }
 
+.book-entry {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border-left: 4px solid #007bff;
+    text-align: left;
+}
+
+.book-entry h3 {
+    color: #007bff;
+    margin: 0 0 15px 0;
+    padding: 0;
+    font-size: 1.2em;
+    text-align: left;
+}
+
+.book-entry .project-description {
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.book-entry .tech-stack {
+    justify-content: flex-start;
+    margin-bottom: 0;
+}
+
+.book-entry .tech-stack span {
+    background-color: #e9ecef;
+    border-color: #007bff;
+    color: #007bff;
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
 .btn {
     display: inline-block;
     padding: 12px 20px;
@@ -200,13 +236,13 @@ p {
 }
 
 .view-source {
-    background-color: #ffffff;
-    color: #333333;
     border: 2px solid #333333;
+    color: #333333;
+    background-color: transparent;
 }
 
 .view-source:hover {
-    background-color: #ffffff;
+    background-color: transparent;
     color: #333333;
     transform: none;
 }
@@ -270,17 +306,17 @@ p {
 
 .profile-text {
     flex: 1;
+    text-align: left;
+    padding-left: 20px;
 }
 
 /* Animation Styles */
 .emoji-particle {
-    position: fixed;
-    font-size: 30px;
+    position: absolute;
+    opacity: 0;
+    animation: floatUp 1.5s ease-out forwards;
     pointer-events: none;
-    z-index: 1000;
-    animation: floatUp 15s linear forwards;
-    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
-    text-shadow: 0 0 5px rgb(233, 153, 153);
+    font-size: 1.5em;
 }
 
 @keyframes floatUp {
@@ -684,4 +720,172 @@ pre {
     margin: 20px 0;
     border: 1px solid #333333;  /* Added border to match other containers */
     box-shadow: 0 2px 5px rgba(51, 51, 51, 0.1);  /* Updated shadow to match */
+}
+
+.bookshelf-container {
+    width: 100%;
+    padding: 40px 20px;
+    background-color: transparent;
+    background-image: none;
+    box-sizing: border-box;
+}
+
+.bookshelf-title {
+    text-align: center;
+    font-size: 3em;
+    color: #444;
+    margin-bottom: 40px;
+}
+
+.shelf {
+    background: transparent;
+    height: 0;
+    box-shadow: none;
+    border: none;
+    margin-top: 20px; /* Reduced top margin */
+    margin-bottom: 220px; /* Increased bottom margin for spacing */
+    position: relative;
+}
+
+.shelf-books {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align books to the top */
+    gap: 30px;
+    position: absolute;
+    top: 0; /* Position from the top */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.book {
+    position: relative;
+    /* The transition is removed to prevent animation artifacts */
+}
+
+.book:hover {
+    transform: none; /* Disables the pop-out effect */
+}
+
+.book-cover {
+    height: 180px;
+    width: auto;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.book-info {
+    display: none;
+    position: absolute;
+    bottom: 105%; /* Position above the book, adjusted for spacing */
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    width: 250px;
+    z-index: 10;
+    text-align: left;
+    /* Add a small pointer */
+    --arrow-size: 8px;
+}
+
+.book-info::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: var(--arrow-size);
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
+
+.book:hover .book-info {
+    display: block;
+}
+
+.book-info h3 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-size: 1.1em;
+    color: #333;
+    text-align: left;
+}
+
+.book-info p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.4;
+}
+
+.book-info p a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.book-info p a:hover {
+    text-decoration: underline;
+}
+
+.shelf-category {
+    font-size: 1.5em; /* 24px */
+    font-weight: bold;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: -10px; /* Reduces space to the book images */
+    text-align: left;
+    padding-left: 20px; /* Aligns with the shelf padding */
+}
+
+.news-item {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 12px;
+    padding: 0px;
+    padding-left: 15px;
+    border-left: 3px solid #000;
+    background-color: #fff;
+}
+
+.news-date {
+    font-weight: bold;
+    color: #333;
+    min-width: 100px;
+    font-size: 14px;
+}
+
+.news-description {
+    color: #555;
+    line-height: 1.6;
+}
+
+.news-description a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.news-description a:hover {
+    text-decoration: underline;
+}
+
+/* Reduce margin for news page to align navigation */
+body:has(.news-item) .content {
+    margin-top: 20px;
+}
+
+.new-tag {
+    background-color: #4CAF50;
+    color: rgb(245, 255, 57);
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
