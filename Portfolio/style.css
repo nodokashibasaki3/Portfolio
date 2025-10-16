@@ -479,7 +479,26 @@ a, button, .btn, .project-container, .mini-project, .social-icon {
 /* Optional: make everything even smaller by uncommenting:
 .experience-container.project-row { padding: 8px; gap: 8px; }
 .project-media { flex-basis: 96px; max-height: 72px; }
-*/
+
+/* ---- Hobby section ---- */
+.hobby-section {
+  /* margin-top: 50px; */
+  text-align: left;
+}
+
+.hobby-section h3 {
+  color: #333;
+  /* margin-bottom: 10px; */
+}
+
+.hobby-note {
+  color: #c44;
+  font-size: 0.8em;
+  /* margin-bottom: 15px; */
+  letter-spacing: 0.5px;
+}
+
+.hobby-section p {padding: 0;}
 
 /* Project Page Specific Styles */
 .game-container {
