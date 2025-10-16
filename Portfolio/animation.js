@@ -144,6 +144,8 @@ document.addEventListener('DOMContentLoaded', () => {
             item.setAttribute('data-type', 'Life Transition');
         }
     });
+    
+    // -[X] you finished this
 
     function updateFocus(newIndex) {
         items.forEach((item, i) => {

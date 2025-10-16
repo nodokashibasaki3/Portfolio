@@ -425,9 +425,63 @@ a, button, .btn, .project-container, .mini-project, .social-icon {
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2'><circle cx='12' cy='12' r='10'/><path d='M8 12h8'/><path d='M12 8v8'/></svg>") 12 12, pointer;
 }
 
-/* Project Page Specific Styles */
+/* Project Section in index.html */
+.projects-list { gap: 12px; }
 
-/* Game Container for demos */
+.experience-container.project-row {
+  padding: 12px;       /* was ~20px */
+  border-radius: 8px;  /* slightly tighter */
+  border-color: white;
+  gap: 12px;           /* inner spacing */
+  display: flex;       /* keep row layout */
+  align-items: stretch;
+  background-color: #F2F2F2;
+}
+
+.project-media {
+  margin: 0;
+  flex: 0 0 120px;     /* narrower image column */
+  max-height: 90px;    /* shorter block */
+}
+.project-media img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3; /* stable crop in small size */
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+.project-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  gap: 1jpx;            /* tighter vertical rhythm */
+}
+
+/* tighten title/paragraph spacing inside project rows only */
+.project-row h2 { margin: 0 0 4px 0; line-height: 1.5; }
+.project-row .project-description { margin: 0; line-height: 1.5; }
+.project-row .project-links { gap: 8px; margin-top: 6px; }
+.project-row p { padding: 0; background-color: #F2F2F2;}
+
+/* responsive tweaks */
+@media (max-width: 700px) {
+  .experience-container.project-row { flex-direction: row; }
+  .project-media { flex-basis: 96px; max-height: 80px; }
+}
+@media (max-width: 480px) {
+  .experience-container.project-row { flex-direction: column; padding: 10px; }
+  .project-media { flex-basis: auto; max-height: 120px; }
+}
+
+/* Optional: make everything even smaller by uncommenting:
+.experience-container.project-row { padding: 8px; gap: 8px; }
+.project-media { flex-basis: 96px; max-height: 72px; }
+*/
+
+/* Project Page Specific Styles */
 .game-container {
     background-color: white;
     border-radius: 10px;
