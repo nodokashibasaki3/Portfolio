@@ -120,7 +120,7 @@ p {
     text-align: center;
     max-width: 600px;
     margin: 30px auto;
-    box-shadow: 0 2px 5px rgba(51, 51, 51, 0.1);
+    /* box-shadow: 0 2px 5px rgba(51, 51, 51, 0.1); */
     transition: transform 0.3s ease;
     position: relative;
     overflow: visible !important;
@@ -267,7 +267,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(51, 51, 51, 0.1);
+    /* box-shadow: 0 2px 5px rgba(51, 51, 51, 0.1); */
     transition: transform 0.3s ease;
     overflow: visible !important;
     position: relative;
@@ -339,7 +339,7 @@ p {
 
 .tech-hover {
     transform: scale(1.1) translateY(-3px);
-    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+    /* box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3); */
     background-color: rgba(76, 175, 80, 0.1);
 }
 
@@ -430,7 +430,7 @@ a, button, .btn, .project-container, .mini-project, .social-icon {
 
 .experience-container.project-row {
   padding: 12px;       /* was ~20px */
-  border-radius: 8px;  /* slightly tighter */
+  /* border-radius: 8px;  slightly tighter */
   border-color: white;
   gap: 12px;           /* inner spacing */
   display: flex;       /* keep row layout */
@@ -504,7 +504,7 @@ a, button, .btn, .project-container, .mini-project, .social-icon {
 .game-container {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
     padding: 20px;
     margin-bottom: 30px;
     text-align: center;
@@ -621,7 +621,7 @@ pre {
     border-radius: 10px;
     max-height: 500px;
     overflow-y: auto;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
 }
 
 /* Japanese game specific styles */
@@ -764,7 +764,7 @@ pre {
 .blog-post {
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(51, 51, 51, 0.1);
+    /* box-shadow: 0 4px 8px rgba(51, 51, 51, 0.1); */
     padding: 30px;
     margin-bottom: 40px;
     border: 1px solid #333333;  /* Added border to match project containers */
@@ -775,7 +775,7 @@ pre {
     overflow: hidden;
     border-radius: 8px;
     border: 1px solid #333333;  /* Added border to match other containers */
-    box-shadow: 0 4px 8px rgba(51, 51, 51, 0.1);  /* Updated shadow to match */
+    /* box-shadow: 0 4px 8px rgba(51, 51, 51, 0.1);  Updated shadow to match */
 }
 
 .gallery-item img,
@@ -791,8 +791,8 @@ pre {
     padding: 20px;
     border-radius: 10px;
     margin: 20px 0;
-    border: 1px solid #333333;  /* Added border to match other containers */
-    box-shadow: 0 2px 5px rgba(51, 51, 51, 0.1);  /* Updated shadow to match */
+    border: 1px solid #333333; /* Added border to match other containers */
+    /* box-shadow: 0 2px 5px rgba(51, 51, 51, 0.1);  Updated shadow to match */
 }
 
 .bookshelf-container {
@@ -844,7 +844,7 @@ pre {
 .book-cover {
     height: 180px;
     width: auto;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    /* box-shadow: 5px 5px 15px rgba(0,0,0,0.2); */
     border-radius: 4px;
     cursor: pointer;
 }
@@ -858,7 +858,7 @@ pre {
     background: white;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    /* box-shadow: 0 5px 15px rgba(0,0,0,0.2); */
     width: 250px;
     z-index: 10;
     text-align: left;
