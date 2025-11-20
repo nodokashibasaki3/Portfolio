@@ -93,6 +93,21 @@ h2 {
     margin-bottom: 15px;
 }
 
+h2#animated-name {
+    min-height: 1.2em;
+    display: inline-block;
+    font-size: 2em;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+    font-family: inherit;
+    vertical-align: top;
+    /* Reserve enough width for both names to prevent shift */
+    width: 10.5ch;
+    text-align: left;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
 h3 {
     text-align: center;
     padding: 30px;
