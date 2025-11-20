@@ -1,11 +1,27 @@
+/* Experience toggle button style */
+.exp-toggle-btn {
+    cursor: pointer;
+    color: #111;
+    font-weight: normal;
+    font-size: 1em;
+    user-select: none;
+    margin-bottom: 6px;
+    display: inline-block;
+    transition: color 0.2s;
+}
+.exp-toggle-btn:hover {
+    color: #111;
+    text-decoration: underline;
+}
 /* Base styles */
 body {
     background-color: #ffffff;  /* White background */
     box-sizing: border-box;
-    margin: 10px auto;
-    max-width: 700px;
+    margin: 0 auto;            /* remove large outer margins */
+    max-width: none;           /* allow layout to use full viewport */
+    width: 100%;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 0 15px;
+    padding: 0px;                /* let .content control inner padding */
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2'><circle cx='12' cy='12' r='10'/><circle cx='12' cy='12' r='2'/></svg>") 12 12, auto;
     overflow-x: hidden; /* Prevent horizontal scroll from animations */
 }
@@ -16,6 +32,10 @@ body {
     margin-bottom: 20px;
     background: transparent !important;
     box-shadow: none !important;
+
+    /* align inner links with .content */
+    padding: 0 40px;
+    box-sizing: border-box;
 }
 
 /* Style the topnav links */
@@ -46,9 +66,10 @@ body {
 
 /* Style the content */
 .content {
-    padding: 0px;
-    margin-top: 40px;  /* Added margin-top for spacing */
-    margin-bottom: 40px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 40px;        /* increased side padding for more breathing room */
+    box-sizing: border-box;
     position: relative; /* For positioning animations */
 }
 
@@ -82,8 +103,16 @@ p {
     color: #444444;
 }
 
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 12px;
+    align-items: center;
+}
+
 .social-icon {
-    margin: 0 10px;
+    margin: 0;
     color: #333333;
     text-decoration: none;
     font-size: 30px;
@@ -118,9 +147,8 @@ p {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    max-width: 600px;
+    max-width: 1200px; /* increased from 900px to match page width */
     margin: 30px auto;
-    /* box-shadow: 0 2px 5px rgba(51, 51, 51, 0.1); */
     transition: transform 0.3s ease;
     position: relative;
     overflow: visible !important;
@@ -292,16 +320,22 @@ p {
     align-items: flex-start;
     gap: 20px;
     justify-content: flex-start;
-    max-width: 700px;
+    max-width: 1200px; /* increased from 900px to match page width */
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+    .exp-toggle-wrapper {
+        margin-top: 0 !important;
+        margin-bottom: 8px !important;
+    }
     position: relative; /* For positioning animations */
 }
 
 .profile-image {
-    max-width: 50%;
+    /* width: 220px;     fixed display size on desktop — adjust as needed */
+    max-width: 30%;     /* won't grow beyond 60% of container */
     height: auto;
-    margin-left: auto;
+    margin-left: 0;     /* align with text block */
+    border-radius: 6px; /* optional */
 }
 
 .profile-text {
@@ -759,6 +793,13 @@ pre {
     .tab {
         margin-bottom: 5px;
     }
+    
+    .content {
+        padding: 0 24px;    /* reduce padding on smaller screens */
+    }
+    .topnav {
+        padding: 0 24px; /* match .content on smaller screens */
+    }
 }
 
 .blog-post {
@@ -791,7 +832,6 @@ pre {
     padding: 20px;
     border-radius: 10px;
     margin: 20px 0;
-    border: 1px solid #333333; /* Added border to match other containers */
     /* box-shadow: 0 2px 5px rgba(51, 51, 51, 0.1);  Updated shadow to match */
 }
 
