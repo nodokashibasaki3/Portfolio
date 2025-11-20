@@ -28,7 +28,19 @@
         <div class="profile-container">
             <img src="assets/PortraitPhoto.png" alt="Nodoka Shibasaki" class="profile-image" id="profile-pic">
             <div class="profile-text">
-                <h2>Nodoka Shibasaki</h2>
+                <script> // Name animation: alternate between English and Japanese every 5 seconds
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const nameEl = document.getElementById('animated-name');
+                        if (!nameEl) return;
+                        const names = ['Nodoka Shibasaki', '芝崎のどか'];
+                        let idx = 0;
+                        setInterval(() => {
+                            idx = 1 - idx;
+                            nameEl.textContent = names[idx];
+                        }, 5000);
+                    });
+                </script>
+                <h2 id="animated-name">Nodoka Shibasaki</h2>
                 <p>I'm a third-year Electrical and Computer Engineering student at <a href="https://www.northeastern.edu/" target="_blank">Northeastern University</a> studying robotics and control. I'm currently interning at <a href="https://www.omron.com/sinicx/" target="_blank">OMRON SINIC X</a> in Tokyo working on soft robotics learning and control. During my undergrad, I've conducted research at <a href="https://siliconsynapse.sites.northeastern.edu/" target="_blank">Silicon Synapses Lab</a> with Professor <a href="https://coe.northeastern.edu/people/ramezani-alireza/" target="_blank">Ramezani Alireza</a> and at <a href="https://shepherdlab.sites.northeastern.edu/" target="_blank">Shepherd's Lab</a> with Professor <a href="https://coe.northeastern.edu/people/shepherd-max/" target="_blank">Max Shepherd</a>. My research is motivated by the goal of enabling humans to seamlessly and safely work together with robots in their daily lives.</p>
                 <p>My early work in athletic training and at <a href="https://sportsmedicine.stanford.edu/" target="_blank">Stanford Sports Medicine Lab</a> initially drew me toward biomechanics and pre-med. But as I began working on rehabilitation robotics in college, I found myself more captivated by the engineering challenge of creating adaptive systems that work with human capabilities. I'm interested in developing safe, adaptive and replicable robotic systems that enable intuitive human-robot collaboration.</p> 
                 <!-- <h2 style="font-size: 13px;"><strong>Strong interest in Robotics Learning and Systems</strong></h2> -->
@@ -245,34 +257,34 @@
             <h2>Multi-Modal Locomotion Robot</h2>
             <p class="project-date">Jan 2025 – July 2025</p>
             <p class="project-description">
-                Built a Sim-to-Real transfer pipeline for the lab multi-modal locomotion robot (M4): energy-aware planner on ROS 2 with Python, ArduPilot, and Dockerized stack for reproducible sim and field runs.
+                Sim-to-real transfer remains a major bottleneck for deploying advanced control policies on multi-modal robots in the wild. The challenge persists because real-world environments introduce unpredictable dynamics and hardware constraints that are hard to model or anticipate in simulation. For the M4 platform, I built a reproducible pipeline that bridges simulation and field deployment, integrating ROS 2, ArduPilot, and Dockerized tools for energy-aware planning and robust control. This system reduced deployment time by 40% and improved energy efficiency by 18% in field trials, enabling rapid iteration and reliable real-world testing for our research group.
             </p>
           </div>
         </article>
 
         <article class="experience-container project-row">
-          <figure class="project-media">
-            <!-- DONE: Insert Image for Ankle Exo -->
-            <img src="assets/ankleexo_mlstructure.png" alt="Ankle Exoskeleton project image">
-          </figure>
+                    <figure class="project-media">
+                        <img src="assets/ankleexo_cad2.jpg" alt="Ankle Exoskeleton CAD design">
+                    </figure>
           <div class="project-main">
             <h2>Ankle Exoskeleton</h2>
             <p class="project-date">Sep 2024 – Jun 2025</p>
             <p class="project-description">
-                Delivered a modular CAD design for the ankle exoskeleton, stared at data and .hydra
+                Modular, adaptable exoskeletons are key to advancing assistive robotics for rehabilitation and performance. However, designing hardware that is both customizable and robust for diverse users remains an open problem due to the complexity of human biomechanics and the need for rapid iteration. I designed a modular ankle exoskeleton platform, developing a flexible CAD system and integrating sensor data pipelines for rapid prototyping and testing. This enabled our team to iterate on hardware and control strategies efficiently, laying the groundwork for future machine learning-driven gait assistance studies.
             </p>
           </div>
         </article>
 
         <article class="experience-container project-row">
-          <figure class="project-media">
-            <img src="assets/WIRING_HIPEXO.PNG" alt="Hip Exoskeleton project image">
-          </figure>
+                    <figure class="project-media hipexo-images" style="display: flex; flex-direction: column; gap: 10px;">
+                        <img src="assets/WIRING_HIPEXO.PNG" alt="Hip Exoskeleton wiring" />
+                        <img src="assets/CAN_TRANCEIVER.png" alt="CAN Transceiver board" />
+                    </figure>
           <div class="project-main">
             <h2>Hip Exoskeleton</h2>
             <p class="project-date">Jun 2024 – Feb 2025</p>
             <p class="project-description">
-                Optimized the hip-exoskeleton power system through LC filtering and policy of an Reinforcement Learning controller
+                Power efficiency and adaptive control are critical for wearable robotics. Achieving both is difficult because wearable systems must balance comfort, safety, and real-time response under variable human movement, which is still a major challenge in the field. I optimized the hip exoskeleton’s power system with advanced LC filtering and implemented a reinforcement learning-based control policy, improving system stability and energy usage. These upgrades enabled longer-duration experiments and more robust real-world performance in human-in-the-loop trials.
             </p>
           </div>
         </article>

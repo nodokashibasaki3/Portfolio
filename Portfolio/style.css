@@ -1,3 +1,8 @@
+/* Increase padding for all .content except the first one */
+.content:not(:first-of-type):not(.profile-section), .content.hobby-section {
+    padding-left: 120px !important;
+    padding-right: 120px !important;
+}
 /* Experience toggle button style */
 .exp-toggle-btn {
     cursor: pointer;
@@ -473,17 +478,22 @@ a, button, .btn, .project-container, .mini-project, .social-icon {
 }
 
 .project-media {
-  margin: 0;
-  flex: 0 0 120px;     /* narrower image column */
-  max-height: 90px;    /* shorter block */
+    margin: 0;
+    flex: 0 0 200px;
+    max-height: 200px;
 }
 .project-media img {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 4 / 3; /* stable crop in small size */
-  object-fit: cover;
-  display: block;
-  border-radius: 4px;
+    width: 100%;
+    height: 200px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Hip Exoskeleton project: set images to 100px height */
+.project-media.hipexo-images img {
+    height: 100px !important;
 }
 
 .project-main {
@@ -757,45 +767,36 @@ pre {
     h1 {
         font-size: 3em;
     }
-    
     .profile-container {
         flex-direction: column;
         align-items: center;
     }
-    
     .profile-image {
         max-width: 80%;
         margin: 0 auto 20px;
     }
-    
     .profile-text {
         text-align: center;
     }
-    
     .mini-project-container {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
     .features-list {
         grid-template-columns: 1fr;
     }
-    
     .controls, .patterns {
         flex-direction: column;
         align-items: center;
     }
-    
     .tab-container {
         flex-wrap: wrap;
     }
-    
     .tab {
         margin-bottom: 5px;
     }
-    
     .content {
-        padding: 0 24px;    /* reduce padding on smaller screens */
+        padding: 0 24px !important;    /* reduce padding on smaller screens */
     }
     .topnav {
         padding: 0 24px; /* match .content on smaller screens */
