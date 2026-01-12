@@ -1,0 +1,16 @@
+- title: Multi-Modal Locomotion Robot
+  date: Jan 2025 – July 2025
+  description: Sim-to-real transfer is a bottleneck for multi-modal robots due to unpredictable real-world dynamics. To address this, I built a reproducible pipeline for the M4 platform using ROS 2, ArduPilot, and Docker. This system reduced deployment time by 40% and improved energy efficiency by 18%, enabling reliable field testing.
+  image: assets/m4.jpg
+
+- title: Ankle Exoskeleton
+  date: Sep 2024 – Jun 2025
+  description: Designing customizable, robust exoskeletons is challenging due to complex biomechanics. I developed a modular ankle exoskeleton platform with a flexible CAD system and sensor pipelines. This accelerated hardware and control iteration, laying the groundwork for future ML-driven gait assistance.
+  image: assets/ankleexo_cad2.jpg
+
+- title: Hip Exoskeleton
+  date: Jun 2024 – Feb 2025
+  description: Balancing power efficiency and adaptive control in wearable robotics is difficult under variable human movement. I optimized the hip exoskeleton's power system and implemented an RL-based control policy. These upgrades improved stability and energy efficiency, enabling longer, more robust human-in-the-loop trials.
+  images:
+    - assets/WIRING_HIPEXO.PNG
+    # - assets/CAN_TRANCEIVER.png
