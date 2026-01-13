@@ -1,5 +1,5 @@
 <div class="exp-toggle-wrapper" style="margin-top: 20px; margin-bottom: 10px;">
-    <span id="exp-toggle" class="exp-toggle-btn profile-text" style="cursor: pointer; color: #333; font-weight: 600;">▶︎ in-depth experience timeline...</span>
+    <span id="exp-toggle" class="exp-toggle-btn profile-text" style="cursor: pointer; color: #333; font-weight: normal;">▶︎ toggle here for experience timeline!</span>
 </div>
 
 <div id="exp-experience-outer" class="experience">
