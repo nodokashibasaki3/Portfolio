@@ -23,4 +23,4 @@
   description: Balancing power efficiency and adaptive control in wearable robotics is difficult under variable human movement. I optimized the hip exoskeleton's power system and implemented an RL-based control policy. These upgrades improved stability and energy efficiency, enabling longer, more robust human-in-the-loop trials.
   images:
     - assets/WIRING_HIPEXO.PNG
-    - assets/can_tranceiver.png
+    - assets/CAN_TRANCEIVER.png
