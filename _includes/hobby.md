@@ -2,7 +2,7 @@
 <div class="content hobby-section">
   <p class="hobby-note"><strong>composition of activities I spend too much time on</strong></p>
   <p>
-    - Trying new restaurants and cafes: [Tokyo Food Review](https://nodokas.notion.site/Tokyo-Food-Review-2d3f432196de817b8033f41e42cf33ac) <br>
+    - Trying new restaurants and cafes: <a href="https://nodokas.notion.site/Tokyo-Food-Review-2d3f432196de817b8033f41e42cf33ac" target="_blank">Tokyo Food Review</a> <br>
     - Optimizing workflow and settings on MacOS <br>  
     - Building my own multi-modality drone <br>
     - Reading <br>
