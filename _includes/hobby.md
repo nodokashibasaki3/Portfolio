@@ -4,7 +4,8 @@
   <p>
     - Trying new restaurants and cafes: <a href="https://nodokas.notion.site/Tokyo-Food-Review-2d3f432196de817b8033f41e42cf33ac" target="_blank">Tokyo Food Review</a> <br>
     - Optimizing workflow and settings on MacOS <br>  
-    - Building my own multi-modality drone <br>
-    - Reading <br>
+    - Exercising: Basketball, Running, Weightlifting <br> 
+    <!-- - Building my own multi-modality drone <br> -->
+    <!-- - Reading <br> -->
   </p>
 </div>
