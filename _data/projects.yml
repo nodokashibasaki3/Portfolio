@@ -1,30 +1,42 @@
 - title: Autonomous Wheelchair Navigation and Manipulation 
-  date: Jan 2026 - Present 
+  date: Jan 2026 - Present
+  institution: RiVER lab
+  institution_url: https://robot.neu.edu/
   description: LUCI-enabled autonomous wheelchair uses RGB-D camera and robotic arm for indoor navigation and manipulation in Isaac Sim. Features include door-opening capabilities and autonomous task execution.
   video: assets/wheelchair.mp4
 
 - title: Active vs. Passive Control with FT feedback
   date: Jul 2025 – Dec 2025
+  institution: OMRON SINIC X
+  institution_url: https://www.omron.com/sinicx/
   description: Comparative study of passive compliance (soft wrist, position control) versus active compliance (Forward Dynamics Compliance Controller, rigid wrist) on a UR5e using SAC reinforcement learning with force-torque feedback only.
   video: assets/passivevsactive.mp4
   
 - title: Tactile Memory with Soft Robots
   date: Jul 2025 – Dec 2025
+  institution: OMRON SINIC X
+  institution_url: https://www.omron.com/sinicx/
   description: TaMeSo-bot uses transformer-based learning to process tactile, force-torque, and proprioceptive signals for retrieval-based manipulation. Achieved 88.5% and 62% success rates under seen and unseen peg-in-hole conditions (varying shapes, sizes, textures, orientations).
   video: assets/tameso.mp4
 
 - title: Multi-Modal Locomotion Robot
   date: Jan 2025 – July 2025
+  institution: Silicon Synapses Lab
+  institution_url: https://siliconsynapse.sites.northeastern.edu/
   description: M4 platform uses a reproducible sim-to-real pipeline built with ROS 2, ArduPilot, and Docker for multi-modal locomotion. Reduced deployment time by 40% and improved energy efficiency by 18% across aerial and ground modes.
   video: assets/m4.mp4
 
 - title: Ankle Exoskeleton
   date: Sep 2024 – Jun 2025
+  institution: Shepherd Lab
+  institution_url: https://shepherdlab.sites.northeastern.edu/
   description: Modular ankle exoskeleton uses flexible CAD system and integrated sensor pipelines for rapid prototyping and biomechanical testing. Accelerated hardware-control iteration cycles, enabling foundation for ML-driven gait assistance.
   image: assets/ankleexo_cad2.jpg
 
 - title: Hip Exoskeleton
   date: Jun 2024 – Feb 2025
+  institution: Shepherd Lab
+  institution_url: https://shepherdlab.sites.northeastern.edu/
   description: Hip exoskeleton uses optimized power system with RL-based control policy for adaptive gait assistance under variable human movement. Reduced metabolic cost by 38.5% and improved stability, enabling extended human-in-the-loop trials.
   images:
     - assets/WIRING_HIPEXO.PNG

@@ -88,7 +88,7 @@
         </div>
         <div class="project-content" style="flex: 1;">
             <h3 style="margin-top: 0;">{{ project.title }}</h3>
-            <p class="project-date" style="color: #666; font-size: 0.9em; margin-bottom: 10px;">{{ project.date }}</p>
+            <p class="project-date" style="color: #666; font-size: 0.9em; margin-bottom: 10px;">{{ project.date }}{% if project.institution %} | {% if project.institution_url %}<a href="{{ project.institution_url }}" target="_blank" rel="noopener noreferrer">{{ project.institution }}</a>{% else %}{{ project.institution }}{% endif %}{% endif %}</p>
             <p class="project-description">{{ project.description }}</p>
         </div>
     </div>
