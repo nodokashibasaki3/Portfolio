@@ -1,4 +1,4 @@
-<h2 id="projects" style="margin: 20px 0px 10px;">Research Projects</h2>
+<h2 id="projects" style="margin: 20px 0px 10px;">Projects</h2>
 
 <style>
 .project-container {
