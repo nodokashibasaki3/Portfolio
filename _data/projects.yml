@@ -1,6 +1,6 @@
 - title: Autonomous Wheelchair Navigation and Manipulation 
   date: Jan 2026 - Present
-  institution: RiVER lab
+  institution: RIVeR Lab
   institution_url: https://robot.neu.edu/
   description: LUCI-enabled autonomous wheelchair uses RGB-D camera and robotic arm for indoor navigation and manipulation in Isaac Sim. Features include door-opening capabilities and autonomous task execution.
   video: assets/wheelchair.mp4
