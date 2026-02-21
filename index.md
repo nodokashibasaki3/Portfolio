@@ -5,7 +5,7 @@ layout: homepage
 
 ## About Me
 
-I am a third-year Electrical and Computer Engineering student at [Northeastern University](https://www.northeastern.edu/){:target="\_blank"} with a strong intent to pursue robotics. I am currently a research assistant in the [RIVeR Lab](https://robot.neu.edu/){:target="\_blank"} under the supervision of Professor [Taskin Padir](https://coe.northeastern.edu/people/padir-taskin/){:target="\_blank"}.
+I am a third-year Electrical and Computer Engineering student at [Northeastern University](https://www.northeastern.edu/){:target="\_blank"}. I am currently a research assistant in the [RIVeR Lab](https://robot.neu.edu/){:target="\_blank"} under the supervision of Professor [Taskin Padir](https://coe.northeastern.edu/people/padir-taskin/){:target="\_blank"}.
 
 Through many guidance both in industry and academia, I have gained full-stack knowledge in robotics from low-level control to high-level planning. 
 
