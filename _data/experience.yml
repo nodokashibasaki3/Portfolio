@@ -10,11 +10,11 @@
 - duration: 2020–23
   position: Founder & Executive Dir @ JTutor
 
-- duration: 2024
-  position: Founder & President of Asian Student Association @ Northeastern Sattelite Campus 
+# - duration: 2024
+#   position: Founder & President of Asian Student Association @ Sattelite Campus 
 
 - duration: 2024
-  position: Software Engineering Intern @ London South Bank University
+  position: Software Engineering Intern @ KAIKAKU
 
 - duration: 2024–25
   position: Robotics Intern @ Shepherd Lab
@@ -30,7 +30,7 @@
   highlight: true
 
 - duration: 2025
-  position: Robotics Intern @ OMRON SINIC X
+  position: Robotics Intern @ OMRON
 
 - duration: 2026
   position: Robotics Researcher @ RIVeR Lab

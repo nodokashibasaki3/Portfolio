@@ -453,11 +453,13 @@ screen and (max-width: 960px) {
   }
 
   section {
-    border: 1px solid #e5e5e5;
-    border-width: 1px 0;
+    float: none;
+    position: static;
+    width: auto;
     padding: 20px 0;
     margin: 0 0 20px;
   }
+
 
   header a small {
     display: inline;
@@ -502,8 +504,7 @@ screen and (max-width: 960px) {
     padding: 0;
   }
 
-  header ul,
-  header p.view {}
+
 
   pre,
   code {
