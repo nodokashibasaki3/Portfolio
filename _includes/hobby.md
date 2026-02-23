@@ -54,13 +54,18 @@
   <span style="color: #999; font-size: 0.85em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-right: -8px;">Writing & Interests:</span>
 
   <a class="hobby-item link-item" href="https://nodokas.notion.site/Tokyo-Food-Review-2d3f432196de817b8033f41e42cf33ac" target="_blank" title="Read Food Blog">
-    <span class="hobby-emoji">🍕</span>
+    <span class="hobby-emoji">😋</span>
     <span class="hobby-label">Food Reviews <span class="external-icon">↗</span></span>
   </a>
   
   <a class="hobby-item link-item" href="https://nodokas.notion.site/macOS-Optimization-30ef432196de80b287f2e297420d1d46?source=copy_link" target="_blank" title="Read MacOS Blog">
     <span class="hobby-emoji">💻</span>
     <span class="hobby-label">macOS Optimization <span class="external-icon">↗</span></span>
+  </a>
+
+  <a class="hobby-item link-item" href="https://nodokas.notion.site/macOS-Optimization-and-Shell-Tools-30ef432196de80b287f2e297420d1d46?source=copy_link" target="_blank" title="Read OS Contribution Blog">
+    <span class="hobby-emoji">🌐</span>
+    <span class="hobby-label">OS Contribution <span class="external-icon">↗</span></span>
   </a>
 
   <div class="hobby-item">
