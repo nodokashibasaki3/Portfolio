@@ -58,12 +58,12 @@
     <span class="hobby-label">Food Reviews <span class="external-icon">↗</span></span>
   </a>
   
-  <a class="hobby-item link-item" href="https://nodokas.notion.site/macOS-Optimization-30ef432196de80b287f2e297420d1d46?source=copy_link" target="_blank" title="Read MacOS Blog">
+  <a class="hobby-item link-item" href="https://nodokas.notion.site/macOS-Optimization-and-Shell-Tools-30ef432196de80b287f2e297420d1d46?source=copy_link" target="_blank" title="Read MacOS Blog">
     <span class="hobby-emoji">💻</span>
     <span class="hobby-label">macOS Optimization <span class="external-icon">↗</span></span>
   </a>
 
-  <a class="hobby-item link-item" href="https://nodokas.notion.site/macOS-Optimization-and-Shell-Tools-30ef432196de80b287f2e297420d1d46?source=copy_link" target="_blank" title="Read OS Contribution Blog">
+  <a class="hobby-item link-item" href="https://nodokas.notion.site/OS-contribution-Shipping-Background-Sync-310f432196de808e92f9f657c94c6f0d?source=copy_link" target="_blank" title="Read OS Contribution Blog">
     <span class="hobby-emoji">🌐</span>
     <span class="hobby-label">OS Contribution <span class="external-icon">↗</span></span>
   </a>
