@@ -12,12 +12,12 @@
   description: Comparative study of passive compliance (soft wrist, position control) versus active compliance (Forward Dynamics Compliance Controller, rigid wrist) on a UR5e using SAC reinforcement learning with force-torque feedback only.
   video: assets/passivevsactive.mp4
   
-- title: Tactile Memory with Soft Robots
-  date: Jul 2025 – Dec 2025
-  institution: OMRON SINIC X
-  institution_url: https://www.omron.com/sinicx/
-  description: TaMeSo-bot uses transformer-based learning to process tactile, force-torque, and proprioceptive signals for retrieval-based manipulation. Achieved 88.5% and 62% success rates under seen and unseen peg-in-hole conditions (varying shapes, sizes, textures, orientations).
-  video: assets/tameso.mp4
+# - title: Tactile Memory with Soft Robots
+#   date: Jul 2025 – Dec 2025
+#   institution: OMRON SINIC X
+#   institution_url: https://www.omron.com/sinicx/
+#   description: TaMeSo-bot uses transformer-based learning to process tactile, force-torque, and proprioceptive signals for retrieval-based manipulation. Achieved 88.5% and 62% success rates under seen and unseen peg-in-hole conditions (varying shapes, sizes, textures, orientations).
+#   video: assets/tameso.mp4
 
 - title: Multi-Modal Locomotion Robot
   date: Jan 2025 – July 2025
