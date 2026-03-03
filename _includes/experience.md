@@ -6,7 +6,7 @@
         <div style="position: absolute; left: 79.49999618px; top: 12px; bottom: 12px; width: 1px; background-color: #eee; z-index: 0;"></div>
 
         {% assign exp_size = site.data.experience | size %}
-        {% assign hide_limit = exp_size | minus: 5 %}
+        {% assign hide_limit = exp_size | minus: 4 %}
         {% for item in site.data.experience %}
         <div class="experience-item {% if forloop.index <= hide_limit %}hidden-exp{% endif %}" style="display: {% if forloop.index <= hide_limit %}none{% else %}flex{% endif %}; margin-bottom: 5px; position: relative; align-items: flex-start;">
             <!-- Duration -->

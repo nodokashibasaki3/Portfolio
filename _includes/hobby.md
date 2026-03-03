@@ -150,12 +150,9 @@
 
   <!-- Expanding Links Item -->
   <div class="writing-item">
-    <span style="color: #999; font-size: 0.85em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-right: 8px;">Blog:</span>
-    <span class="hobby-emoji" title="Read my blogs">✍️</span>
-    <div class="writing-links">
-      <a class="writing-link" href="https://nodokas.notion.site/Tokyo-Food-Review-2d3f432196de817b8033f41e42cf33ac" target="_blank">Tokyo Eats<span class="external-icon">↗</span></a>
-      <a class="writing-link" href="https://nodokas.notion.site/macOS-Optimization-and-Shell-Tools-30ef432196de80b287f2e297420d1d46?source=copy_link" target="_blank">macOS + Shell Tools<span class="external-icon">↗</span></a>
-      <a class="writing-link" href="https://nodokas.notion.site/OS-contribution-Shipping-Background-Sync-310f432196de808e92f9f657c94c6f0d?source=copy_link" target="_blank">OS Contribution<span class="external-icon">↗</span></a>
-    </div>
+    <a href="#blog" style="text-decoration: none; display: flex; align-items: center;">
+      <span style="color: #999; font-size: 0.85em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-right: 8px; transition: color 0.2s;" onmouseover="this.style.color='#FF7900'" onmouseout="this.style.color='#999'">Blog:</span>
+      <span class="hobby-emoji" title="Read my blogs">✍️</span>
+    </a>
   </div>
 </div>

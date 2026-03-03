@@ -1,5 +1,6 @@
 - title: HASHI
   date: Jan 2026 - Present
+  ongoing: true
   institution: RIVeR Lab
   institution_url: https://robot.neu.edu/
   description: Investigates imitation learning for contact-rich tasks using an xArm robot with a custom chopsticks gripper. The project explores mapping human teleoperation data to dexterous manipulation policies.
@@ -16,6 +17,7 @@
 
 - title: Autonomous Wheelchair Navigation and Manipulation 
   date: Jan 2026 - Present
+  ongoing: true
   institution: RIVeR Lab
   institution_url: https://robot.neu.edu/
   description: LUCI-enabled autonomous wheelchair uses RGB-D camera and robotic arm for urban navigation and manipulation.

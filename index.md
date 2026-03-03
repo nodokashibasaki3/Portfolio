@@ -20,3 +20,5 @@ I gained valuable industry experience as a Robotics intern at [OMRON](https://ww
 {% include_relative _includes/projects.md %}
 
 {% include_relative _includes/motivation.md %}
+
+{% include_relative _includes/blog.md %}

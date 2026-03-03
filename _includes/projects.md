@@ -1,5 +1,5 @@
-<h2 id="projects" style="margin: 20px 0px 10px;">Selected Projects</h2>
-
+<h2 id="projects" style="margin: 20px 0px 5px;">Selected Projects</h2>
+<p style="color: #888; font-size: 0.9em; margin-bottom: 25px;">* Highlighted blocks indicate ongoing projects intended for future publication.</p>
 <style>
 .project-container {
     display: flex;
@@ -11,6 +11,7 @@
     max-width: 30%;
     padding-right: 15px;
     padding-left: 15px;
+    position: relative;
 }
 .project-media img {
     width: 100%;
@@ -39,7 +40,7 @@
 
 <div class="projects">
     {% for project in site.data.projects %}
-    <div class="project-container">
+    <div class="project-container" {% if project.ongoing %}style="background-color: rgba(255, 121, 0, 0.05); padding: 20px 60px 20px 20px; border-radius: 10px; margin-left: -20px; margin-right: -40px;"{% endif %}>
         <div class="project-media">
             {% if project.video %}
                 <video width="100%" autoplay loop muted playsinline style="border-radius: 4px;">
