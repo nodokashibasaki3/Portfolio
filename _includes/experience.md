@@ -1,5 +1,6 @@
 <div class="technical-journey" style="margin: 40px 0;">
-    <h3 style="font-size: 1.1em; font-weight: 600; color: #222; margin-bottom: 25px; letter-spacing: 0.02em;">Timeline</h3>
+    <h3 style="font-size: 1.1em; font-weight: 600; color: #222; margin-bottom: 5px; letter-spacing: 0.02em;">Timeline</h3>
+    <p style="color: #888; font-size: 0.85em; margin-bottom: 25px;">* Highlighted are ongoing positions</p>
     
     <div style="position: relative;">
         <!-- Vertical Line -->

@@ -1,5 +1,5 @@
 <h2 id="projects" style="margin: 20px 0px 5px;">Selected Projects</h2>
-<p style="color: #888; font-size: 0.9em; margin-bottom: 25px;">* Highlighted blocks indicate ongoing projects intended for future publication.</p>
+<p style="color: #888; font-size: 0.85em; margin-bottom: 25px;">* Highlighted are ongoing projects intended for future publication.</p>
 <style>
 .project-container {
     display: flex;
