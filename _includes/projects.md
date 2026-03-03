@@ -1,14 +1,16 @@
-<h2 id="projects" style="margin: 20px 0px 10px;">Projects</h2>
+<h2 id="projects" style="margin: 20px 0px 10px;">Selected Projects</h2>
 
 <style>
 .project-container {
     display: flex;
-    gap: 20px;
     margin-bottom: 30px;
     align-items: center; /* Vertically center image relative to text */
 }
 .project-media {
-    flex: 0 0 180px;
+    flex: 0 0 30%;
+    max-width: 30%;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 .project-media img {
     width: 100%;
@@ -85,11 +87,14 @@
                     <img src="{{ project.image }}" alt="{{ project.title }}">
                 {% endif %}
             {% endif %}
+            {% if project.caption %}
+                <p style="font-size: 0.75em; color: #888; margin: 4px 0 0 0; text-align: center; font-style: italic;">{{ project.caption }}</p>
+            {% endif %}
         </div>
-        <div class="project-content" style="flex: 1;">
-            <h3 style="margin-top: 0;">{{ project.title }}</h3>
-            <p class="project-date" style="color: #666; font-size: 0.9em; margin-bottom: 10px;">{{ project.date }}{% if project.institution %} | {% if project.institution_url %}<a href="{{ project.institution_url }}" target="_blank" rel="noopener noreferrer">{{ project.institution }}</a>{% else %}{{ project.institution }}{% endif %}{% endif %}</p>
-            <p class="project-description">{{ project.description }}</p>
+        <div class="project-content" style="flex: 0 0 70%; max-width: 70%; padding-right: 15px; padding-left: 20px;">
+            <div class="title" style="font-weight: bolder; font-size: 1.1em;"><a style="color: inherit; text-decoration: none;">{{ project.title }}</a></div>
+            <div class="author" style="margin-top: 2px;">{{ project.date }}{% if project.institution %} | {% if project.institution_url %}<a href="{{ project.institution_url }}" target="_blank" rel="noopener noreferrer">{{ project.institution }}</a>{% else %}{{ project.institution }}{% endif %}{% endif %}</div>
+            <div class="periodical" style="margin-top: 5px; font-size: 0.95em;">{{ project.description }}</div>
         </div>
     </div>
     {% endfor %}

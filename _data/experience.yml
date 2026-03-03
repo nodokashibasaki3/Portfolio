@@ -8,22 +8,22 @@
   position: Biomechanics & ML Intern @ Stanford
 
 - duration: 2020–23
-  position: Founder & Executive Dir @ JTutor
+  position: Founder & Executive Director @ JTutor
 
 # - duration: 2024
 #   position: Founder & President of Asian Student Association @ Sattelite Campus 
 
 - duration: 2024
-  position: Software Engineering Intern @ KAIKAKU
+  position: Robotics Intern (Vision) @ KAIKAKU
 
 - duration: 2024–25
-  position: Robotics Intern @ Shepherd Lab
+  position: Engineering Researcher @ Shepherd Lab
 
 - duration: 2025
-  position: Control & Simulations Intern @ Silicon Synapses
+  position: Control & Simulations Researcher @ Silicon Synapses
 
-- duration: 2025
-  position: Service Director @ Phi Sigma Rho
+# - duration: 2025
+#   position: Service Director @ Phi Sigma Rho
 
 - duration: 2025
   position: Operations @ Boston Hack BeanPot
@@ -33,5 +33,5 @@
   position: Robotics Intern @ OMRON
 
 - duration: 2026
-  position: Robotics Researcher @ RIVeR Lab
+  position: Researcher @ RIVeR Lab
   highlight: true

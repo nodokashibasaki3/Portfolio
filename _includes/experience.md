@@ -5,8 +5,10 @@
         <!-- Vertical Line -->
         <div style="position: absolute; left: 79.49999618px; top: 12px; bottom: 12px; width: 1px; background-color: #eee; z-index: 0;"></div>
 
+        {% assign exp_size = site.data.experience | size %}
+        {% assign hide_limit = exp_size | minus: 5 %}
         {% for item in site.data.experience %}
-        <div style="display: flex; margin-bottom: 5px; position: relative; align-items: flex-start;">
+        <div class="experience-item {% if forloop.index <= hide_limit %}hidden-exp{% endif %}" style="display: {% if forloop.index <= hide_limit %}none{% else %}flex{% endif %}; margin-bottom: 5px; position: relative; align-items: flex-start;">
             <!-- Duration -->
             <div style="width: 65px; text-align: right; margin-right: 30px; font-size: 0.85em; color: #999; padding-top: 5px; flex-shrink: 0;">
                 {{ item.duration }}
@@ -26,4 +28,24 @@
         </div>
         {% endfor %}
     </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button id="toggle-experience-btn" onclick="toggleExperience()" style="background: none; border: none; padding: 0; outline: none; color: #999; font-family: inherit; font-size: 0.8075em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; transition: color 0.2s ease;" onmouseover="this.style.color='#FF7900'" onmouseout="this.style.color='#999'">SHOW FULL TIMELINE ▼</button>
+    </div>
 </div>
+
+<script>
+function toggleExperience() {
+    var items = document.querySelectorAll('.experience-item.hidden-exp');
+    var btn = document.getElementById('toggle-experience-btn');
+    if (!items || items.length === 0) return;
+    
+    var isHidden = items[0].style.display === 'none';
+    
+    for (var i = 0; i < items.length; i++) {
+        items[i].style.display = isHidden ? 'flex' : 'none';
+    }
+    
+    btn.innerHTML = isHidden ? 'SHOW LESS ▲' : 'SHOW FULL TIMELINE ▼';
+}
+</script>

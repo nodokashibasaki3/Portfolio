@@ -1,3 +1,19 @@
+- title: HASHI
+  date: Jan 2026 - Present
+  institution: RIVeR Lab
+  institution_url: https://robot.neu.edu/
+  description: Investigates imitation learning for contact-rich tasks using an xArm robot with a custom chopsticks gripper. The project explores mapping human teleoperation data to dexterous manipulation policies.
+  image: assets/hashi.jpeg
+  caption: Image from <a href="https://arxiv.org/abs/2311.02277" target="_blank">A. Allison et al.</a>
+
+# - title: Articulated Tool Data Collection
+#   date: Jan 2026 - Present
+#   institution: RIVeR Lab
+#   institution_url: https://robot.neu.edu/
+#   description: Aims to create a scalable and generalizable framework for collecting high-quality human teleoperation data for dexterous hands using articulated tools.
+#   video: assets/honda_hand.mp4
+#   caption: Video from <a href="https://usa.honda-ri.com/-/honda-dexterous-multi-fingered-hand" target="_blank">Honda Research Institute</a>
+
 - title: Autonomous Wheelchair Navigation and Manipulation 
   date: Jan 2026 - Present
   institution: RIVeR Lab
