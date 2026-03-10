@@ -1,13 +1,21 @@
 <h2 id="publications" style="margin: 2px 0px -15px;">Publications</h2>
 
+<style>
+@media (max-width: 768px) {
+  .pub-row { flex-direction: column; }
+  .pub-media { flex: 0 0 100% !important; max-width: 100% !important; padding-bottom: 10px; }
+  .pub-content { flex: 0 0 100% !important; max-width: 100% !important; padding-left: 15px !important; margin-top: 0 !important; }
+}
+</style>
+
 <div class="publications">
 <ol class="bibliography">
 
 {% for link in site.data.publications.main %}
 
 <li>
-<div class="pub-row" style="display: flex; align-items: flex-start;">
-  <div class="col-sm-3 abbr" style="position: relative; flex: 0 0 30%; max-width: 30%; padding-right: 15px; padding-left: 15px;">
+<div class="pub-row" style="display: flex; align-items: flex-start; flex-wrap: wrap;">
+  <div class="col-sm-3 abbr pub-media" style="position: relative; flex: 0 0 30%; max-width: 30%; padding-right: 15px; padding-left: 15px;">
     {% if link.image %} 
     {% assign file_ext = link.image | split: '.' | last | downcase %}
     {% if file_ext == 'mp4' or file_ext == 'mov' or file_ext == 'webm' %}
@@ -20,7 +28,7 @@
     {% endif %}
     {% endif %}
   </div>
-  <div class="col-sm-9" style="position: relative; flex: 0 0 70%; max-width: 70%; padding-right: 15px; padding-left: 20px; margin-top: -5px;">
+  <div class="col-sm-9 pub-content" style="position: relative; flex: 0 0 70%; max-width: 70%; padding-right: 15px; padding-left: 20px; margin-top: -5px;">
       <div class="title"><a href="{{ link.pdf }}">{{ link.title }}</a></div>
       <div class="author">{{ link.authors }}</div>
       <div class="periodical"><em>{{ link.conference }}</em>

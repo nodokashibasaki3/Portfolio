@@ -29,6 +29,8 @@
 @media (max-width: 768px) {
     .project-container {
         flex-direction: column;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
     .project-media {
         flex: 0 0 auto;
