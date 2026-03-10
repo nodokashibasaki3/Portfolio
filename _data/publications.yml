@@ -4,7 +4,7 @@ main:
     authors: T. Kamijo, M. Nishimura, <strong>N. Shibasaki</strong>, J. Siburian, C. Beltran-Hernandez, M. Hamaya
     conference_short: RA-L
     conference: Under review at RA-L 
-    pdf:
+    pdf: assets/RAL2026.pdf
     code: 
     bibtex: 
     image: assets/tameso.mp4
