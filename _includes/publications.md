@@ -14,7 +14,7 @@
 {% for link in site.data.publications.main %}
 
 <li>
-<div class="pub-row" style="display: flex; align-items: flex-start; flex-wrap: wrap;">
+<div class="pub-row" style="display: flex; align-items: flex-start;">
   <div class="col-sm-3 abbr pub-media" style="position: relative; flex: 0 0 30%; max-width: 30%; padding-right: 15px; padding-left: 15px;">
     {% if link.image %} 
     {% assign file_ext = link.image | split: '.' | last | downcase %}
