@@ -26,6 +26,10 @@
 #   position: Service Director @ Phi Sigma Rho
 
 - duration: 2025
+  position: Course Lead @ MassRobotics
+  highlight: true
+
+- duration: 2025
   position: Operations @ Boston Hack BeanPot
   highlight: true
 
