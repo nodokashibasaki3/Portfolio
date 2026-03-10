@@ -6,7 +6,7 @@
 {% for link in site.data.publications.main %}
 
 <li>
-<div class="pub-row">
+<div class="pub-row" style="display: flex; align-items: flex-start;">
   <div class="col-sm-3 abbr" style="position: relative; flex: 0 0 30%; max-width: 30%; padding-right: 15px; padding-left: 15px;">
     {% if link.image %} 
     {% assign file_ext = link.image | split: '.' | last | downcase %}
@@ -20,7 +20,7 @@
     {% endif %}
     {% endif %}
   </div>
-  <div class="col-sm-9" style="position: relative; flex: 0 0 70%; max-width: 70%; padding-right: 15px; padding-left: 20px;">
+  <div class="col-sm-9" style="position: relative; flex: 0 0 70%; max-width: 70%; padding-right: 15px; padding-left: 20px; margin-top: -5px;">
       <div class="title"><a href="{{ link.pdf }}">{{ link.title }}</a></div>
       <div class="author">{{ link.authors }}</div>
       <div class="periodical"><em>{{ link.conference }}</em>
