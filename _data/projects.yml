@@ -7,15 +7,15 @@
   image: assets/hashi.jpeg
   caption: Image from <a href="https://arxiv.org/abs/2311.02277" target="_blank">A. Allison et al.</a>
 
-# - title: Articulated Tool Data Collection
-#   date: Jan 2026 - Present
-#   institution: RIVeR Lab
-#   institution_url: https://robot.neu.edu/
-#   description: Aims to create a scalable and generalizable framework for collecting high-quality human teleoperation data for dexterous hands using articulated tools.
-#   video: assets/honda_hand.mp4
-#   caption: Video from <a href="https://usa.honda-ri.com/-/honda-dexterous-multi-fingered-hand" target="_blank">Honda Research Institute</a>
+- title: Articulate Tool Data Collection
+  date: Jan 2026 - Present
+  ongoing: true
+  institution: RIVeR Lab
+  institution_url: https://robot.neu.edu/
+  description: Investigates how robots can learn contact-rich tasks from sensor data by observing object interactions. The project explores turning these observations into representations that improve dexterous manipulation.
+  image: assets/articulate_tools.png
 
-- title: Autonomous Wheelchair Navigation and Manipulation 
+- title: Autonomous Wheelchair Locomanipulation
   date: Jan 2026 - Present
   ongoing: true
   institution: RIVeR Lab
