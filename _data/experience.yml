@@ -4,6 +4,9 @@
 - duration: 2015
   position: Moved to Cupertino, CA
 
+- duration: 2019–22
+  position: Sports Medicine Intern @ Homestead High School
+
 - duration: 2020–23
   position: Sports Medicine Intern @ Stanford
 
@@ -13,8 +16,8 @@
 # - duration: 2024
 #   position: Founder & President of Asian Student Association @ Sattelite Campus 
 
-- duration: 2024
-  position: Firmware Engineering Intern @ KAIKAKU
+# - duration: 2024
+#   position: Firmware Engineering Intern @ KAIKAKU
 
 - duration: 2024–25
   position: Undergraduate Researcher @ Shepherd Lab
@@ -30,7 +33,7 @@
   highlight: true
 
 - duration: 2025
-  position: Operations @ Boston Hack BeanPot
+  position: Operations @ HackBeanPot
   highlight: true
 
 - duration: 2025
