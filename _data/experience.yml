@@ -1,8 +1,11 @@
 - duration: 2004
   position: Born in Tokyo, Japan
 
-- duration: 2015
-  position: Moved to Cupertino, CA
+- duration: 2021
+  position: Visitor @ Wake Forest University
+
+- duration: 2022
+  position: Visitor @ University of Rochester
 
 - duration: 2019–22
   position: Sports Medicine Intern @ Homestead High School
@@ -28,17 +31,26 @@
 # - duration: 2025
 #   position: Service Director @ Phi Sigma Rho
 
+# - duration: 2025
+#   position: Volunteer Basketball Coach @ Bunkyo-ku City
+
 - duration: 2025
-  position: Course Lead @ MassRobotics
-  highlight: true
+  position: Volunteer Course Lead @ MassRobotics
 
 - duration: 2025
   position: Operations @ HackBeanPot
   highlight: true
 
 - duration: 2025
-  position: Robotics Intern @ OMRON SINIC X
+  position: Research Intern @ OMRON SINIC X
 
 - duration: 2026
   position: Undergraduate Researcher @ RIVeR Lab
   highlight: true
+
+- duration: 2026
+  position: Software Engineer Intern @ The Linux Foundation
+  highlight: true
+
+- duration: 2026
+  position: Hardware Engineer Intern @ Amazon Robotics

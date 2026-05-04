@@ -7,9 +7,9 @@ layout: homepage
 
 I am a third-year Electrical and Computer Engineering student at [Northeastern University](https://www.northeastern.edu/){:target="\_blank"}. I am currently a research assistant in the [RIVeR Lab](https://robot.neu.edu/){:target="\_blank"} under the supervision of Professor [Taskin Padir](https://coe.northeastern.edu/people/padir-taskin/){:target="\_blank"}.
 
-Through many guidance both in industry and academia, I have gained full-stack knowledge in robotics from low-level control to high-level planning. 
+Through mentorship in both industry and academia, I gained both Research and Engineering experience in robotics across hardware, software, and the space in between.
 
-I gained valuable industry experience as a Robotics intern at [OMRON SINIC X](https://www.omron.com/sinicx/){:target="\_blank"} where I researched contact-rich manipulation with tactile sensing through sim2real and imitation learning. I also had the opportunity to develop autonomous multi-modal locomotion robots at the [Silicon Synapses Lab](https://siliconsynapse.sites.northeastern.edu/){:target="\_blank"} under Professor [Ramezani Alireza](https://coe.northeastern.edu/people/ramezani-alireza/){:target="\_blank"}, and uncertainty-aware exoskeletons at the [Shepherd's Lab](https://shepherdlab.sites.northeastern.edu/){:target="\_blank"} under Professor [Max Shepherd](https://coe.northeastern.edu/people/shepherd-max/){:target="_blank"}.
+I gained valuable industry experience as a Research intern at [OMRON SINIC X](https://www.omron.com/sinicx/){:target="\_blank"} where I researched contact-rich manipulation with tactile sensing through sim2real and imitation learning. I also had the opportunity to develop autonomous multi-modal locomotion robots at the [Silicon Synapses Lab](https://siliconsynapse.sites.northeastern.edu/){:target="\_blank"} under Professor [Ramezani Alireza](https://coe.northeastern.edu/people/ramezani-alireza/){:target="\_blank"}, and uncertainty-aware exoskeletons at the [Shepherd's Lab](https://shepherdlab.sites.northeastern.edu/){:target="\_blank"} under Professor [Max Shepherd](https://coe.northeastern.edu/people/shepherd-max/){:target="_blank"}.
 
 {% include_relative _includes/hobby.md %}
 
