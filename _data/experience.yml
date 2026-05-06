@@ -31,18 +31,18 @@
 # - duration: 2025
 #   position: Service Director @ Phi Sigma Rho
 
-# - duration: 2025
-#   position: Volunteer Basketball Coach @ Bunkyo-ku City
+- duration: 2025
+  position: Research Intern @ OMRON SINIC X
+
+- duration: 2025
+  position: Volunteer Basketball Coach @ Bunkyo-ku City
 
 - duration: 2025-26
   position: Volunteer Course Lead @ MassRobotics
 
-- duration: 2025
+- duration: 2025-26
   position: Operations @ HackBeanPot
   highlight: true
-
-- duration: 2025
-  position: Research Intern @ OMRON SINIC X
 
 - duration: 2026
   position: Undergraduate Researcher @ RIVeR Lab
