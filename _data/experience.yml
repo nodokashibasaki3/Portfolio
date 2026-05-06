@@ -16,12 +16,6 @@
 - duration: 2020–23
   position: Co-Founder @ JTutor
 
-# - duration: 2024
-#   position: Founder & President of Asian Student Association @ Sattelite Campus 
-
-# - duration: 2024
-#   position: Firmware Engineering Intern @ KAIKAKU
-
 - duration: 2024–25
   position: Undergraduate Researcher @ Shepherd Lab
 
@@ -34,23 +28,23 @@
 - duration: 2025
   position: Research Intern @ OMRON SINIC X
 
-- duration: 2025
-  position: Volunteer Basketball Coach @ Bunkyo-ku City
+# - duration: 2025
+#   position: Volunteer Basketball Coach @ Bunkyo-ku City
 
-- duration: 2025-26
-  position: Volunteer Course Lead @ MassRobotics
+# - duration: 2025-26
+#   position: Volunteer Course Lead @ MassRobotics
 
-- duration: 2025-26
-  position: Operations @ HackBeanPot
-  highlight: true
+# - duration: 2025-26
+#   position: Operations @ HackBeanPot
+#   highlight: true
 
 - duration: 2026
   position: Undergraduate Researcher @ RIVeR Lab
   highlight: true
 
-- duration: 2026
-  position: Volunteer Running Coach @ Girls on the Run
-  highlight: true
+# - duration: 2026
+#   position: Volunteer Running Coach @ Girls on the Run
+#   highlight: true
 
 - duration: 2026
   position: Software Engineer Intern @ The Linux Foundation
