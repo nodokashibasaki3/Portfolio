@@ -20,10 +20,10 @@
   position: Co-Founder @ JTutor
 
 - duration: 2024-2025
-  position: Research Engineer @ Northeastern
+  position: Research Engineer @ Northeastern, Shepherd's Lab
 
-# - duration: 2024–25
-#   position: Undergraduate Researcher @ Northeastern University
+- duration: 2025
+  position: Research Engineer @ Northeastern, Silicon Synapses
 
 # - duration: 2025
 #   position: Service Director @ Phi Sigma Rho
@@ -42,7 +42,7 @@
 #   highlight: true
 
 - duration: 2026
-  position: Research Assistant @ RIVeR Lab
+  position: Research Assistant @ Northeastern, RIVeR Lab
   highlight: true
 
 # - duration: 2026
