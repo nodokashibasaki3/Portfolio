@@ -4,11 +4,11 @@
 - duration: 2016
   position: Moved to Cupertino, CA, USA
 
-- duration: 2021
-  position: Visitor @ Wake Forest University
+# - duration: 2021
+#   position: Visitor @ Wake Forest University
 
-- duration: 2022
-  position: Visitor @ University of Rochester
+# - duration: 2022
+#   position: Visitor @ University of Rochester
 
 - duration: 2019–22
   position: Sports Medicine Intern @ Homestead High School
@@ -19,11 +19,11 @@
 - duration: 2020–23
   position: Co-Founder @ JTutor
 
-- duration: 2024–25
-  position: Undergraduate Researcher @ Shepherd Lab
+- duration: 2024-2025
+  position: Research Engineer @ Northeastern
 
-- duration: 2025
-  position: Undergraduate Researcher @ Silicon Synapses
+# - duration: 2024–25
+#   position: Undergraduate Researcher @ Northeastern University
 
 # - duration: 2025
 #   position: Service Director @ Phi Sigma Rho
@@ -42,7 +42,7 @@
 #   highlight: true
 
 - duration: 2026
-  position: Undergraduate Researcher @ RIVeR Lab
+  position: Research Assistant @ RIVeR Lab
   highlight: true
 
 # - duration: 2026
@@ -50,7 +50,9 @@
 #   highlight: true
 
 - duration: 2026
-  position: Software Engineer Intern @ The Linux Foundation
+  position: Hardware Engineer Intern @ Amazon Robotics
+  highlight: true
 
 - duration: 2026
-  position: Hardware Engineer Intern @ Amazon Robotics
+  position: Software Engineer Intern @ The Linux Foundation
+  highlight: true
