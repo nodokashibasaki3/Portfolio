@@ -5,11 +5,11 @@ layout: homepage
 
 ## About Me
 
-I am a third-year Electrical and Computer Engineering student at [Northeastern University](https://www.northeastern.edu/){:target="\_blank"}. I am currently researching dexterity, control and autonomy under the supervision of Professor Taskin Padir.
+I am a fourth-year Electrical and Computer Engineering student at [Northeastern University](https://www.northeastern.edu/){:target="\_blank"}. Under the supervision of Professor Taskin Padir, I am currently researching manipulation and autonomy. 
 
-Through mentorship in both industry and academia, I gained both Research and Engineering experience in robotics across hardware, software, and the space in between.
+Until December, I am researching robot manipulation for warehouse applications at the [Innovation Lab at Amazon Robotics](https://www.aboutamazon.com/news/operations/amazon-robotics-headquarters-tour-westborough-massachusetts){:target="\_blank"}. Additionally, I am contributing to the open source [SONiC Platform Driver Development Kit](https://github.com/sonic-net/SONiC/blob/master/doc/platform/brcm_pdk_pddf.md){:target="\_blank"} under the close guidance of mentors at [the Linux Foundation](https://www.linuxfoundation.org/){:target="\_blank"}.
 
-I gained valuable industry experience as a Research intern at [OMRON SINIC X](https://www.omron.com/sinicx/){:target="\_blank"} where I researched contact-rich manipulation with tactile sensing through sim2real and imitation learning. I also had the opportunity to develop autonomous multi-modal locomotion robots under Professor Ramezani Alireza, and uncertainty-aware exoskeletons under Professor Max Shepherd.
+In the past, I gained valuable industry research experience as a Research Intern at [OMRON SINIC X](https://www.omron.com/sinicx/){:target="\_blank"} in Tokyo where I researched contact-rich manipulation for soft robotics. During my undergraduate studies, I also had the opportunity to develop autonomous multi-modal locomotion robots under Professor Alireza Ramezani, and uncertainty-aware exoskeletons under Professor Max Shepherd.
 
 {% include_relative _includes/hobby.md %}
 
