@@ -1,0 +1,27 @@
+---
+layout: homepage
+---
+
+{% include blog-styles.html %}
+
+<article class="blog-post-content">
+    <header class="blog-post-header">
+        <h1 class="blog-post-title">{{ page.title }}</h1>
+        <div class="blog-post-meta">
+            {{ page.date | date: "%B %d, %Y" }} • {{ page.author | default: site.title }}
+        </div>
+    </header>
+
+    {% if page.tldr %}
+    <div class="tldr-box">
+        <h3>TL;DR</h3>
+        <p>{{ page.tldr }}</p>
+    </div>
+    {% endif %}
+
+    {{ content }}
+
+    <footer class="blog-post-footer" style="margin-top: 5rem; padding-top: 2rem; border-top: 1px solid #eee; font-family: var(--blog-font-sans);">
+        <a href="{{ '/' | relative_url }}" style="color: var(--blog-accent); text-decoration: none; font-weight: 600;">← Back to Home</a>
+    </footer>
+</article>

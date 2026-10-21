@@ -1,0 +1,15 @@
+<a class="bookmark-card" href="{{ include.url }}" target="_blank" rel="noopener noreferrer">
+    <div class="bookmark-info">
+        <div class="bookmark-title">{{ include.title | default: include.url }}</div>
+        {% if include.description %}
+        <div class="bookmark-description">{{ include.description }}</div>
+        {% endif %}
+        <div class="bookmark-link-info">
+            <img src="https://www.google.com/s2/favicons?domain={{ include.url }}&sz=32" alt="favicon">
+            <span class="bookmark-url">{{ include.url | split: '://' | last | split: '/' | first }}</span>
+        </div>
+    </div>
+    {% if include.image %}
+    <div class="bookmark-thumbnail" style="background-image: url('{{ include.image }}');"></div>
+    {% endif %}
+</a>

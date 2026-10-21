@@ -1,5 +1,5 @@
 <h2 id="projects" style="margin: 20px 0px 5px;">Selected Projects</h2>
-<p style="color: #888; font-size: 0.85em; margin-bottom: 25px;">* Highlighted are ongoing projects intended for future publication.</p>
+<p style="color: #888; font-size: 0.85em; margin-bottom: 25px;">* Highlighted are ongoing projects.</p>
 <style>
 .project-container {
     display: flex;
@@ -89,6 +89,10 @@
                 {% else %}
                     <img src="{{ project.image }}" alt="{{ project.title }}">
                 {% endif %}
+            {% else %}
+                <div style="aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center; border-radius: 4px; background-color: rgba(255, 121, 0, 0.08); color: #FF7900; font-size: 2em;">
+                    <i class="fa-solid fa-lock" aria-label="Confidential project"></i>
+                </div>
             {% endif %}
             {% if project.caption %}
                 <p style="font-size: 0.75em; color: #888; margin: 4px 0 0 0; text-align: center; font-style: italic;">{{ project.caption }}</p>
@@ -98,6 +102,9 @@
             <div class="title" style="font-weight: bolder; font-size: 1.1em;"><a style="color: inherit; text-decoration: none;">{{ project.title }}</a></div>
             <div class="author" style="margin-top: 2px;">{{ project.date }}{% if project.institution %} | {% if project.institution_url %}<a href="{{ project.institution_url }}" target="_blank" rel="noopener noreferrer">{{ project.institution }}</a>{% else %}{{ project.institution }}{% endif %}{% endif %}</div>
             <div class="periodical" style="margin-top: 5px; font-size: 0.95em;">{{ project.description }}</div>
+            {% if project.paper %}
+            <div class="paper" style="margin-top: 6px; font-size: 0.9em;"><i class="fa-regular fa-file-lines" style="margin-right: 4px;"></i>Published in <em>{{ project.paper.venue }}</em> · <a href="{{ project.paper.url }}" target="_blank" rel="noopener noreferrer">arXiv</a></div>
+            {% endif %}
         </div>
     </div>
     {% endfor %}
