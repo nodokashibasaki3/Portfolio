@@ -105,6 +105,11 @@
         font-size: 0.82em;
     }
 
+    /* Inline code gets its own color, distinct from body text and orange links. */
+    .post :not(pre) > code {
+        color: #3b6ea5;
+    }
+
     .post pre {
         max-width: none;
         line-height: 1.45;
