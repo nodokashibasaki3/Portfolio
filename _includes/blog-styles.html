@@ -143,6 +143,108 @@
         margin-bottom: 0;
     }
 
+    /* Link-only callouts: the card carries its own icon, so the box holds just the card. */
+    .post .callout.callout-link {
+        padding: 12px;
+    }
+
+    /* Link preview cards (Notion-style bookmarks and GitHub cards). */
+    .post .bookmark-card,
+    .post .github-card {
+        display: flex;
+        align-items: stretch;
+        background: #fff;
+        border: 1px solid #e8e6e1;
+        border-radius: 6px;
+        overflow: hidden;
+        color: inherit;
+        margin: 0 0 18px;
+        transition: border-color 0.15s;
+    }
+
+    .post .callout .bookmark-card,
+    .post .callout .github-card {
+        margin: 0;
+    }
+
+    .post .bookmark-card:hover,
+    .post .github-card:hover {
+        border-color: #cfccc4;
+    }
+
+    .post .bookmark-thumbnail {
+        flex: 0 0 34%;
+        min-height: 120px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .post .bookmark-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 0;
+        padding: 14px 18px;
+        gap: 4px;
+    }
+
+    .post img.bookmark-icon {
+        width: 20px;
+        height: 20px;
+        margin: 0 0 2px;
+        border: 0;
+        border-radius: 4px;
+    }
+
+    .post .bookmark-title,
+    .post .github-card-title {
+        color: #232F3E;
+        font-weight: 500;
+        line-height: 1.3;
+    }
+
+    .post .bookmark-description {
+        font-size: 15px;
+        line-height: 1.4;
+        color: #777;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .post .bookmark-url,
+    .post .github-card-owner {
+        font-size: 14px;
+        color: #999;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .post .github-card {
+        align-items: center;
+        gap: 16px;
+        padding: 14px 18px;
+    }
+
+    .post .github-card-icon {
+        font-size: 36px;
+        color: #232F3E;
+    }
+
+    .post .github-card-info {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+        .post .bookmark-thumbnail {
+            display: none;
+        }
+    }
+
     .post details {
         margin: 0 0 18px;
     }

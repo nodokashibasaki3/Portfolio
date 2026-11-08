@@ -1,15 +1,20 @@
+{% comment %}
+  Link preview card (Notion-style bookmark).
+  Params: url (required), title, description, image (thumbnail), icon (site icon; falls back to favicon service).
+{% endcomment %}
+{% assign bm_domain = include.url | split: '://' | last | split: '/' | first %}
+{% capture bm_favicon %}https://www.google.com/s2/favicons?sz=64&domain={{ bm_domain }}{% endcapture %}
+{% assign bm_icon = include.icon | default: bm_favicon %}
 <a class="bookmark-card" href="{{ include.url }}" target="_blank" rel="noopener noreferrer">
-    <div class="bookmark-info">
-        <div class="bookmark-title">{{ include.title | default: include.url }}</div>
-        {% if include.description %}
-        <div class="bookmark-description">{{ include.description }}</div>
-        {% endif %}
-        <div class="bookmark-link-info">
-            <img src="https://www.google.com/s2/favicons?domain={{ include.url }}&sz=32" alt="favicon">
-            <span class="bookmark-url">{{ include.url | split: '://' | last | split: '/' | first }}</span>
-        </div>
-    </div>
     {% if include.image %}
-    <div class="bookmark-thumbnail" style="background-image: url('{{ include.image }}');"></div>
+    <span class="bookmark-thumbnail" style="background-image: url('{{ include.image }}');"></span>
     {% endif %}
+    <span class="bookmark-info">
+        <img class="bookmark-icon" src="{{ bm_icon }}" alt="" loading="lazy">
+        <span class="bookmark-title">{{ include.title | default: bm_domain }}</span>
+        {% if include.description %}
+        <span class="bookmark-description">{{ include.description }}</span>
+        {% endif %}
+        <span class="bookmark-url">{{ include.url }}</span>
+    </span>
 </a>
