@@ -56,8 +56,11 @@
       }
     </style>
   </head>
-  <body>
+  {% assign hide_sidebar = false %}
+  {% if page.layout == "post" %}{% assign hide_sidebar = true %}{% endif %}
+  <body{% if hide_sidebar %} class="no-sidebar"{% endif %}>
     <div class="wrapper">
+      {% unless hide_sidebar %}
       <header>
         
         {% if site.avatar %}
@@ -126,6 +129,7 @@
         <br>
 
       </header>
+      {% endunless %}
       <section>
 
       {{ content }}
