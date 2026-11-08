@@ -76,13 +76,36 @@
     }
 
     .post .callout {
+        display: flex;
+        gap: 12px;
         background: #f7f6f3;
         border-radius: 5px;
         padding: 14px 18px;
         margin: 0 0 20px;
     }
 
-    .post .callout > :last-child {
+    .post .callout-icon {
+        flex-shrink: 0;
+        line-height: 1.5;
+    }
+
+    /* Override the generic post image style (border, margin) for small site icons. */
+    .post .callout-icon .favicon {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        margin: 3px 0 0;
+        border: 0;
+        border-radius: 3px;
+        vertical-align: top;
+    }
+
+    .post .callout-body {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .post .callout-body > :last-child {
         margin-bottom: 0;
     }
 
