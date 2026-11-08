@@ -1,6 +1,8 @@
 <style>
-    /* Blog posts: a simple top bar, one centered column, and a small footer.
-       Fonts and colors come from the homepage theme. */
+    /* Blog posts (_layouts/post.html): one centered column and a small footer.
+       Fonts and base colors come from the homepage theme; navy #232F3E, orange links. */
+
+    /* ---- Page ---- */
 
     /* The theme pads <body> on small screens; posts handle their own gutters. */
     body.blog {
@@ -39,6 +41,8 @@
         font-style: italic;
     }
 
+    /* ---- Text ---- */
+
     .post h2,
     .post h3,
     .post h4 {
@@ -65,8 +69,10 @@
     .post ul,
     .post ol,
     .post pre,
-    .post table {
-        margin-bottom: 18px;
+    .post table,
+    .post blockquote,
+    .post details {
+        margin: 0 0 18px;
     }
 
     .post li > ul,
@@ -74,26 +80,13 @@
         margin: 2px 0 0;
     }
 
-    .post code {
-        font-size: 0.82em;
+    .post blockquote {
+        color: #777;
+        border-left-color: #ddd;
     }
 
-    /* Inline code uses the site's heading navy, distinct from gray body text and orange links. */
-    .post :not(pre) > code {
-        color: #232F3E;
-    }
-
-    .post pre {
-        max-width: none;
-        line-height: 1.45;
-        background: #fafafa;
-        border-color: #eee;
-    }
-
-    .post img {
-        display: block;
-        margin: 28px auto;
-        border-radius: 4px;
+    .post blockquote > :last-child {
+        margin-bottom: 0;
     }
 
     .post hr {
@@ -101,17 +94,51 @@
         background: #e5e5e5;
     }
 
-    .post blockquote {
-        color: #777;
-        border-left-color: #ddd;
-        margin-bottom: 18px;
+    .post table {
+        font-size: 0.9em;
     }
 
-    .post blockquote > :last-child {
-        margin-bottom: 0;
+    .post #markdown-toc {
+        padding-left: 20px;
     }
 
-    /* Callouts: a light gray box with the icon on the left. */
+    /* ---- Code ---- */
+
+    .post code {
+        font-size: 0.82em;
+    }
+
+    /* Inline code uses the heading navy, distinct from gray body text and orange links. */
+    .post :not(pre) > code {
+        color: #232F3E;
+    }
+
+    .post pre {
+        max-width: none; /* the theme caps code blocks at 500px */
+        line-height: 1.45;
+        background: #fafafa;
+        border-color: #eee;
+    }
+
+    /* ---- Media and toggles ---- */
+
+    .post img {
+        display: block;
+        margin: 28px auto;
+        border-radius: 4px;
+    }
+
+    .post summary {
+        cursor: pointer;
+        color: #232F3E;
+    }
+
+    .post details[open] summary {
+        margin-bottom: 10px;
+    }
+
+    /* ---- Callouts: a light gray box with an icon on the left ---- */
+
     .post .callout {
         display: flex;
         gap: 12px;
@@ -119,6 +146,11 @@
         border-radius: 5px;
         padding: 14px 18px;
         margin: 0 0 18px;
+    }
+
+    /* Link-only callouts hold just a card, which carries its own icon. */
+    .post .callout.callout-link {
+        padding: 12px;
     }
 
     .post .callout-icon {
@@ -135,24 +167,19 @@
     }
 
     .post .callout-body {
-        min-width: 0;
         flex: 1;
+        min-width: 0;
     }
 
     .post .callout-body > :last-child {
         margin-bottom: 0;
     }
 
-    /* Link-only callouts: the card carries its own icon, so the box holds just the card. */
-    .post .callout.callout-link {
-        padding: 12px;
-    }
+    /* ---- Link cards (_includes/bookmark.html, _includes/github-card.html) ---- */
 
-    /* Link preview cards (Notion-style bookmarks and GitHub cards). */
     .post .bookmark-card,
     .post .github-card {
         display: flex;
-        align-items: stretch;
         background: #fff;
         border: 1px solid #e8e6e1;
         border-radius: 6px;
@@ -179,13 +206,17 @@
         background-position: center;
     }
 
-    .post .bookmark-info {
+    .post .bookmark-info,
+    .post .github-card-info {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         min-width: 0;
-        padding: 14px 18px;
+    }
+
+    .post .bookmark-info {
+        justify-content: center;
         gap: 4px;
+        padding: 14px 18px;
     }
 
     .post img.bookmark-icon {
@@ -204,13 +235,13 @@
     }
 
     .post .bookmark-description {
-        font-size: 15px;
-        line-height: 1.4;
-        color: #777;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        font-size: 15px;
+        line-height: 1.4;
+        color: #777;
     }
 
     .post .bookmark-url,
@@ -233,38 +264,7 @@
         color: #232F3E;
     }
 
-    .post .github-card-info {
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-    }
-
-    @media screen and (max-width: 600px) {
-        .post .bookmark-thumbnail {
-            display: none;
-        }
-    }
-
-    .post details {
-        margin: 0 0 18px;
-    }
-
-    .post summary {
-        cursor: pointer;
-        color: #232F3E;
-    }
-
-    .post details[open] summary {
-        margin-bottom: 10px;
-    }
-
-    .post table {
-        font-size: 0.9em;
-    }
-
-    .post #markdown-toc {
-        padding-left: 20px;
-    }
+    /* ---- Footer ---- */
 
     .blog-footer {
         border-top: 1px solid #e8e8e8;
@@ -286,6 +286,8 @@
         margin-left: 14px;
     }
 
+    /* ---- Phones ---- */
+
     @media screen and (max-width: 600px) {
         .blog-wrap {
             padding: 0 16px;
@@ -293,6 +295,10 @@
 
         .post-title {
             font-size: 30px;
+        }
+
+        .post .bookmark-thumbnail {
+            display: none;
         }
     }
 </style>
