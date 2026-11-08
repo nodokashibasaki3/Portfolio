@@ -1,25 +1,48 @@
----
-layout: homepage
----
-
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+{% include head.html %}
 {% include blog-styles.html %}
-
-{% comment %}
-  Use divs, not <header>/<footer>: the theme styles those tags as the fixed sidebar.
-{% endcomment %}
-<article class="post">
-    <div class="post-header">
-        <h1 class="post-title">{{ page.title }}</h1>
-        <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+  </head>
+  {% comment %}
+    Use divs and custom classes, not <header>/<footer>/<section>/.wrapper:
+    the theme styles those as the homepage's fixed sidebar and floated column.
+  {% endcomment %}
+  <body class="blog">
+    <div class="blog-topbar">
+      <div class="blog-wrap blog-topbar-inner">
+        <a class="blog-site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <nav class="blog-nav" aria-label="Site">
+          <a href="{{ '/' | relative_url }}#blog">Blog</a>
+          <a href="{{ '/' | relative_url }}">About</a>
+        </nav>
+      </div>
     </div>
 
-    {% if page.tldr %}
-    <p class="post-tldr">{{ page.tldr }}</p>
-    {% endif %}
+    <main class="blog-wrap">
+      <article class="post">
+        <div class="post-header">
+          <h1 class="post-title">{{ page.title }}</h1>
+          <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+        </div>
 
-    {{ content }}
+        {% if page.tldr %}
+        <p class="post-tldr">{{ page.tldr }}</p>
+        {% endif %}
 
-    <div class="post-footer">
-        <a href="{{ '/' | relative_url }}#blog">← Back to home</a>
+        {{ content }}
+      </article>
+    </main>
+
+    <div class="blog-footer">
+      <div class="blog-wrap blog-footer-inner">
+        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <span class="blog-footer-links">
+          {% if site.github_link %}<a href="{{ site.github_link }}" aria-label="GitHub"><i class="fab fa-github"></i></a>{% endif %}
+          {% if site.linkedin %}<a href="{{ site.linkedin }}" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>{% endif %}
+        </span>
+      </div>
     </div>
-</article>
+{% include analytics.html %}
+  </body>
+</html>

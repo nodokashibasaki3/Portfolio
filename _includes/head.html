@@ -1,0 +1,25 @@
+    <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} | {{site.affiliation}}{% endif %}</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    {% if site.keywords %}
+    <meta name="keywords" content="{{ site.keywords }}">
+    {% endif %}
+    {% if site.canonical %}
+    <link rel="canonical" href="{{ site.canonical }}"/>
+    {% endif %}
+
+    <link rel="icon" href="{{ site.favicon | relative_url }}" type="image/jpeg" />
+
+    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    {% if site.font == "Sans Serif" %}
+    <link rel="stylesheet" href="{{ '/assets/css/font_sans_serif.css' | relative_url }}">
+    {% else %}
+    <link rel="stylesheet" href="{{ '/assets/css/font.css' | relative_url }}">
+    {% endif %}
+    <link rel="stylesheet" href="{{ '/assets/css/style-no-dark-mode.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/publications-no-dark-mode.css' | relative_url }}">

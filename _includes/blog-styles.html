@@ -1,29 +1,65 @@
 <style>
-    /* Blog posts: inherit the homepage's fonts and colors; keep everything quiet and readable. */
+    /* Blog posts: a simple top bar, one centered column, and a small footer.
+       Fonts and colors come from the homepage theme. */
 
-    /* Posts hide the sidebar, so center the content column instead of floating it right. */
-    .no-sidebar section {
-        float: none;
+    /* The theme pads <body> on small screens; posts handle their own gutters. */
+    body.blog {
+        padding: 0;
+    }
+
+    .blog-wrap {
+        max-width: 720px;
         margin: 0 auto;
+        padding: 0 30px;
+    }
+
+    .blog-topbar {
+        border-top: 4px solid #232F3E;
+        border-bottom: 1px solid #e8e8e8;
+    }
+
+    .blog-topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 56px;
+    }
+
+    .blog-site-title,
+    .blog-site-title:hover {
+        color: #232F3E;
+        font-size: 22px;
+    }
+
+    .blog-nav a {
+        margin-left: 20px;
+        color: #777;
+    }
+
+    .blog-nav a:hover {
+        color: #FF7900;
     }
 
     .post {
         font-size: 18px;
         line-height: 1.65;
+        padding: 44px 0 20px;
     }
 
     .post-header {
-        margin-bottom: 40px;
+        margin-bottom: 36px;
     }
 
     .post-title {
-        font-size: 30px;
-        margin: 0 0 6px;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 1.15;
+        margin: 0 0 8px;
     }
 
     .post-date {
         color: #999;
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .post-tldr {
@@ -33,18 +69,18 @@
     .post h2,
     .post h3,
     .post h4 {
-        font-weight: 600;
-        line-height: 1.3;
+        font-weight: 500;
+        line-height: 1.2;
     }
 
     .post h2 {
-        font-size: 22px;
-        margin: 44px 0 12px;
+        font-size: 28px;
+        margin: 48px 0 14px;
     }
 
     .post h3 {
-        font-size: 19px;
-        margin: 32px 0 10px;
+        font-size: 22px;
+        margin: 34px 0 10px;
     }
 
     .post h4 {
@@ -150,10 +186,33 @@
         padding-left: 20px;
     }
 
-    .post-footer {
-        margin-top: 56px;
-        padding-top: 16px;
-        border-top: 1px solid #eee;
-        font-size: 16px;
+    .blog-footer {
+        border-top: 1px solid #e8e8e8;
+        padding: 28px 0 40px;
+        font-size: 15px;
+    }
+
+    .blog-footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .blog-footer-inner > a {
+        color: #777;
+    }
+
+    .blog-footer-links a {
+        margin-left: 14px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .blog-wrap {
+            padding: 0 16px;
+        }
+
+        .post-title {
+            font-size: 30px;
+        }
     }
 </style>
