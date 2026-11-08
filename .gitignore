@@ -6,3 +6,5 @@ vendor/
 .DS_Store
 .idea/
 .vscode/
+__pycache__/
+.ruff_cache/
