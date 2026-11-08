@@ -20,8 +20,8 @@ linkedin: https://www.linkedin.com/in/nodoka2027/
 # twitter: https://twitter.com/
 
 # Images (e.g., your profile picture and your website's favicon)
-avatar: ./assets/portrait.jpg
-favicon: ./assets/portrait.jpg
+avatar: /assets/portrait.jpg
+favicon: /assets/portrait.jpg
 
 # Footnote
 # You may use the option to disable the footnote, "Powered by Jekyll and Minimal Light theme."
