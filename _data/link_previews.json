@@ -69,11 +69,6 @@
     "icon": "https://tunaformac.com/favicon.ico",
     "image": "/assets/blog/raycast-toolkit/cover-2.png"
   },
-  "https://www.origami-robotics.com": {
-    "title": "Origami Robotics",
-    "description": "Building the next generation of dexterous robot hands with quasi-direct drive actuators.",
-    "image": "https://images.unsplash.com/photo-1531746790731-6c087fecd05a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-  },
   "https://www.raycast.com/": {
     "title": "Raycast - Your shortcut to everything",
     "description": "A collection of powerful productivity tools all within an extendable launcher.",
