@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Introducing my Raycast Toolkit"
+date: 2026-03-10
 ---
 
 I am Nodoka, and I write for fun 🤓
@@ -53,7 +54,7 @@ After disabling it, set Raycast’s shortcut to `Cmd + Space`.
 
 > ☝ ☝
 >
-> I recommend you install [Arc from The Browser Company](https://arc.net/) for the full keyboard optimization experience´. I talked about this in my other blog ([my macos I]({% post_url 2026-02-21-macos-setup-i %}))
+> I recommend you install [Arc from The Browser Company](https://arc.net/) for the full keyboard optimization experience´. I talked about this in my other blog ([my macos I](/blog/macos-setup-i/))
 {: .callout}
 
 ## Setup basic tools first
@@ -134,7 +135,7 @@ On the side note, my workflow has improved since I started to organize my files 
 
 > [Window Management](https://manual.raycast.com/window-management)
 >
-> I do not use the window management by Raycast. As mentioned in my other blog ([my macos I]({% post_url 2026-02-21-macos-setup-i %})), I use Rectangle because it allows for movement across desktops.
+> I do not use the window management by Raycast. As mentioned in my other blog ([my macos I](/blog/macos-setup-i/)), I use Rectangle because it allows for movement across desktops.
 {: .callout}
 
 Benefit of Raycast’s Window Management is its cycling behavior. This means that repeatedly pressing `Move to Right` (for me, this is `Ctrl + Alt + L`) cycles through layouts:
@@ -189,7 +190,7 @@ P.S. I have tried using Obsidian. It did not me fit well 😟 I use Logseq for 
 
 I have always dreamt of building a `J.A.R.V.I.S`. I envision that Raycast with this update will be like J.A.R.V.I.S running locally on my macOS.
 
-![After Raycast 2026 March update.](/assets/blog/raycast-toolkit/1.png)
+![After Raycast 2026 March update.](1.png)
 
 They also released **`Glaze`****,** which is a vibe coder for Desktop applications. Easily deployed locally and launched to App Store for public usage. You can now join the Waitlist.
 

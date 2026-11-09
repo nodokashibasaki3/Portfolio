@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Introducing my macOS Setup I"
+date: 2026-02-21
 ---
 
 i’m Nodoka.
@@ -42,9 +43,9 @@ in 2025 i learned `nvim` and spent HOURS on `linux` which pulled me into termina
 
 > [2025/02/21]  Published
 
-   [2025/02/27] Transferred Shell Tools to [NEW PAGE]({% post_url 2026-04-29-shell-toolkit-i %})
+   [2025/02/27] Transferred Shell Tools to [NEW PAGE](/blog/shell-toolkit-i/)
 
-   [2025/03/10] Updated [Raycast Optimization]({% post_url 2026-03-10-raycast-toolkit %})
+   [2025/03/10] Updated [Raycast Optimization](/blog/raycast-toolkit/)
 
 </details>
 
@@ -127,7 +128,7 @@ and there are some other ones like `Cmd + Shift + c` (copy tab link), `Cmd + [` 
 
 and, no more tabs so small you cant see the tab title…
 
-![Screenshot of Arc Browser with annotations by Shottr](/assets/blog/macos-setup-i/1.png)
+![Screenshot of Arc Browser with annotations by Shottr](1.png)
 
 > But you still can’t move around individual browser windows the way you can move through text in Vim. That’s when I discovered Vimium, though, spoiler, I don’t use it anymore.
 
@@ -179,7 +180,7 @@ you could also use their window management, i like [Rectangle](https://rectangle
 
 Raycast Toolkit Written ✅
 
-[my raycast toolkit]({% post_url 2026-03-10-raycast-toolkit %})
+[my raycast toolkit](/blog/raycast-toolkit/)
 
 > but what about when you take screenshots?
 
@@ -393,7 +394,7 @@ I only started using speech-to-text apps in 2026 but has helped me to develop an
 
    so now I started to discover some shell tools🙂
 
-   **UPDATE: I transferred** **`Shell Tools`** **to** **[NEW PAGE]({% post_url 2026-04-29-shell-toolkit-i %})**
+   **UPDATE: I transferred** **`Shell Tools`** **to** **[NEW PAGE](/blog/shell-toolkit-i/)**
 
 ## Unrelated to Optimization but in my workflow…
 

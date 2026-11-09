@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Setting up Qwen for Agentic Coding!"
+date: 2026-03-15
 ---
 
 i’m nodoka and i like to write for fun!
@@ -43,7 +44,7 @@ if the goal is to run a coding model locally, the first practical question is si
 
 i ultimately knew i wanted to try `qwen` mostly from all the internet hype lol. it also stands out on the [terminal-bench](https://github.com/harbor-framework/terminal-bench). `terminal-bench` measures how well models perform when interacting with real terminal environments and developer tooling.
 
-![ranking of llms from https://github.com/harbor-framework/terminal-bench. qwen dictates🤴](/assets/blog/qwen-agentic-coding/1.png)
+![ranking of llms from https://github.com/harbor-framework/terminal-bench. qwen dictates🤴](1.png)
 
 *ranking of llms from [https://github.com/harbor-framework/terminal-bench](https://github.com/harbor-framework/terminal-bench). qwen dictates🤴*
 
@@ -191,7 +192,7 @@ is there a seahorse emoji?
 
 it failed:
 
-![](/assets/blog/qwen-agentic-coding/2.png)
+![](2.png)
 
 if you want to know why it failed you can read this!  [AI's Uncanny "Seahorse Problem" \| by Ignacio de Gregorio - Freedium](https://freedium-mirror.cfd/https://medium.com/@ignacio.de.gregorio.noblejas/ais-uncanny-seahorse-problem-81a5ab91c87c)
 

@@ -189,8 +189,8 @@ class TidyTest(unittest.TestCase):
 
 class RewritePostLinksTest(unittest.TestCase):
     TARGETS = {
-        "30ef432196de80b287f2e297420d1d46": "2026-02-21-macos-setup-i",
-        "shell-tools": "2026-04-29-shell",
+        "30ef432196de80b287f2e297420d1d46": "/blog/macos-setup-i/",
+        "shell-tools": "/blog/shell-toolkit-i/",
     }
 
     def rewrite(self, markdown: str) -> str:
@@ -198,15 +198,15 @@ class RewritePostLinksTest(unittest.TestCase):
 
     def test_page_id_links_become_post_urls(self):
         md = "[my macos I](https://nodokas.notion.site/30ef432196de80b287f2e297420d1d46)"
-        self.assertEqual(self.rewrite(md), "[my macos I]({% post_url 2026-02-21-macos-setup-i %})")
+        self.assertEqual(self.rewrite(md), "[my macos I](/blog/macos-setup-i/)")
 
     def test_readable_title_urls_with_query_strings_match_by_id(self):
         md = "(https://nodokas.notion.site/macOS-Optimization-30ef432196de80b287f2e297420d1d46?source=copy_link)"
-        self.assertEqual(self.rewrite(md), "({% post_url 2026-02-21-macos-setup-i %})")
+        self.assertEqual(self.rewrite(md), "(/blog/macos-setup-i/)")
 
     def test_custom_slugs_match(self):
         md = "[NEW PAGE](https://nodokas.notion.site/shell-tools?source=copy_link)"
-        self.assertEqual(self.rewrite(md), "[NEW PAGE]({% post_url 2026-04-29-shell %})")
+        self.assertEqual(self.rewrite(md), "[NEW PAGE](/blog/shell-toolkit-i/)")
 
     def test_other_notion_pages_are_left_alone(self):
         md = "[x](https://nodokas.notion.site/unrelated-page)"

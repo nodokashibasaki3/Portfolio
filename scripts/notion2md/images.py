@@ -19,11 +19,11 @@ EXTENSIONS = {"image/png": ".png", "image/jpeg": ".jpg", "image/gif": ".gif", "i
 MARKDOWN_IMAGE = re.compile(r"(!\[[^\]]*\]\()([^)\s]+)(\))")
 
 
-def localize_images(markdown: str, site_domain: str, asset_dir: Path, public_prefix: str) -> str:
-    """Download images served by the Notion site into asset_dir and point the Markdown at them.
+def localize_images(markdown: str, site_domain: str, post_dir: Path) -> str:
+    """Download images served by the Notion site next to the post and link them by file name.
 
-    Images hosted elsewhere are left as-is. public_prefix is the URL path for asset_dir,
-    e.g. "/assets/blog/my-post".
+    Relative links (`![..](1.png)`) work on the site and in editor Markdown previews.
+    Images hosted elsewhere are left as-is.
     """
     notion_prefix = f"https://{site_domain}/image/"
     count = 0
@@ -34,8 +34,8 @@ def localize_images(markdown: str, site_domain: str, asset_dir: Path, public_pre
         if not url.startswith(notion_prefix):
             return match.group(0)
         count += 1
-        filename = _download(url, asset_dir, f"{count}")
-        return f"{match.group(1)}{public_prefix}/{filename}{match.group(3)}"
+        filename = _download(url, post_dir, f"{count}")
+        return f"{match.group(1)}{filename}{match.group(3)}"
 
     return MARKDOWN_IMAGE.sub(replace, markdown)
 
@@ -45,18 +45,20 @@ def localize_preview_images(
 ) -> dict[str, dict[str, str]]:
     """Save link-card thumbnails locally; drop ones that no longer load (e.g. expired Maps photos)."""
     localized = {}
-    for number, (url, preview) in enumerate(previews.items(), start=1):
+    saved = 0
+    for url, preview in previews.items():
         image = preview.get("image")
         if not image or image.startswith("/"):
             localized[url] = preview
             continue
         rest = {key: value for key, value in preview.items() if key != "image"}
         try:
-            filename = _download(image, asset_dir, f"cover-{number}", MAX_COVER_WIDTH_PX)
+            filename = _download(image, asset_dir, f"cover-{saved + 1}", MAX_COVER_WIDTH_PX)
         except (OSError, ValueError) as err:
             log.info("dropping card thumbnail that no longer loads: %s (%s)", image[:80], err)
             localized[url] = rest
             continue
+        saved += 1
         localized[url] = {**rest, "image": f"{public_prefix}/{filename}"}
     return localized
 

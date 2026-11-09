@@ -1,13 +1,14 @@
 ---
 layout: post
 title: "Introducing my Shell Toolkit I"
+date: 2026-04-29
 ---
 
 i am nodoka.
 
-this post introduces my current shell tool stack. it was originally part of my [my macos I]({% post_url 2026-02-21-macos-setup-i %}) blog, but that write-up became too long, so i moved the shell tooling into its own post.
+this post introduces my current shell tool stack. it was originally part of my [my macos I](/blog/macos-setup-i/) blog, but that write-up became too long, so i moved the shell tooling into its own post.
 
-in the process, i lost the original draft from the [my macos I]({% post_url 2026-02-21-macos-setup-i %}). that is probably for the better… the tools i listed then were not particularly strong (and i may feel the same about this list in a few months). for now, i’m calling this *my shell toolkit i*, leaving room for a future *ii*.
+in the process, i lost the original draft from the [my macos I](/blog/macos-setup-i/). that is probably for the better… the tools i listed then were not particularly strong (and i may feel the same about this list in a few months). for now, i’m calling this *my shell toolkit i*, leaving room for a future *ii*.
 
 side note: i’ve finished my last exam this morning. this is my leisure time!
 
@@ -44,7 +45,7 @@ side note: i’ve finished my last exam this morning. this is my leisure time!
 > {% include card.html url="https://github.com/neovim/neovim" %}
 {: .callout .callout-link}
 
-i talked about this already in [my macos I]({% post_url 2026-02-21-macos-setup-i %}) blog, but `neovim` is where this whole shell obsession started. once i was living inside a terminal editor, everything else followed. i wanted the tools around it to match that speed and keyboard-first feel.
+i talked about this already in [my macos I](/blog/macos-setup-i/) blog, but `neovim` is where this whole shell obsession started. once i was living inside a terminal editor, everything else followed. i wanted the tools around it to match that speed and keyboard-first feel.
 
 neovim is also what ties most of this stack together. [ripgrep](https://github.com/burntsushi/ripgrep) as the grep backend, [fzf](https://github.com/junegunn/fzf) for fuzzy finding, [vim-fugitive](https://github.com/tpope/vim-fugitive) for git. they're all plugins or integrations that live inside neovim. so it belongs at the top.
 

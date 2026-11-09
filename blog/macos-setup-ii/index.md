@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "Introducing my macOS Setup II"
+date: 2026-05-31
 ---
 
-i’m nodoka. this writing is my updated / continuation of [my macos I]({% post_url 2026-02-21-macos-setup-i %}) blog.
+i’m nodoka. this writing is my updated / continuation of [my macos I](/blog/macos-setup-i/) blog.
 
 i set up my `macos II blog` long time ago and i have been meaning to post this but i have not had enough updates worth to post. maybe now, i have enough to post, although not as volumetric as my first one.
 
@@ -70,17 +71,17 @@ funny enough, I found about this website because I was looking for icons for the
 > {% include card.html url="https://github.com/nodokashibasaki3/quire" %}
 {: .callout .callout-link}
 
-I mentioned in my [my macos I]({% post_url 2026-02-21-macos-setup-i %}) that I use [logseq](https://github.com/logseq/logseq) for daily todo list management. I like that [logseq](https://github.com/logseq/logseq) is open sourced, markdown-based (allows vim) and that it generates a journal everyday automatically. some gaps I saw in logseq is that vim control is semi-broken, design is ugly, it has no canvas integration (as notion does) and it does not carry forward tasks automatically.
+I mentioned in my [my macos I](/blog/macos-setup-i/) that I use [logseq](https://github.com/logseq/logseq) for daily todo list management. I like that [logseq](https://github.com/logseq/logseq) is open sourced, markdown-based (allows vim) and that it generates a journal everyday automatically. some gaps I saw in logseq is that vim control is semi-broken, design is ugly, it has no canvas integration (as notion does) and it does not carry forward tasks automatically.
 
 I have fixed all these gaps in my app [quire](https://github.com/nodokashibasaki3/quire) which is a macos native app built in swift. a *quire* is a set of four sheets of paper folded together to form eight leaves which is the building block of an old-school notebook. my hope is that this application gives me the minimal features needed to track my todo tasks cleanly.
 
 this app has its own quirks that could use some debugging… lol
 
-![features of app](/assets/blog/macos-setup-ii/1.png)
+![features of app](1.png)
 
-![set your canvas API key in settings](/assets/blog/macos-setup-ii/2.png)
+![set your canvas API key in settings](2.png)
 
-![change the path of your todo list file in settings](/assets/blog/macos-setup-ii/3.png)
+![change the path of your todo list file in settings](3.png)
 
 ## macos settings
 

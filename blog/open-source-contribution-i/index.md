@@ -1,11 +1,12 @@
 ---
 layout: post
 title: "Open Source Contribution I"
+date: 2026-02-22
 ---
 
 i’m [Nodoka Shibasaki \| Northeastern University](https://nodokas.com/).
 
-this is development log of my open-source contribution to [notion-assignment-import](https://github.com/JamesNZL/notion-assignment-import). in my Blog [my macos I]({% post_url 2026-02-21-macos-setup-i %}) I mentioned that I use [Notion Canvas Assignment Import - Chrome Web Store](https://chromewebstore.google.com/detail/notion-canvas-assignment/elbkjcjgakaoccocmbglokgmalkoacie) to pull Assignments from Canvas to Notion database.
+this is development log of my open-source contribution to [notion-assignment-import](https://github.com/JamesNZL/notion-assignment-import). in my Blog [my macos I](/blog/macos-setup-i/) I mentioned that I use [Notion Canvas Assignment Import - Chrome Web Store](https://chromewebstore.google.com/detail/notion-canvas-assignment/elbkjcjgakaoccocmbglokgmalkoacie) to pull Assignments from Canvas to Notion database.
 
 i decided to build a better version of this for myself and others. after a few hours of digging into Chrome internals and TypeScript since midnight, I finally got it working.
 
@@ -26,7 +27,7 @@ the motivation was clear, but I had one obvious problem: I didn’t know `typeSc
 > - [typeScript crash course](https://www.youtube.com/watch?v=BwuLxPH8IDs) - watching selective snippets was enough.
 > - [MCP clearly explained](https://www.youtube.com/watch?v=7j_NE6Pjv-E) - crash course on integrating these new agentic tools.
 >
-> ![MCP > HTTPS → my takeaway](/assets/blog/open-source-contribution-i/1.png)
+> ![MCP > HTTPS → my takeaway](1.png)
 {: .callout}
 
 ## Figured out what I need to do to achieve my goal!
@@ -37,7 +38,7 @@ have a background service worker would wake up on a `chrome.alarms` trigger, f
 
 when [Extensions / Manifest V3  \|  Chrome for Developers](https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3) (the new, stricter set of rules for chrome extensions) started being my worst nightmare, i tried to fire the sync function in the background. i was half-asleep so i couldn't tell if it was an actual nightmare, but then everything *silently* exploded 💥 so yes, this was very real.
 
-![me in my room at 1AM.](/assets/blog/open-source-contribution-i/2.png)
+![me in my room at 1AM.](2.png)
 
 the funniest part was that because of how `manifest v3` uses `service workers`, scripts ran in the background without a browser tab, but there was no error message on the screen. everything just **stopped 😵‍💫**. even funnier, i was actually enjoying this new challenge at 1 am.
 
@@ -131,7 +132,7 @@ surprisingly, I **learned** a lot in these three hours…
 
 ## Extra: my setup for this contribution ✨
 
-> I mentioned in [my macos I]({% post_url 2026-02-21-macos-setup-i %}) that I used iTerm and even said, "I do not need it to be fast." Then I actually realized how slow it was through this project.
+> I mentioned in [my macos I](/blog/macos-setup-i/) that I used iTerm and even said, "I do not need it to be fast." Then I actually realized how slow it was through this project.
 
 > {% include card.html url="https://github.com/ghostty-org/ghostty" %}
 >

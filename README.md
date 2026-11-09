@@ -14,7 +14,16 @@ An improved vision from [@Xiao-Chenguang](https://github.com/Xiao-Chenguang): [[
 
 ## Blog posts
 
-Posts are plain Markdown in `_posts/YYYY-MM-DD-slug.md`. All formatting lives outside them:
+Each post is a folder in `blog/` holding the post and its images, served at `/blog/<slug>/`:
+
+```
+blog/macos-setup-ii/
+├── index.md       # front matter (layout: post, title, date) + plain Markdown
+├── 1.png          # images, linked by file name: ![caption](1.png)
+└── cover-1.jpg    # link-card thumbnails
+```
+
+All formatting lives outside the posts:
 
 | What | Where |
 |---|---|
@@ -22,8 +31,9 @@ Posts are plain Markdown in `_posts/YYYY-MM-DD-slug.md`. All formatting lives ou
 | Styles | `assets/css/blog.css` |
 | Link cards | `_includes/card.html` → `bookmark.html` / `github-card.html` |
 | Card titles, descriptions, icons, thumbnails | `_data/link_previews.json` |
-| Images | `assets/blog/<slug>/` |
 | Homepage blog list | `_data/blog.yml` |
+
+To add a post, create `blog/<slug>/index.md` and add an entry to `_data/blog.yml`.
 
 Two conventions beyond normal Markdown:
 

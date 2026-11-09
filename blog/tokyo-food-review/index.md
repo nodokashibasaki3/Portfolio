@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Tokyo Food Review"
+date: 2026-01-01
 ---
 
 ### Background
