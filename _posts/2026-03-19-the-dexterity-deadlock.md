@@ -51,9 +51,4 @@ Is hardware the only answer? Probably not. But until we have actuators that matc
 
 Stay tuned for our next post on contact modeling!
 
-{% include bookmark.html 
-    url="https://www.origami-robotics.com" 
-    title="Origami Robotics" 
-    description="Building the next generation of dexterous robot hands with quasi-direct drive actuators." 
-    image="https://images.unsplash.com/photo-1531746790731-6c087fecd05a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-%}
+{% include card.html url="https://www.origami-robotics.com" %}

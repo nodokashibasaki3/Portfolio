@@ -41,15 +41,8 @@ side note: i’ve finished my last exam this morning. this is my leisure time!
 
 ## neovim
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include github-card.html url="https://github.com/neovim/neovim" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/neovim/neovim" %}
+{: .callout .callout-link}
 
 i talked about this already in [my macos I]({% post_url 2026-02-21-macos-setup-i %}) blog, but `neovim` is where this whole shell obsession started. once i was living inside a terminal editor, everything else followed. i wanted the tools around it to match that speed and keyboard-first feel.
 
@@ -59,15 +52,8 @@ if you haven't read the macos post, the short version: neovim is an improved vim
 
 ## git
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include github-card.html url="https://github.com/git/git" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/git/git" %}
+{: .callout .callout-link}
 
 for obvious reasons, you need git. it tracks and manages changes in your code. technically, a "distributed version control system." note that git is not github. git is THE version control system. GitHub is just a web-based host for your git repos.
 
@@ -77,15 +63,8 @@ i use [commitlint](https://github.com/conventional-changelog/commitlint) on git 
 
 ## tig
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include github-card.html url="https://github.com/jonas/tig" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/jonas/tig" %}
+{: .callout .callout-link}
 
 have you ever:
 
@@ -104,15 +83,8 @@ and it is so pretty. you get a colored, navigable graph of your entire commit hi
 
 ## vim-fugitive
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include github-card.html url="https://github.com/tpope/vim-fugitive" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/tpope/vim-fugitive" %}
+{: .callout .callout-link}
 
 vim-fugitive is a git wrapper for neovim. the killer feature for me is `:G` (or `:Git`), which opens a staging window right inside neovim. you can stage individual hunks with `s`, unstage with `u`, and commit without ever touching the terminal.
 
@@ -131,15 +103,8 @@ it also means `gd` in the diff view, which i already love for code navigation, n
 
 ## fd
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include github-card.html url="https://github.com/sharkdp/fd" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/sharkdp/fd" %}
+{: .callout .callout-link}
 
 `fd` is a replacement for `find`. i find `find` is annoying to use.
 
@@ -155,15 +120,8 @@ fd is faster, respects `.gitignore` by default, and the output is color-coded. t
 
 ## tmux
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include github-card.html url="https://github.com/tmux/tmux" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/tmux/tmux" %}
+{: .callout .callout-link}
 
 i learned why i needed tmux the hard way.
 
@@ -182,15 +140,8 @@ my most used shortcuts:
 
 ## sshs
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include github-card.html url="https://github.com/quantumsheep/sshs" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/quantumsheep/sshs" %}
+{: .callout .callout-link}
 
 i had an `~/.ssh/config` file. it worked. but remembering which alias mapped to which machine, especially when i'm managing a few different servers, was friction i did not need.
 
@@ -200,15 +151,8 @@ small tool, but i use it every day.
 
 ## htop
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include github-card.html url="https://github.com/htop-dev/htop" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/htop-dev/htop" %}
+{: .callout .callout-link}
 
 htop is an interactive process viewer. you probably know `top` but, htop is just better. color-coded CPU and memory bars, scrollable process list, and you can kill or renice processes directly from the interface.
 
@@ -218,15 +162,8 @@ i usually have it open in a tmux pane alongside whatever job is running. so i ca
 
 ## rsync
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include github-card.html url="https://github.com/RsyncProject/rsync" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/RsyncProject/rsync" %}
+{: .callout .callout-link}
 
 have you ever tried to copy a file that so large it takes 10 hours to copy? i have!
 
@@ -236,15 +173,8 @@ well, no more crashouts because now you can `rsync` your files. you can pause th
 
 ## rclone
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include github-card.html url="https://github.com/rclone/rclone" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/rclone/rclone" %}
+{: .callout .callout-link}
 
 `rclone` is rsync, but for cloud storage. i use it to sync data to and from AWS S3. the interface is almost identical to rsync, which made it easy to pick up.
 
@@ -256,15 +186,8 @@ useful when you have model checkpoints or datasets sitting on a remote server th
 
 ## dua-cli
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include github-card.html url="https://github.com/byron/dua-cli" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/byron/dua-cli" %}
+{: .callout .callout-link}
 
 [baobab](https://github.com/Yomguithereal/baobab)
 
@@ -274,15 +197,8 @@ baobab is the GUI equivalent. it is more visual, better for when you want a bird
 
 ## zoxide
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include github-card.html url="https://github.com/ajeetdsouza/zoxide" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/ajeetdsouza/zoxide" %}
+{: .callout .callout-link}
 
 i got tired of typing `cd ../../some/deeply/nested/folder` every time i wanted to go somewhere i had already been. zoxide tracks the directories you visit and lets you jump to them by typing a fraction of the name.
 
@@ -304,15 +220,8 @@ one of those tools where you install it and wonder how you lived without it.
 
 ## pueue
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include github-card.html url="https://github.com/Nukesor/pueue" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/Nukesor/pueue" %}
+{: .callout .callout-link}
 
 when i want to test several model configs overnight, i can't just run them all in parallel. i don't have enough compute for that. i used to run one job, wait for it to finish, come back, start the next one. that got old fast.
 
@@ -328,15 +237,8 @@ now i queue everything up before i go to sleep and check results in the morning.
 
 ## ripgrep
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include github-card.html url="https://github.com/burntsushi/ripgrep" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/burntsushi/ripgrep" %}
+{: .callout .callout-link}
 
 ripgrep (`rg`) is a line-oriented search tool. it's faster than `grep`, respects `.gitignore`, and the output is color-coded by default.
 
@@ -350,15 +252,8 @@ once you have ripgrep as your neovim grep backend, searching your project feels 
 
 ## neovim
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include github-card.html url="https://github.com/neovim/neovim" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/neovim/neovim" %}
+{: .callout .callout-link}
 
 neovim actually changed my life. neovim is improved version of vim that allows you to write the config in `.lua` . if you are in the software space, you should learn neovim. at least vim. however, i must say that because i use VSCode neovim, i end up using basic vim. i am moving onto neovim editor based coding outside of ides.
 
@@ -372,15 +267,8 @@ you can setup neovim with [kickstart.nvim](https://github.com/nvim-lua/kickstart
 
 ## hyperfine
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include github-card.html url="https://github.com/sharkdp/hyperfine" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/sharkdp/hyperfine" %}
+{: .callout .callout-link}
 
 hyperfine is a command-line benchmarking tool. you give it a command (or two), it runs them many times, and gives you mean, standard deviation, and a comparison if you pass multiple.
 

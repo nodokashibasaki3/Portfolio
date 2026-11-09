@@ -87,17 +87,3 @@ def to_html(segments: list[Segment] | None) -> str:
                 text = f"<{tag}>{text}</{tag}>"
         out.append(text)
     return "".join(out).strip()
-
-
-def first_url(segments: list[Segment] | None, link_urls: dict[str, str]) -> str | None:
-    """First http(s) URL in rich text: plain links, link mentions, or cached link previews."""
-    for segment in segments or []:
-        for mark in _marks(segment):
-            kind = mark[0]
-            if kind == "a" and str(mark[1]).startswith("http"):
-                return mark[1]
-            if kind == "lm":
-                return mark[1].get("href")
-            if kind == "eoi" and mark[1] in link_urls:
-                return link_urls[mark[1]]
-    return None

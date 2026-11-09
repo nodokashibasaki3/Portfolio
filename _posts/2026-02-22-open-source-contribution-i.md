@@ -21,22 +21,13 @@ the way the original plugin works is repetitive. you have to open every course p
 
 the motivation was clear, but I had one obvious problem: I didn’t know `typeScript` or `mcp`. I spent a good hour just staring at the codebase, realized I didn't understand a single line, and ended up back on youtube just to figure out the absolute basics before I could even start.
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true"><img class="favicon" src="https://www.google.com/s2/favicons?domain=www.youtube.com&sz=64" alt="" loading="lazy"></span>
-
-<div class="callout-body" markdown="1">
-
-**how I started 📹:**
-
-- [typeScript crash course](https://www.youtube.com/watch?v=BwuLxPH8IDs) - watching selective snippets was enough.
-- [MCP clearly explained](https://www.youtube.com/watch?v=7j_NE6Pjv-E) - crash course on integrating these new agentic tools.
-
-![MCP > HTTPS → my takeaway](/assets/blog/open-source-contribution-i/1.png)
-
-</div>
-
-</div>
+> **how I started 📹:**
+>
+> - [typeScript crash course](https://www.youtube.com/watch?v=BwuLxPH8IDs) - watching selective snippets was enough.
+> - [MCP clearly explained](https://www.youtube.com/watch?v=7j_NE6Pjv-E) - crash course on integrating these new agentic tools.
+>
+> ![MCP > HTTPS → my takeaway](/assets/blog/open-source-contribution-i/1.png)
+{: .callout}
 
 ## Figured out what I need to do to achieve my goal!
 
@@ -58,34 +49,20 @@ ReferenceError: window is not defined
 ReferenceError: document is not defined
 ```
 
-<div class="callout">
+> ⚠️ ⚠️
+>
+> **The DOM Dependencies**
+>
+> the original `exporttonotion` logic was tightly coupled to the UI. it assumed it was running in a popup and repeatedly tried to call `alert()` to handle errors. `service workers` don't have a `window` object (the browser window), so every time an error fired, the worker crashed instantly because it didn't know what an `alert` was.
+>
+> the real headache was [domparser](https://github.com/thednp/domparser). `domparser`is a high-level library that converts html strings to the DOM tree that can be queried. the original logic used it to scrape assignment data from canvas `html` strings. that works in a normal browser tab, but `service workers` are headless meaning they have no "page" to look at. since they have no `window` or `document`, `DOMParser` just doesn't exist there. i had to follow the export logic and strip out all browser-specific UI dependencies so it could run blindly in the background.
+{: .callout}
 
-<span class="callout-icon" aria-hidden="true">⚠️</span>
-
-<div class="callout-body" markdown="1">
-
-**The DOM Dependencies**
-
-the original `exporttonotion` logic was tightly coupled to the UI. it assumed it was running in a popup and repeatedly tried to call `alert()` to handle errors. `service workers` don't have a `window` object (the browser window), so every time an error fired, the worker crashed instantly because it didn't know what an `alert` was.
-
-the real headache was [domparser](https://github.com/thednp/domparser). `domparser`is a high-level library that converts html strings to the DOM tree that can be queried. the original logic used it to scrape assignment data from canvas `html` strings. that works in a normal browser tab, but `service workers` are headless meaning they have no "page" to look at. since they have no `window` or `document`, `DOMParser` just doesn't exist there. i had to follow the export logic and strip out all browser-specific UI dependencies so it could run blindly in the background.
-
-</div>
-
-</div>
-
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true">✨</span>
-
-<div class="callout-body" markdown="1">
-
-**Fix to DOM issue…**
-ultimately, the main fix was moving away from `domparser`. since i couldn't use the browser's built-in tools to read the canvas html, i had to find a way to parse the data "blindly." i ended up using a lightweight library called [cheerio](https://github.com/cheeriojs/cheerio) (or a similar html-to-json logic). it allowed me to treat the canvas assignments like a simple data structure rather than a live webpage.
-
-</div>
-
-</div>
+> ✨ ✨
+>
+> **Fix to DOM issue…**
+> ultimately, the main fix was moving away from `domparser`. since i couldn't use the browser's built-in tools to read the canvas html, i had to find a way to parse the data "blindly." i ended up using a lightweight library called [cheerio](https://github.com/cheeriojs/cheerio) (or a similar html-to-json logic). it allowed me to treat the canvas assignments like a simple data structure rather than a live webpage.
+{: .callout}
 
 right after solving that `refactor`, i hit the next wall 😞
 
@@ -93,37 +70,23 @@ right after solving that `refactor`, i hit the next wall 😞
 
 If you’re wondering what a bundler even is, don’t worry I also had no idea until last night. it basically compiles your `typescript` into `javascript` and packages all your files together so chrome can actually run the extension.
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true">⚠️</span>
-
-<div class="callout-body" markdown="1">
-
-**ESM Module**
-
-to use modern imports in `background.ts`, i added `"type": "module"` to the manifest. but here’s the problem: the extension relies heavily on `moment-timezone`.
-
-the legacy `gulp` and `browserify` build pipeline (the tools used to "link" the code) completely choked trying to resolve those third-party dependencies inside an isolated `service worker` bundle. nothing would compile because the old tools didn't know how to handle the new module format.
-
-</div>
-
-</div>
+> ⚠️ ⚠️
+>
+> **ESM Module**
+>
+> to use modern imports in `background.ts`, i added `"type": "module"` to the manifest. but here’s the problem: the extension relies heavily on `moment-timezone`.
+>
+> the legacy `gulp` and `browserify` build pipeline (the tools used to "link" the code) completely choked trying to resolve those third-party dependencies inside an isolated `service worker` bundle. nothing would compile because the old tools didn't know how to handle the new module format.
+{: .callout}
 
 after hitting a dead end with the legacy tools, i decided to scrap the `gulp` and `browserify`pipeline entirely.
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true">✨</span>
-
-<div class="callout-body" markdown="1">
-
-**fix? i switched to** [bun](https://github.com/oven-sh/bun)**.**
-
-*what is that? you may ask.* it’s actually sick! `bun` is an all-in-one toolchain (written in **zig**) that handles everything. coming from low-level dev, this felt way more natural. it’s basically the difference between a slow, clunky build script and a high-performance native compiler!!
-
-</div>
-
-</div>
+> ✨ ✨
+>
+> **fix? i switched to** [bun](https://github.com/oven-sh/bun)**.**
+>
+> *what is that? you may ask.* it’s actually sick! `bun` is an all-in-one toolchain (written in **zig**) that handles everything. coming from low-level dev, this felt way more natural. it’s basically the difference between a slow, clunky build script and a high-performance native compiler!!
+{: .callout}
 
 It solved my problems with bundler almost instantly. instead of fighting with the legacy "linker" that couldn't handle the new `esm` modules, [bun](https://github.com/oven-sh/bun) just understood them. it took my disorganized pile of `typescript` and `moment-timezone` dependencies and squashed them into a clean `background.js` file in milliseconds.
 
@@ -140,33 +103,24 @@ i managed to push through and get the core automation working. here’s the brea
 
 surprisingly, I **learned** a lot in these three hours…
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true">💡</span>
-
-<div class="callout-body" markdown="1">
-
-<details markdown="1"><summary>1. service workers are RUTHLESS 😭</summary>
-
-they demand total isolation. no `window`, no `document`, and definitely no `alert()`. unlike bare-metal programming where you can usually reach out and touch any peripheral, `manifest v3` traps you in a  sandbox with zero visibility into the ui. thus, abstracting your logic is the only way to keep the code from crashing.
-
-</details>
-
-<details markdown="1"><summary>2. bundlers HATE background scripts 👎</summary>
-
-trying to link external modules like `moment-timezone` into an isolated background worker is a nightmare. it requires a perfectly tuned pipeline, or the whole thing just chokes.
-
-</details>
-
-<details markdown="1"><summary>3. the best UI is NO UI 🙅‍♀️</summary>
-
-scouring local storage for existing data is infinitely better than forcing the user to fill out another settings field. if the data is already there, just use it.
-
-</details>
-
-</div>
-
-</div>
+> <details markdown="1"><summary>1. service workers are RUTHLESS 😭</summary>
+>
+> they demand total isolation. no `window`, no `document`, and definitely no `alert()`. unlike bare-metal programming where you can usually reach out and touch any peripheral, `manifest v3` traps you in a  sandbox with zero visibility into the ui. thus, abstracting your logic is the only way to keep the code from crashing.
+>
+> </details>
+>
+> <details markdown="1"><summary>2. bundlers HATE background scripts 👎</summary>
+>
+> trying to link external modules like `moment-timezone` into an isolated background worker is a nightmare. it requires a perfectly tuned pipeline, or the whole thing just chokes.
+>
+> </details>
+>
+> <details markdown="1"><summary>3. the best UI is NO UI 🙅‍♀️</summary>
+>
+> scouring local storage for existing data is infinitely better than forcing the user to fill out another settings field. if the data is already there, just use it.
+>
+> </details>
+{: .callout}
 
 ### What is Next?
 
@@ -179,33 +133,15 @@ scouring local storage for existing data is infinitely better than forcing the u
 
 > I mentioned in [my macos I]({% post_url 2026-02-21-macos-setup-i %}) that I used iTerm and even said, "I do not need it to be fast." Then I actually realized how slow it was through this project.
 
-<div class="callout">
+> {% include card.html url="https://github.com/ghostty-org/ghostty" %}
+>
+> GPU-accelerated terminal, much needed for this development.
+{: .callout}
 
-<span class="callout-icon" aria-hidden="true"><img class="favicon" src="https://www.google.com/s2/favicons?domain=github.com&sz=64" alt="" loading="lazy"></span>
-
-<div class="callout-body" markdown="1">
-
-{% include github-card.html url="https://github.com/ghostty-org/ghostty" %}
-
-GPU-accelerated terminal, much needed for this development.
-
-</div>
-
-</div>
-
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true"><img class="favicon" src="https://www.google.com/s2/favicons?domain=github.com&sz=64" alt="" loading="lazy"></span>
-
-<div class="callout-body" markdown="1">
-
-{% include github-card.html url="https://github.com/zellij-org/zellij" %}
-
-cool multiplexer.
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/zellij-org/zellij" %}
+>
+> cool multiplexer.
+{: .callout}
 
 I had
 
@@ -215,18 +151,9 @@ I had
 
 i also utilized the sequential thinking mcp server to break down the complex codebase jumps. it was helpful when mapping out how the existing `storage` api connected to the popup's state.
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true"><img class="favicon" src="https://www.google.com/s2/favicons?domain=github.com&sz=64" alt="" loading="lazy"></span>
-
-<div class="callout-body" markdown="1">
-
-for those interested in the repo.
-
-{% include github-card.html url="https://github.com/nodokashibasaki3/notion-assignment-import-deltas/tree/main" %}
-
-</div>
-
-</div>
+> for those interested in the repo.
+>
+> {% include card.html url="https://github.com/nodokashibasaki3/notion-assignment-import-deltas/tree/main" %}
+{: .callout}
 
 thanks for reading👋

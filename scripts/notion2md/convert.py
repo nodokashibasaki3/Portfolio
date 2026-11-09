@@ -1,7 +1,9 @@
-"""Convert a Notion page's blocks into Markdown for this Jekyll site.
+"""Convert a Notion page's blocks into plain Markdown for this Jekyll site.
 
-Link previews become `{% include bookmark.html %}` / `{% include github-card.html %}` cards,
-callouts become `<div class="callout">` boxes (styled in _includes/blog-styles.html).
+Posts keep formatting out of the Markdown (see README "Blog posts"):
+- link previews become `{% include card.html url="..." %}`; their details are collected in
+  `Converter.previews` for _data/link_previews.json
+- callouts become quotes tagged `{: .callout}`, styled by assets/css/blog.css
 """
 
 from __future__ import annotations
@@ -13,7 +15,7 @@ from collections.abc import Callable
 from typing import Any, Protocol
 
 from .local_cache import LocalCache
-from .rich_text import Mark, escape_pipes, first_url, plain_text, to_html, to_markdown
+from .rich_text import Mark, escape_pipes, plain_text, to_html, to_markdown
 
 log = logging.getLogger(__name__)
 
@@ -28,8 +30,6 @@ SKIPPED_TYPES = {"table_of_contents"}
 
 # A heading that is only a greeting word plus punctuation/emoji, e.g. "hey 👋" or "hello."
 GREETING = re.compile(r"^(?:hey|hello|hi)\b[\W_]*$")
-DEFAULT_CALLOUT_ICON = "💡"
-FAVICON_URL = "https://www.google.com/s2/favicons?domain={domain}&sz=64"
 # Titles Notion saves when a site shows a bot check instead of the real page.
 BOT_CHECK_TITLES = ("establishing a secure connection", "just a moment", "attention required")
 UNRESOLVED_LINK = "[link?]"
@@ -53,18 +53,33 @@ def domain_of(url: str) -> str:
     return urllib.parse.urlparse(url).netloc
 
 
-def favicon_img(url: str) -> str:
-    src = FAVICON_URL.format(domain=domain_of(url))
-    return f'<img class="favicon" src="{src}" alt="" loading="lazy">'
+def link_preview(block: Block, url: str) -> dict[str, str]:
+    """Title, description, icon, and thumbnail Notion saved for a bookmark (empty fields dropped)."""
+    props, fmt = block.get("properties", {}), block.get("format", {})
+    title, description = plain_text(props.get("title")), plain_text(props.get("description"))
+    if title.lower().startswith(BOT_CHECK_TITLES):
+        title, description = domain_of(url).removeprefix("www."), ""
+    preview = {
+        "title": title.strip(),
+        "description": description.strip(),
+        "image": fmt.get("bookmark_cover", ""),
+        "icon": fmt.get("bookmark_icon", ""),
+    }
+    return {key: value for key, value in preview.items() if value}
 
 
 class Converter:
-    """Renders one page. Create a new Converter per page."""
+    """Renders one page. Create a new Converter per page.
+
+    After convert(), `previews` maps each card URL to its preview details, for
+    _data/link_previews.json.
+    """
 
     def __init__(self, blocks: dict[str, Block], cache: LocalCache, pages: PageLookup) -> None:
         self.blocks = blocks
         self.cache = cache
         self.pages = pages
+        self.previews: dict[str, dict[str, str]] = {}
         self._handlers: dict[str, Callable[[Block, int], list[str]]] = {
             **{kind: self._heading for kind in HEADING_MARKS},
             **{kind: self._list_item for kind in LIST_MARKS},
@@ -184,30 +199,22 @@ class Converter:
         return [f"{INDENT * depth}> {self._text(block)}", *self._children(block, depth + 1)]
 
     def _callout(self, block: Block, depth: int) -> list[str]:
+        """A quote tagged {: .callout}, which assets/css/blog.css draws as a gray box."""
+        link_only = self._is_link_only(block)
         text = self._text(block)
-        body = ([text] if text else []) + self._children(block, 0)
-        if self._is_link_only(block):
-            # The card carries its own icon, so the box holds just the card.
-            return [
-                '<div class="callout callout-link">',
-                '<div class="callout-body">',
-                "",
-                *body,
-                "",
-                "</div>",
-                "</div>",
-            ]
-        icon = f'<span class="callout-icon" aria-hidden="true">{self._callout_icon(block)}</span>'
-        return [
-            '<div class="callout">',
-            icon,
-            '<div class="callout-body" markdown="1">',
-            "",
-            *body,
-            "",
-            "</div>",
-            "</div>",
-        ]
+        emoji = block.get("format", {}).get("page_icon", "")
+        if emoji.startswith(("http", "/")) or link_only:  # custom image icons; cards have their own
+            emoji = ""
+        first = f"{emoji} {text}".strip()
+        parts = ([first] if first else []) + self._children(block, 0)
+        if emoji and not text and parts:
+            parts[0] = f"{emoji} {parts[0]}"
+        ind = INDENT * depth
+        body = tidy("\n\n".join(parts)).rstrip("\n")  # tidy before quoting, so lists stay tight
+        quoted = [f"{ind}>" if not line else f"{ind}> {line}" for line in body.split("\n")]
+        classes = ".callout .callout-link" if link_only else ".callout"
+        # One entry, so no blank line separates the quote from the tag that styles it.
+        return ["\n".join([*quoted, f"{ind}{{: {classes}}}"])]
 
     def _is_link_only(self, block: Block) -> bool:
         children = block.get("content") or []
@@ -216,26 +223,6 @@ class Converter:
             and not self._text(block)
             and all(self.blocks.get(child, {}).get("type") in LINK_TYPES for child in children)
         )
-
-    def _callout_icon(self, block: Block) -> str:
-        """The Notion emoji if set, else the favicon of the callout's first link, else 💡."""
-        emoji = block.get("format", {}).get("page_icon", "")
-        if emoji and not emoji.startswith(("http", "/")):
-            return emoji
-        url = self._first_url_in(block)
-        return favicon_img(url) if url else DEFAULT_CALLOUT_ICON
-
-    def _first_url_in(self, block: Block) -> str | None:
-        own = first_url(block.get("properties", {}).get("title"), self.cache.link_urls)
-        if own:
-            return own
-        for child_id in block.get("content") or []:
-            child = self.blocks.get(child_id, {})
-            title = child.get("properties", {}).get("title")
-            url = self._block_url(child) or first_url(title, self.cache.link_urls)
-            if url:
-                return url
-        return None
 
     def _code(self, block: Block, depth: int) -> list[str]:
         props = block.get("properties", {})
@@ -264,21 +251,12 @@ class Converter:
         return [f"{ind}[{label}]({url})"]
 
     def _card(self, block: Block, url: str) -> str:
-        if domain_of(url).endswith("github.com"):
-            return f'{{% include github-card.html url="{liquid_str(url)}" %}}'
-        props, fmt = block.get("properties", {}), block.get("format", {})
-        title, description = plain_text(props.get("title")), plain_text(props.get("description"))
-        if title.lower().startswith(BOT_CHECK_TITLES):
-            title, description = domain_of(url).removeprefix("www."), ""
-        params = {
-            "url": url,
-            "title": title,
-            "description": description,
-            "image": fmt.get("bookmark_cover", ""),
-            "icon": fmt.get("bookmark_icon", ""),
-        }
-        args = " ".join(f'{key}="{liquid_str(value)}"' for key, value in params.items() if value)
-        return f"{{% include bookmark.html {args} %}}"
+        """A one-line card include; its preview details go to self.previews, not the post."""
+        if not domain_of(url).endswith("github.com"):
+            preview = link_preview(block, url)
+            if preview:
+                self.previews[url] = preview
+        return f'{{% include card.html url="{liquid_str(url)}" %}}'
 
     def _equation(self, block: Block, depth: int) -> list[str]:
         return [f"$$\n{plain_text(block.get('properties', {}).get('title'))}\n$$"]

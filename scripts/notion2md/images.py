@@ -17,7 +17,6 @@ MAX_WIDTH_PX = 1440  # 2x the 720px post column
 MAX_COVER_WIDTH_PX = 720  # card thumbnails show at about a third of the column
 EXTENSIONS = {"image/png": ".png", "image/jpeg": ".jpg", "image/gif": ".gif", "image/webp": ".webp"}
 MARKDOWN_IMAGE = re.compile(r"(!\[[^\]]*\]\()([^)\s]+)(\))")
-CARD_COVER = re.compile(r' image="(https?://[^"]+)"')  # in {% include bookmark.html ... %}
 
 
 def localize_images(markdown: str, site_domain: str, asset_dir: Path, public_prefix: str) -> str:
@@ -41,22 +40,25 @@ def localize_images(markdown: str, site_domain: str, asset_dir: Path, public_pre
     return MARKDOWN_IMAGE.sub(replace, markdown)
 
 
-def localize_card_covers(markdown: str, asset_dir: Path, public_prefix: str) -> str:
+def localize_preview_images(
+    previews: dict[str, dict[str, str]], asset_dir: Path, public_prefix: str
+) -> dict[str, dict[str, str]]:
     """Save link-card thumbnails locally; drop ones that no longer load (e.g. expired Maps photos)."""
-    count = 0
-
-    def replace(match: re.Match[str]) -> str:
-        nonlocal count
-        url = match.group(1).replace("&amp;", "&")
+    localized = {}
+    for number, (url, preview) in enumerate(previews.items(), start=1):
+        image = preview.get("image")
+        if not image or image.startswith("/"):
+            localized[url] = preview
+            continue
+        rest = {key: value for key, value in preview.items() if key != "image"}
         try:
-            filename = _download(url, asset_dir, f"cover-{count + 1}", MAX_COVER_WIDTH_PX)
+            filename = _download(image, asset_dir, f"cover-{number}", MAX_COVER_WIDTH_PX)
         except (OSError, ValueError) as err:
-            log.info("dropping card thumbnail that no longer loads: %s (%s)", url[:80], err)
-            return ""
-        count += 1
-        return f' image="{public_prefix}/{filename}"'
-
-    return CARD_COVER.sub(replace, markdown)
+            log.info("dropping card thumbnail that no longer loads: %s (%s)", image[:80], err)
+            localized[url] = rest
+            continue
+        localized[url] = {**rest, "image": f"{public_prefix}/{filename}"}
+    return localized
 
 
 def _download(url: str, asset_dir: Path, stem: str, max_width: int = MAX_WIDTH_PX) -> str:

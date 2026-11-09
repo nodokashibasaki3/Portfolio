@@ -11,7 +11,7 @@ from typing import Any
 from .convert import Converter, liquid_str, tidy
 from .links import rewrite_post_links
 from .local_cache import LocalCache
-from .rich_text import first_url, plain_text, to_html, to_markdown
+from .rich_text import plain_text, to_html, to_markdown
 
 PAGE = "page"
 
@@ -34,11 +34,15 @@ def block(block_id: str, kind: str, title: str | None = None, content=(), **extr
     return {"id": block_id, "type": kind, "properties": props, "content": list(content), **extra}
 
 
-def convert(*children: dict, cache: LocalCache | None = None) -> str:
+def converter_for(*children: dict, cache: LocalCache | None = None) -> Converter:
     blocks = {child["id"]: child for child in children}
     top_level = [c["id"] for c in children if not c.get("nested")]
     blocks[PAGE] = block(PAGE, "page", "Post", top_level)
-    return Converter(blocks, cache or LocalCache(), FakePages()).convert(PAGE)
+    return Converter(blocks, cache or LocalCache(), FakePages())
+
+
+def convert(*children: dict, cache: LocalCache | None = None) -> str:
+    return converter_for(*children, cache=cache).convert(PAGE)
 
 
 class RichTextTest(unittest.TestCase):
@@ -52,10 +56,6 @@ class RichTextTest(unittest.TestCase):
 
     def test_html_escapes_text(self):
         self.assertEqual(to_html([["a < b", [["b"]]]]), "<strong>a &lt; b</strong>")
-
-    def test_first_url_prefers_order_in_text(self):
-        segments = [["x"], ["‣", [["eoi", "e1"]]], ["y", [["a", "https://later"]]]]
-        self.assertEqual(first_url(segments, {"e1": "https://github.com/a/b"}), "https://github.com/a/b")
 
     def test_plain_text_ignores_marks(self):
         self.assertEqual(plain_text([["a", [["b"]]], ["b"]]), "ab")
@@ -104,17 +104,17 @@ class ConvertTest(unittest.TestCase):
         text = block("t", "text", properties={"title": [["‣", [["p", "other"]]]]})
         self.assertEqual(convert(text), "[my macos I](https://example.notion.site/other)\n")
 
-    def test_bookmark_becomes_a_card_include(self):
+    def test_bookmark_is_a_short_include_with_details_kept_as_data(self):
         bookmark = block(
             "b",
             "bookmark",
             properties={"link": [["https://reddit.com/r/x"]], "title": [['Say "hi"']]},
             format={"bookmark_icon": "https://icon"},
         )
+        converter = converter_for(bookmark)
+        self.assertEqual(converter.convert(PAGE), '{% include card.html url="https://reddit.com/r/x" %}\n')
         self.assertEqual(
-            convert(bookmark),
-            '{% include bookmark.html url="https://reddit.com/r/x" title="Say &quot;hi&quot;" '
-            'icon="https://icon" %}\n',
+            converter.previews, {"https://reddit.com/r/x": {"title": 'Say "hi"', "icon": "https://icon"}}
         )
 
     def test_bot_check_titles_fall_back_to_the_domain(self):
@@ -127,30 +127,37 @@ class ConvertTest(unittest.TestCase):
                 "description": [["Checking your browser"]],
             },
         )
-        self.assertEqual(
-            convert(bookmark), '{% include bookmark.html url="https://www.site.com/q" title="site.com" %}\n'
-        )
+        converter = converter_for(bookmark)
+        converter.convert(PAGE)
+        self.assertEqual(converter.previews, {"https://www.site.com/q": {"title": "site.com"}})
 
-    def test_github_link_preview_becomes_a_github_card(self):
+    def test_github_link_preview_needs_no_preview_data(self):
         preview = block("e", "external_object_instance")
-        md = convert(preview, cache=LocalCache(link_urls={"e": "https://github.com/neovim/neovim"}))
-        self.assertEqual(md, '{% include github-card.html url="https://github.com/neovim/neovim" %}\n')
-
-    def test_link_only_callout_holds_just_the_card(self):
-        card = block("b", "bookmark", properties={"link": [["https://a.com"]]}, nested=True)
-        md = convert(block("c", "callout", content=["b"]), card)
-        self.assertIn('<div class="callout callout-link">', md)
-        self.assertNotIn("callout-icon", md)
-
-    def test_text_callout_uses_its_emoji(self):
-        md = convert(block("c", "callout", "note", format={"page_icon": "📣"}))
-        self.assertIn('<span class="callout-icon" aria-hidden="true">📣</span>', md)
-
-    def test_text_callout_without_emoji_uses_the_link_favicon(self):
-        text = block(
-            "c", "callout", properties={"title": [["see ", []], ["here", [["a", "https://raycast.com/x"]]]]}
+        converter = converter_for(
+            preview, cache=LocalCache(link_urls={"e": "https://github.com/neovim/neovim"})
         )
-        self.assertIn("favicons?domain=raycast.com", convert(text))
+        md = converter.convert(PAGE)
+        self.assertEqual(md, '{% include card.html url="https://github.com/neovim/neovim" %}\n')
+        self.assertEqual(converter.previews, {})
+
+    def test_link_only_callout_is_a_tagged_quote_around_the_card(self):
+        card = block("b", "bookmark", properties={"link": [["https://a.com"]]}, nested=True)
+        md = convert(block("c", "callout", content=["b"], format={"page_icon": "📣"}), card)
+        self.assertEqual(md, '> {% include card.html url="https://a.com" %}\n{: .callout .callout-link}\n')
+
+    def test_text_callout_starts_with_its_emoji(self):
+        md = convert(block("c", "callout", "note", format={"page_icon": "📣"}))
+        self.assertEqual(md, "> 📣 note\n{: .callout}\n")
+
+    def test_lists_inside_callouts_stay_tight(self):
+        items = [block(f"i{n}", "bulleted_list", f"item {n}", nested=True) for n in (1, 2)]
+        md = convert(block("c", "callout", "list", content=["i1", "i2"]), *items)
+        self.assertEqual(md, "> list\n>\n> - item 1\n> - item 2\n{: .callout}\n")
+
+    def test_multi_paragraph_callouts_stay_one_quote(self):
+        child = block("t", "text", "second", nested=True)
+        md = convert(block("c", "callout", "first", content=["t"]), child)
+        self.assertEqual(md, "> first\n>\n> second\n{: .callout}\n")
 
     def test_code_blocks_keep_raw_text(self):
         code = block("k", "code", properties={"title": [["x = 1", [["b"]]]], "language": [["Python"]]})
@@ -166,9 +173,7 @@ class NestedContentTest(unittest.TestCase):
         card = block("b", "bookmark", properties={"link": [["https://maps.app/x"]]}, nested=True)
         note = block("t", "text", "budget", nested=True)
         md = convert(block("n", "numbered_list", "Udon", content=["b", "t"]), card, note)
-        self.assertEqual(
-            md, '1. Udon\n\n   {% include bookmark.html url="https://maps.app/x" %}\n\n   budget\n'
-        )
+        self.assertEqual(md, '1. Udon\n\n   {% include card.html url="https://maps.app/x" %}\n\n   budget\n')
 
 
 class TidyTest(unittest.TestCase):

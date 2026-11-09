@@ -12,6 +12,34 @@ An improved vision from [@Xiao-Chenguang](https://github.com/Xiao-Chenguang): [[
 
 **The latest version of my homepage is available here: <br><https://github.com/yaoyao-liu/homepage>**
 
+## Blog posts
+
+Posts are plain Markdown in `_posts/YYYY-MM-DD-slug.md`. All formatting lives outside them:
+
+| What | Where |
+|---|---|
+| Page layout (title, date, footer) | `_layouts/post.html` |
+| Styles | `assets/css/blog.css` |
+| Link cards | `_includes/card.html` → `bookmark.html` / `github-card.html` |
+| Card titles, descriptions, icons, thumbnails | `_data/link_previews.json` |
+| Images | `assets/blog/<slug>/` |
+| Homepage blog list | `_data/blog.yml` |
+
+Two conventions beyond normal Markdown:
+
+```markdown
+> 💡 A gray callout box. Any quote followed by this tag becomes one.
+{: .callout}
+
+{% include card.html url="https://github.com/neovim/neovim" %}
+```
+
+GitHub URLs show a GitHub card; other URLs use their entry in `_data/link_previews.json`
+(or just the domain if there is none). Collapsible sections use `<details markdown="1"><summary>Title</summary> … </details>`.
+
+To re-import from Notion: `python3 -m scripts.notion2md` (or `--only <slug>`), then
+`python3 -m unittest scripts.notion2md.test_convert` to run its tests.
+
 ## Features
 
 - Simple and elegant personal homepage theme

@@ -15,15 +15,8 @@ i set up my `macos II blog` long time ago and i have been meaning to post this b
 
 ## `killall` apps
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include bookmark.html url="https://www.reddit.com/r/MacOS/comments/lt1vlh/a_simple_automator_app_with_an_intuitive_icon/" title="A simple automator app with an intuitive icon" description="943 votes, 74 comments. 529K subscribers in the MacOS community. A community to talk about macOS, the operating system powering Apple's Macintosh…" image="/assets/blog/macos-setup-ii/cover-1.jpg" icon="https://www.redditstatic.com/shreddit/assets/favicon/192x192.png" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://www.reddit.com/r/MacOS/comments/lt1vlh/a_simple_automator_app_with_an_intuitive_icon/" %}
+{: .callout .callout-link}
 
 I have mentioned in my previous blog that I use `option + K` for safely killing applications. Recently, I have wondered about killing **ALL** applications with one command. I set this up with [Automator (macOS)](https://en.wikipedia.org/wiki/Automator_(macOS)) and the [AppleScript](https://en.wikipedia.org/wiki/AppleScript) as shared in the reddit thread above.
 
@@ -57,7 +50,7 @@ on run {input, parameters}
 end run
 ```
 
-{% include bookmark.html url="https://www.reddit.com/r/MacOS/comments/ly9xgj/howto_killall_application_to_close_all_active/" title="[How-To] killall application to close all active apps at once (see thread)" description="83 votes, 42 comments. 529K subscribers in the MacOS community. A community to talk about macOS, the operating system powering Apple's Macintosh…" image="/assets/blog/macos-setup-ii/cover-2.jpg" icon="https://www.redditstatic.com/shreddit/assets/favicon/192x192.png" %}
+{% include card.html url="https://www.reddit.com/r/MacOS/comments/ly9xgj/howto_killall_application_to_close_all_active/" %}
 
 </details>
 
@@ -65,15 +58,8 @@ What is cool about setting this up using `AppleScript` instead of setting up `ki
 
 ## cool icons
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include bookmark.html url="https://macosicons.com/?query=whatsapp" title="macosicons.com" icon="https://macosicons.com/favicon.ico" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://macosicons.com/?query=whatsapp" %}
+{: .callout .callout-link}
 
 I use dark mode for icons on my macbook nowadays but apps like `WhatsApp` do not natively have a black icon on mac which is why I would set it manually using one of the icons in macosicons.com.
 
@@ -81,15 +67,8 @@ funny enough, I found about this website because I was looking for icons for the
 
 ## my own todo list app
 
-<div class="callout callout-link">
-
-<div class="callout-body">
-
-{% include github-card.html url="https://github.com/nodokashibasaki3/quire" %}
-
-</div>
-
-</div>
+> {% include card.html url="https://github.com/nodokashibasaki3/quire" %}
+{: .callout .callout-link}
 
 I mentioned in my [my macos I]({% post_url 2026-02-21-macos-setup-i %}) that I use [logseq](https://github.com/logseq/logseq) for daily todo list management. I like that [logseq](https://github.com/logseq/logseq) is open sourced, markdown-based (allows vim) and that it generates a journal everyday automatically. some gaps I saw in logseq is that vim control is semi-broken, design is ugly, it has no canvas integration (as notion does) and it does not carry forward tasks automatically.
 

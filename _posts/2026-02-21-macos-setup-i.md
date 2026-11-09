@@ -9,17 +9,10 @@ my obsession with random apps probably started in elementary school when i made 
 
 in 2025 i learned `nvim` and spent HOURS on `linux` which pulled me into terminal tools and keyboard workflows. since then i’ve just kept exploring whatever catches my interest. today i’ll share my current flow, the result of years of being curious about software.
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true">📣</span>
-
-<div class="callout-body" markdown="1">
-
-I would like to make a special shoutout to my friend, Alan Huang from OMRON, who introduced me to many of the apps listed here.
-
-</div>
-
-</div>
+> 📣 📣
+>
+> I would like to make a special shoutout to my friend, Alan Huang from OMRON, who introduced me to many of the apps listed here.
+{: .callout}
 
 ### TLDR🤓
 
@@ -61,19 +54,10 @@ I would like to make a special shoutout to my friend, Alan Huang from OMRON, who
 
 Funny enough, at first, I basically spammed `i` and lived in insert mode.
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true"><img class="favicon" src="https://www.google.com/s2/favicons?domain=github.com&sz=64" alt="" loading="lazy"></span>
-
-<div class="callout-body" markdown="1">
-
-[neovim](https://github.com/neovim/neovim)
-
-Modern Vim-based text editor extensible in Lua for high-performance workflows.
-
-</div>
-
-</div>
+> [neovim](https://github.com/neovim/neovim)
+>
+> Modern Vim-based text editor extensible in Lua for high-performance workflows.
+{: .callout}
 
 What `neovim` changed for me:
 
@@ -86,19 +70,10 @@ I highly recommend to use [kickstart.nvim](https://github.com/nvim-lua/kickstart
 
 ## macOS Window Management
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true"><img class="favicon" src="https://www.google.com/s2/favicons?domain=rectangleapp.com&sz=64" alt="" loading="lazy"></span>
-
-<div class="callout-body" markdown="1">
-
-[Rectangle](https://rectangleapp.com/)
-
-macOS window manager that lets you resize and position windows using keyboard shortcuts.
-
-</div>
-
-</div>
+> [Rectangle](https://rectangleapp.com/)
+>
+> macOS window manager that lets you resize and position windows using keyboard shortcuts.
+{: .callout}
 
 I use Rectangle instead of the native macOS window management because:
 
@@ -118,19 +93,10 @@ other than this, I have `Ctrl + Alt` + { `k` , `i` , `u` , `j` } to snap a windo
 
 ## AltTab
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true"><img class="favicon" src="https://www.google.com/s2/favicons?domain=alt-tab-macos.netlify.app&sz=64" alt="" loading="lazy"></span>
-
-<div class="callout-body" markdown="1">
-
-[AltTab - Windows alt-tab on macOS](https://alt-tab-macos.netlify.app/)
-
-macOS app that brings Windows-style `Alt + Tab` window switching, letting you quickly cycle through open windows using only the keyboard.
-
-</div>
-
-</div>
+> [AltTab - Windows alt-tab on macOS](https://alt-tab-macos.netlify.app/)
+>
+> macOS app that brings Windows-style `Alt + Tab` window switching, letting you quickly cycle through open windows using only the keyboard.
+{: .callout}
 
 macOS does have native switching, but it’s different. macOS only has `Cmd + Tab`, which switches through all open applications, not individual windows. Nothing else. For reference, Linux has `Alt + Tab`, which cycles through each open window across apps.
 
@@ -145,19 +111,10 @@ I have it setup so that:
 
 ## Arc Browser
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true"><img class="favicon" src="https://www.google.com/s2/favicons?domain=arc.net&sz=64" alt="" loading="lazy"></span>
-
-<div class="callout-body" markdown="1">
-
-[Arc from The Browser Company](https://arc.net/)
-
-Chromium-based browser with workspace-driven tab organization and profile isolation. You can move around the workspaces using your keyboard.
-
-</div>
-
-</div>
+> [Arc from The Browser Company](https://arc.net/)
+>
+> Chromium-based browser with workspace-driven tab organization and profile isolation. You can move around the workspaces using your keyboard.
+{: .callout}
 
 the coolest part is you can set custom keyboard shortcuts to navigate around your tabs and workspaces. here are mine:
 
@@ -176,19 +133,10 @@ and, no more tabs so small you cant see the tab title…
 
 ## Vimium
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true"><img class="favicon" src="https://www.google.com/s2/favicons?domain=github.com&sz=64" alt="" loading="lazy"></span>
-
-<div class="callout-body" markdown="1">
-
-[vimium](https://github.com/philc/vimium)
-
-browser extension that provides keyboard-based navigation and control of the web in the spirit of the Vim editor.
-
-</div>
-
-</div>
+> [vimium](https://github.com/philc/vimium)
+>
+> browser extension that provides keyboard-based navigation and control of the web in the spirit of the Vim editor.
+{: .callout}
 
 >
 
@@ -198,19 +146,10 @@ browser extension that provides keyboard-based navigation and control of the web
 
 ## Vimium C
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true"><img class="favicon" src="https://www.google.com/s2/favicons?domain=github.com&sz=64" alt="" loading="lazy"></span>
-
-<div class="callout-body" markdown="1">
-
-[vimium-c](https://github.com/gdh1995/vimium-c)
-
-fork of vimium with an advanced omnibar.
-
-</div>
-
-</div>
+> [vimium-c](https://github.com/gdh1995/vimium-c)
+>
+> fork of vimium with an advanced omnibar.
+{: .callout}
 
 I use Vimium C now because I found [PDF Viewer for Vimium C - Chrome Web Store](https://chromewebstore.google.com/detail/pdf-viewer-for-vimium-c/nacjakoppgmdcpemlfnfegmlhipddanj?authuser=1&pli=1) which only works with Vimium C. It lets me navigate PDFs with the keyboard, which fixed the one place where things were still breaking my flow!!
 
@@ -218,19 +157,10 @@ I use Vimium C now because I found [PDF Viewer for Vimium C - Chrome Web Store](
 
 ## Raycast
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true"><img class="favicon" src="https://www.google.com/s2/favicons?domain=www.raycast.com&sz=64" alt="" loading="lazy"></span>
-
-<div class="callout-body" markdown="1">
-
-[Raycast - Your shortcut to everything](https://www.raycast.com/)
-
-Keyboard-first macOS launcher for apps, scripts, window management, and automation.
-
-</div>
-
-</div>
+> [Raycast - Your shortcut to everything](https://www.raycast.com/)
+>
+> Keyboard-first macOS launcher for apps, scripts, window management, and automation.
+{: .callout}
 
 It is like Spotlight, but better (so as fans claim). I never used spotlight but, all I know is that once I started using Raycast, my workflow improved immediately.
 
@@ -257,19 +187,10 @@ Raycast Toolkit Written ✅
 
 ## Shottr
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true"><img class="favicon" src="https://www.google.com/s2/favicons?domain=shottr.cc&sz=64" alt="" loading="lazy"></span>
-
-<div class="callout-body" markdown="1">
-
-[Shottr](https://shottr.cc/)
-
-Fast screenshot and annotation tool with scrolling capture and OCR support.
-
-</div>
-
-</div>
+> [Shottr](https://shottr.cc/)
+>
+> Fast screenshot and annotation tool with scrolling capture and OCR support.
+{: .callout}
 
 After I started using Shottr, I realized macOS already lets you set separate shortcuts to copy or save screenshots. So technically, you don’t need another app.
 
@@ -289,19 +210,10 @@ F.Y.I [Take a screenshot on Mac - Apple Support](https://support.apple.com/en-us
 
 ## Getting to Data Management… Notion
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true"><img class="favicon" src="https://www.google.com/s2/favicons?domain=www.notion.so&sz=64" alt="" loading="lazy"></span>
-
-<div class="callout-body" markdown="1">
-
-[Notion Desktop App for Mac & Windows \| Notion](https://www.notion.so/desktop)
-
-All-in-one workspace for databases and time management. Students can get Notion Pro for free through [GitHub Education](https://github.com/education)
-
-</div>
-
-</div>
+> [Notion Desktop App for Mac & Windows \| Notion](https://www.notion.so/desktop)
+>
+> All-in-one workspace for databases and time management. Students can get Notion Pro for free through [GitHub Education](https://github.com/education)
+{: .callout}
 
 Since I began using Notion in high school, this application has made amazing advancements! But I agree that how I have changed to use it also made my experience better:
 
@@ -324,19 +236,10 @@ One thing that annoys me is I cannot use `nvim` on here. This guy from my intern
 
 ## Notion Calendar
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true"><img class="favicon" src="https://www.google.com/s2/favicons?domain=www.notion.com&sz=64" alt="" loading="lazy"></span>
-
-<div class="callout-body" markdown="1">
-
-[Notion Calendar](https://www.notion.com/product/calendar)
-
-All of your commitments, now in one place. Meet the beautifully designed, fully integrated calendar for your work and life.
-
-</div>
-
-</div>
+> [Notion Calendar](https://www.notion.com/product/calendar)
+>
+> All of your commitments, now in one place. Meet the beautifully designed, fully integrated calendar for your work and life.
+{: .callout}
 
 Notion Calendar only came out 2 or 3 years ago. When it was in Beta it was terrible but now, it is the best one out there. And it’s completely free.
 
@@ -366,39 +269,23 @@ What makes Notion Calendar goated 🐐:
 - only read-only access to Microsoft Calendar
 - limited colors (this can be overcome by using GCal import)
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true">💬</span>
-
-<div class="callout-body" markdown="1">
-
-**Side Note:** **Apple Calendar**
-
-It has pretty design and **CAN** edit Teams Calendar unlike Notion Calendar.
-
-But, you cannot navigate using your keyboard (unless you use external tool like [folivora.ai - Great Tools for your Mac!](https://folivora.ai/)), and cannot import Notion db. Depending on the implementation, it is better than Notion Calendar.
-
-</div>
-
-</div>
+> 💬 💬
+>
+> **Side Note:** **Apple Calendar**
+>
+> It has pretty design and **CAN** edit Teams Calendar unlike Notion Calendar.
+>
+> But, you cannot navigate using your keyboard (unless you use external tool like [folivora.ai - Great Tools for your Mac!](https://folivora.ai/)), and cannot import Notion db. Depending on the implementation, it is better than Notion Calendar.
+{: .callout}
 
 > well now what? seems like we are fully setup! no. we need a good daily task management… preferably open sourced because data is important!!
 
 ## Logseq
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true"><img class="favicon" src="https://www.google.com/s2/favicons?domain=logseq.com&sz=64" alt="" loading="lazy"></span>
-
-<div class="callout-body" markdown="1">
-
-[A privacy-first, open-source knowledge base](https://logseq.com/)
-
-Local-first, graph-based knowledge management tool with bidirectional linking.
-
-</div>
-
-</div>
+> [A privacy-first, open-source knowledge base](https://logseq.com/)
+>
+> Local-first, graph-based knowledge management tool with bidirectional linking.
+{: .callout}
 
 `Logseq` is date-based, which matches how I plan my days. Each day generates a local `.md` file, and I use Vim mode inside `Logseq`, so everything stays keyboard-driven. I track habits, goals, communication notes, and draft my daily schedule there. The `todo` plugin logs task duration, which surfaces how I actually spend time. I keep generic tasks like `do homework` there instead of on my calendar to preserve visual space.
 
@@ -495,19 +382,10 @@ echo "To:   $TODAY_FILE"
 
 ## Spokenly
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true"><img class="favicon" src="https://www.google.com/s2/favicons?domain=spokenly.app&sz=64" alt="" loading="lazy"></span>
-
-<div class="callout-body" markdown="1">
-
-[Spokenly – Whisper-Powered Mac Dictation App \| Best Voice to Text for macOS](https://spokenly.app/)
-
-Seamless speech-to-text in every application across your Mac and iPhone.
-
-</div>
-
-</div>
+> [Spokenly – Whisper-Powered Mac Dictation App \| Best Voice to Text for macOS](https://spokenly.app/)
+>
+> Seamless speech-to-text in every application across your Mac and iPhone.
+{: .callout}
 
 I only started using speech-to-text apps in 2026 but has helped me to develop and gather my thoughts much faster. Spokenly is a free and high-performing option I found amongst many competitors.
 

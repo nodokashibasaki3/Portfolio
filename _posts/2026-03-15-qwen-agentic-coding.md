@@ -65,17 +65,10 @@ i tried to force macOS to “wire” more memory to the GPU:
 sudo sysctl iogpu.wired_limit_mb=12288
 ```
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true">⚠️</span>
-
-<div class="callout-body" markdown="1">
-
-**for obvious reasons, do not do this! it may break your computer. luckily for me, it only crashed the computer lol**
-
-</div>
-
-</div>
+> ⚠️ ⚠️
+>
+> **for obvious reasons, do not do this! it may break your computer. luckily for me, it only crashed the computer lol**
+{: .callout}
 
 > why did it fail, you may ask. to understand why, i will tell you more about m5!
 
@@ -122,21 +115,12 @@ the bad part is that even with the new accelerators, the M5 Pro is still limited
 
 so in conclusion:
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true">💡</span>
-
-<div class="callout-body" markdown="1">
-
-large unified memory ✅
-
-fast pre-fill ✅
-
-memory bandwidth for GPU ❌
-
-</div>
-
-</div>
+> large unified memory ✅
+>
+> fast pre-fill ✅
+>
+> memory bandwidth for GPU ❌
+{: .callout}
 
 and that is what caused the crash on day one is because the MoE architecture of Qwen 3.5 loads many experts into memory. even with 64GB unified memory, the combination of model weights, kv cache, and runtime buffers exceeded what my system could handle.
 

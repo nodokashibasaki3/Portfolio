@@ -1,0 +1,95 @@
+{
+  "https://macosicons.com/?query=whatsapp": {
+    "title": "macosicons.com",
+    "icon": "https://macosicons.com/favicon.ico"
+  },
+  "https://maps.app.goo.gl/2owksP3z6BfLAhFUA": {
+    "title": "洋食屋伊勢十 丸の内店 · Japan, 〒100-0005 Tokyo, Chiyoda City, Marunouchi, 3 Chome−3−1 Shin-Tokyo Building, B1F",
+    "description": "★★★★☆ · Japanized western restaurant",
+    "icon": "https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico",
+    "image": "/assets/blog/tokyo-food-review/cover-4.jpg"
+  },
+  "https://maps.app.goo.gl/F7Gz1g7re8Z7Vubb9": {
+    "title": "pizza marumo · Japan, 〒150-0022 Tokyo, Shibuya, Ebisuminami, 1 Chome−11−13 恵比寿ヴェルソービル 1階",
+    "description": "★★★★☆ · Pizza restaurant",
+    "icon": "https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico"
+  },
+  "https://maps.app.goo.gl/KKkwXqNtpYQruvFAA": {
+    "title": "Shin-Ochanomizu Manryu · Japan, 〒101-0062 Tokyo, Chiyoda City, Kanda Surugadai, 3 Chome−２−6",
+    "description": "★★★★☆ · Chinese restaurant",
+    "icon": "https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico",
+    "image": "/assets/blog/tokyo-food-review/cover-8.jpg"
+  },
+  "https://maps.app.goo.gl/KRXAFfMxH9TE4Zcp7": {
+    "title": "Tsukesoba Kanda Katsumoto · 1 Chome-2-4 Sarugakucho, Chiyoda City, Tokyo 101-0064, Japan",
+    "description": "★★★★☆ · Ramen restaurant",
+    "icon": "https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico",
+    "image": "/assets/blog/tokyo-food-review/cover-6.jpg"
+  },
+  "https://maps.app.goo.gl/LoNxxhcZCPFGAxiR8": {
+    "title": "Tokyo Bombay Ebisu · Japan, 〒150-0022 Tokyo, Shibuya, Ebisuminami, 1 Chome−23−1 １F ビル",
+    "description": "★★★★☆ · Japanese curry restaurant",
+    "icon": "https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico"
+  },
+  "https://maps.app.goo.gl/RD2VkgBqi4DXWyze6": {
+    "title": "Morikawa · 5 Chome-30-16 Hongo, Bunkyo City, Tokyo 113-0033, Japan",
+    "description": "★★★★☆ · Syokudo and Teishoku restaurant",
+    "icon": "https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico"
+  },
+  "https://maps.app.goo.gl/Tfu8G3QKsnGXCt5h9": {
+    "title": "Ramen Nemuru · 4 Chome-3-2 Hongo, Bunkyo City, Tokyo 113-0033, Japan",
+    "description": "★★★★☆ · Ramen restaurant",
+    "icon": "https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico"
+  },
+  "https://maps.app.goo.gl/TxvQP6ygZFY8LM2R9": {
+    "title": "Kinryu · Japan, 〒101-0048 Tokyo, Chiyoda City, Kanda Tsukasamachi, 2 Chome−１５−16 サトウビル 1階",
+    "description": "★★★★☆ · Ramen restaurant",
+    "icon": "https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico",
+    "image": "/assets/blog/tokyo-food-review/cover-5.jpg"
+  },
+  "https://maps.app.goo.gl/iWNHHA6GEz9khuZt5": {
+    "title": "Nikaido · 101 1 Chome-9-14 Kudankita, Chiyoda City, Tokyo 102-0073, Japan",
+    "description": "★★★★☆ · Ramen restaurant",
+    "icon": "https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico",
+    "image": "/assets/blog/tokyo-food-review/cover-7.jpg"
+  },
+  "https://maps.app.goo.gl/p25oZ9ya9q1Kye5WA": {
+    "title": "Udon Yamacho Ebisu · Japan, 〒150-0013 Tokyo, Shibuya, Ebisu, 1 Chome−1−5 Ebisu Oak Bldg., 1F",
+    "description": "★★★★☆ · Udon noodle restaurant",
+    "icon": "https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico"
+  },
+  "https://maps.app.goo.gl/vo2gAnPWzBHUZhQj9": {
+    "title": "Miso Niko Min · Japan, 〒113-0033 Tokyo, Bunkyo City, Hongo, 3 Chome−31−15 菅谷ビル",
+    "description": "★★★★☆ · Udon noodle restaurant",
+    "icon": "https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico"
+  },
+  "https://tunaformac.com/": {
+    "title": "Tuna",
+    "description": "New, modern launcher for macOS.",
+    "icon": "https://tunaformac.com/favicon.ico",
+    "image": "/assets/blog/raycast-toolkit/cover-2.png"
+  },
+  "https://www.origami-robotics.com": {
+    "title": "Origami Robotics",
+    "description": "Building the next generation of dexterous robot hands with quasi-direct drive actuators.",
+    "image": "https://images.unsplash.com/photo-1531746790731-6c087fecd05a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  },
+  "https://www.raycast.com/": {
+    "title": "Raycast - Your shortcut to everything",
+    "description": "A collection of powerful productivity tools all within an extendable launcher.",
+    "icon": "https://www.raycast.com/favicon-production.png",
+    "image": "/assets/blog/raycast-toolkit/cover-1.png"
+  },
+  "https://www.reddit.com/r/MacOS/comments/lt1vlh/a_simple_automator_app_with_an_intuitive_icon/": {
+    "title": "A simple automator app with an intuitive icon",
+    "description": "943 votes, 74 comments. 529K subscribers in the MacOS community. A community to talk about macOS, the operating system powering Apple's Macintosh…",
+    "icon": "https://www.redditstatic.com/shreddit/assets/favicon/192x192.png",
+    "image": "/assets/blog/macos-setup-ii/cover-1.jpg"
+  },
+  "https://www.reddit.com/r/MacOS/comments/ly9xgj/howto_killall_application_to_close_all_active/": {
+    "title": "[How-To] killall application to close all active apps at once (see thread)",
+    "description": "83 votes, 42 comments. 529K subscribers in the MacOS community. A community to talk about macOS, the operating system powering Apple's Macintosh…",
+    "icon": "https://www.redditstatic.com/shreddit/assets/favicon/192x192.png",
+    "image": "/assets/blog/macos-setup-ii/cover-2.jpg"
+  }
+}

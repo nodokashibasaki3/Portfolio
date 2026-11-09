@@ -1,0 +1,281 @@
+/* Blog post styles, loaded by _layouts/post.html. Posts stay plain Markdown; see README "Blog posts".
+   One centered column and a small footer. Fonts and base colors come from the homepage theme;
+   navy #232F3E, orange links. */
+
+/* ---- Page ---- */
+
+/* The theme pads <body> on small screens; posts handle their own gutters. */
+body.blog {
+    padding: 0;
+}
+
+.blog-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.post {
+    font-size: 18px;
+    line-height: 1.65;
+    padding: 4em 0 20px;
+}
+
+.post-header {
+    margin-bottom: 36px;
+}
+
+.post-title {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.15;
+    margin: 0 0 8px;
+}
+
+.post-date {
+    color: #999;
+    font-size: 15px;
+}
+
+.post-tldr {
+    font-style: italic;
+}
+
+/* ---- Text ---- */
+
+.post h2,
+.post h3,
+.post h4 {
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.post h2 {
+    font-size: 28px;
+    margin: 48px 0 14px;
+}
+
+.post h3 {
+    font-size: 22px;
+    margin: 34px 0 10px;
+}
+
+.post h4 {
+    font-size: 18px;
+    margin: 24px 0 8px;
+}
+
+.post p,
+.post ul,
+.post ol,
+.post pre,
+.post table,
+.post blockquote,
+.post details {
+    margin: 0 0 18px;
+}
+
+.post li > ul,
+.post li > ol {
+    margin: 2px 0 0;
+}
+
+.post blockquote {
+    color: #777;
+    border-left-color: #ddd;
+}
+
+.post blockquote > :last-child {
+    margin-bottom: 0;
+}
+
+.post hr {
+    margin: 40px 0;
+    background: #e5e5e5;
+}
+
+.post table {
+    font-size: 0.9em;
+}
+
+.post #markdown-toc {
+    padding-left: 20px;
+}
+
+/* ---- Code ---- */
+
+.post code {
+    font-size: 0.82em;
+}
+
+/* Inline code uses the heading navy, distinct from gray body text and orange links. */
+.post :not(pre) > code {
+    color: #232F3E;
+}
+
+.post pre {
+    max-width: none; /* the theme caps code blocks at 500px */
+    line-height: 1.45;
+    background: #fafafa;
+    border-color: #eee;
+}
+
+/* ---- Media and toggles ---- */
+
+.post img {
+    display: block;
+    margin: 28px auto;
+    border-radius: 4px;
+}
+
+.post summary {
+    cursor: pointer;
+    color: #232F3E;
+}
+
+.post details[open] summary {
+    margin-bottom: 10px;
+}
+
+/* ---- Callouts: a quote tagged {: .callout} becomes a light gray box ---- */
+
+.post blockquote.callout {
+    background: #f7f6f3;
+    border: 0;
+    border-radius: 5px;
+    padding: 14px 18px;
+    color: inherit;
+    font-style: normal;
+}
+
+/* Link-only callouts ({: .callout .callout-link}) hold just a card. */
+.post blockquote.callout-link {
+    padding: 12px;
+}
+
+/* ---- Link cards (_includes/bookmark.html, _includes/github-card.html) ---- */
+
+.post .bookmark-card,
+.post .github-card {
+    display: flex;
+    background: #fff;
+    border: 1px solid #e8e6e1;
+    border-radius: 6px;
+    overflow: hidden;
+    color: inherit;
+    margin: 0 0 18px;
+    transition: border-color 0.15s;
+}
+
+.post .callout .bookmark-card,
+.post .callout .github-card {
+    margin: 0;
+}
+
+.post .bookmark-card:hover,
+.post .github-card:hover {
+    border-color: #cfccc4;
+}
+
+.post .bookmark-thumbnail {
+    flex: 0 0 34%;
+    min-height: 120px;
+    background-size: cover;
+    background-position: center;
+}
+
+.post .bookmark-info,
+.post .github-card-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.post .bookmark-info {
+    justify-content: center;
+    gap: 4px;
+    padding: 14px 18px;
+}
+
+.post img.bookmark-icon {
+    width: 20px;
+    height: 20px;
+    margin: 0 0 2px;
+    border: 0;
+    border-radius: 4px;
+}
+
+.post .bookmark-title,
+.post .github-card-title {
+    color: #232F3E;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.post .bookmark-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #777;
+}
+
+.post .bookmark-url,
+.post .github-card-owner {
+    font-size: 14px;
+    color: #999;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post .github-card {
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+}
+
+.post .github-card-icon {
+    font-size: 36px;
+    color: #232F3E;
+}
+
+/* ---- Footer ---- */
+
+.blog-footer {
+    border-top: 1px solid #e8e8e8;
+    padding: 28px 0 40px;
+    font-size: 15px;
+}
+
+.blog-footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blog-footer-inner > a {
+    color: #777;
+}
+
+.blog-footer-links a {
+    margin-left: 14px;
+}
+
+/* ---- Phones ---- */
+
+@media screen and (max-width: 600px) {
+    .blog-wrap {
+        padding: 0 16px;
+    }
+
+    .post-title {
+        font-size: 30px;
+    }
+
+    .post .bookmark-thumbnail {
+        display: none;
+    }
+}

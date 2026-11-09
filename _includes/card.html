@@ -1,0 +1,12 @@
+{% comment %}
+  Link card for blog posts: {% include card.html url="https://..." %}
+  GitHub URLs get the GitHub card; other URLs get a preview card whose title, description,
+  icon, and thumbnail come from _data/link_previews.json (written by scripts/notion2md).
+  A URL with no preview data still renders, using its domain as the title.
+{% endcomment %}
+{%- if include.url contains "github.com/" -%}
+{%- include github-card.html url=include.url -%}
+{%- else -%}
+{%- assign preview = site.data.link_previews[include.url] -%}
+{%- include bookmark.html url=include.url title=preview.title description=preview.description image=preview.image icon=preview.icon -%}
+{%- endif -%}

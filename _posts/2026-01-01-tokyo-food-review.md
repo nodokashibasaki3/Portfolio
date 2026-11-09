@@ -9,21 +9,14 @@ title: "Tokyo Food Review"
 
 私が訪れた飲食店の多くは，SNSや知人に教えてもらった場所で，気づけば文京区や千代田区に集まっていますが，それは単純に，そのエリアに住んでいたからです．この資料では，その中でも特に印象に残った11個の飲食店を紹介しています．すでに帰国して一週間が経っているため記憶は少し曖昧ですが，心に残った場所はすべて記録したつもりです．
 
-<div class="callout">
-
-<span class="callout-icon" aria-hidden="true">☝</span>
-
-<div class="callout-body" markdown="1">
-
-個人的に飲食店にて重視しているもの：
-
-1. 具材の素材はいいか
-1. 出来立てであるか
-1. 接客はいいか
-
-</div>
-
-</div>
+> ☝ ☝
+>
+> 個人的に飲食店にて重視しているもの：
+>
+> 1. 具材の素材はいいか
+> 1. 出来立てであるか
+> 1. 接客はいいか
+{: .callout}
 
 ### Food Reviews
 
@@ -31,7 +24,7 @@ title: "Tokyo Food Review"
 
 1. Udon Yamacho Ebisu
 
-   {% include bookmark.html url="https://maps.app.goo.gl/p25oZ9ya9q1Kye5WA" title="Udon Yamacho Ebisu · Japan, 〒150-0013 Tokyo, Shibuya, Ebisu, 1 Chome−1−5 Ebisu Oak Bldg., 1F" description="★★★★☆ · Udon noodle restaurant" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+   {% include card.html url="https://maps.app.goo.gl/p25oZ9ya9q1Kye5WA" %}
 
    予算：２０００円から３０００円
 
@@ -41,7 +34,7 @@ title: "Tokyo Food Review"
 
 1. Tokyo Bombay Ebisu
 
-   {% include bookmark.html url="https://maps.app.goo.gl/LoNxxhcZCPFGAxiR8" title="Tokyo Bombay Ebisu · Japan, 〒150-0022 Tokyo, Shibuya, Ebisuminami, 1 Chome−23−1 １F ビル" description="★★★★☆ · Japanese curry restaurant" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+   {% include card.html url="https://maps.app.goo.gl/LoNxxhcZCPFGAxiR8" %}
 
    予算：１０００円あたり
 
@@ -51,7 +44,7 @@ title: "Tokyo Food Review"
 
 1. Pizza Marumo
 
-   {% include bookmark.html url="https://maps.app.goo.gl/F7Gz1g7re8Z7Vubb9" title="pizza marumo · Japan, 〒150-0022 Tokyo, Shibuya, Ebisuminami, 1 Chome−11−13 恵比寿ヴェルソービル 1階" description="★★★★☆ · Pizza restaurant" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+   {% include card.html url="https://maps.app.goo.gl/F7Gz1g7re8Z7Vubb9" %}
 
    予算：２０００円から５０００円
 
@@ -61,7 +54,7 @@ title: "Tokyo Food Review"
 
 1. Yoshoku-ya Iseju
 
-   {% include bookmark.html url="https://maps.app.goo.gl/2owksP3z6BfLAhFUA" title="洋食屋伊勢十 丸の内店 · Japan, 〒100-0005 Tokyo, Chiyoda City, Marunouchi, 3 Chome−3−1 Shin-Tokyo Building, B1F" description="★★★★☆ · Japanized western restaurant" image="/assets/blog/tokyo-food-review/cover-1.jpg" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+   {% include card.html url="https://maps.app.goo.gl/2owksP3z6BfLAhFUA" %}
 
    予算：１０００円から３０００円
 
@@ -71,7 +64,7 @@ title: "Tokyo Food Review"
 
 1. Kinryu
 
-   {% include bookmark.html url="https://maps.app.goo.gl/TxvQP6ygZFY8LM2R9" title="Kinryu · Japan, 〒101-0048 Tokyo, Chiyoda City, Kanda Tsukasamachi, 2 Chome−１５−16 サトウビル 1階" description="★★★★☆ · Ramen restaurant" image="/assets/blog/tokyo-food-review/cover-2.jpg" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+   {% include card.html url="https://maps.app.goo.gl/TxvQP6ygZFY8LM2R9" %}
 
    予算：１０００円から３０００円
 
@@ -81,7 +74,7 @@ title: "Tokyo Food Review"
 
 1. Tsukesoba Kanda Katsumoto
 
-   {% include bookmark.html url="https://maps.app.goo.gl/KRXAFfMxH9TE4Zcp7" title="Tsukesoba Kanda Katsumoto · 1 Chome-2-4 Sarugakucho, Chiyoda City, Tokyo 101-0064, Japan" description="★★★★☆ · Ramen restaurant" image="/assets/blog/tokyo-food-review/cover-3.jpg" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+   {% include card.html url="https://maps.app.goo.gl/KRXAFfMxH9TE4Zcp7" %}
 
    予算：１０００円から２０００円
 
@@ -91,7 +84,7 @@ title: "Tokyo Food Review"
 
 1. Nikaido
 
-   {% include bookmark.html url="https://maps.app.goo.gl/iWNHHA6GEz9khuZt5" title="Nikaido · 101 1 Chome-9-14 Kudankita, Chiyoda City, Tokyo 102-0073, Japan" description="★★★★☆ · Ramen restaurant" image="/assets/blog/tokyo-food-review/cover-4.jpg" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+   {% include card.html url="https://maps.app.goo.gl/iWNHHA6GEz9khuZt5" %}
 
    予算：１０００円から２０００円
 
@@ -101,7 +94,7 @@ title: "Tokyo Food Review"
 
 1. Manryu 📍Ochanomizu
 
-   {% include bookmark.html url="https://maps.app.goo.gl/KKkwXqNtpYQruvFAA" title="Shin-Ochanomizu Manryu · Japan, 〒101-0062 Tokyo, Chiyoda City, Kanda Surugadai, 3 Chome−２−6" description="★★★★☆ · Chinese restaurant" image="/assets/blog/tokyo-food-review/cover-5.jpg" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+   {% include card.html url="https://maps.app.goo.gl/KKkwXqNtpYQruvFAA" %}
 
    予算：１０００円から２０００円
 
@@ -111,7 +104,7 @@ title: "Tokyo Food Review"
 
 1. Nemuru 📍Honsan
 
-   {% include bookmark.html url="https://maps.app.goo.gl/Tfu8G3QKsnGXCt5h9" title="Ramen Nemuru · 4 Chome-3-2 Hongo, Bunkyo City, Tokyo 113-0033, Japan" description="★★★★☆ · Ramen restaurant" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+   {% include card.html url="https://maps.app.goo.gl/Tfu8G3QKsnGXCt5h9" %}
 
    予算：１０００円から２０００円
 
@@ -121,7 +114,7 @@ title: "Tokyo Food Review"
 
 1. Niso Nikomin 📍Honsan
 
-   {% include bookmark.html url="https://maps.app.goo.gl/vo2gAnPWzBHUZhQj9" title="Miso Niko Min · Japan, 〒113-0033 Tokyo, Bunkyo City, Hongo, 3 Chome−31−15 菅谷ビル" description="★★★★☆ · Udon noodle restaurant" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+   {% include card.html url="https://maps.app.goo.gl/vo2gAnPWzBHUZhQj9" %}
 
    予算：１０００円ぐらい
 
@@ -131,7 +124,7 @@ title: "Tokyo Food Review"
 
 1. Morikawa 📍Honsan
 
-   {% include bookmark.html url="https://maps.app.goo.gl/RD2VkgBqi4DXWyze6" title="Morikawa · 5 Chome-30-16 Hongo, Bunkyo City, Tokyo 113-0033, Japan" description="★★★★☆ · Syokudo and Teishoku restaurant" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+   {% include card.html url="https://maps.app.goo.gl/RD2VkgBqi4DXWyze6" %}
 
    **予算：**８５０円から２５００円
 
