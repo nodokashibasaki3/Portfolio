@@ -169,6 +169,15 @@ class ConvertTest(unittest.TestCase):
 
 
 class NestedContentTest(unittest.TestCase):
+    def test_quote_with_only_nested_paragraphs_keeps_them_inside(self):
+        first = block("a", "text", "I thought so.", nested=True)
+        second = block("b", "text", "Then I opened a PDF.", nested=True)
+        md = convert(block("q", "quote", content=["a", "b"]), first, second)
+        self.assertEqual(md, "> I thought so.\n>\n> Then I opened a PDF.\n")
+
+    def test_empty_quote_is_dropped(self):
+        self.assertEqual(convert(block("q", "quote", ""), block("t", "text", "after")), "after\n")
+
     def test_numbered_item_children_stay_inside_the_item(self):
         card = block("b", "bookmark", properties={"link": [["https://maps.app/x"]]}, nested=True)
         note = block("t", "text", "budget", nested=True)

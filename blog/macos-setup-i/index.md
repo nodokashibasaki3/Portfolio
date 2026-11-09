@@ -42,10 +42,10 @@ in 2025 i learned `nvim` and spent HOURS on `linux` which pulled me into termina
 <details markdown="1"><summary>Updates</summary>
 
 > [2025/02/21]  Published
-
-   [2025/02/27] Transferred Shell Tools to [NEW PAGE](/blog/shell-toolkit-i/)
-
-   [2025/03/10] Updated [Raycast Optimization](/blog/raycast-toolkit/)
+>
+> [2025/02/27] Transferred Shell Tools to [NEW PAGE](/blog/shell-toolkit-i/)
+>
+> [2025/03/10] Updated [Raycast Optimization](/blog/raycast-toolkit/)
 
 </details>
 
@@ -139,11 +139,9 @@ and, no more tabs so small you cant see the tab title…
 > browser extension that provides keyboard-based navigation and control of the web in the spirit of the Vim editor.
 {: .callout}
 
+> I thought, now I can navigate the browser with just my keyboard!
 >
-
-   I thought, now I can navigate the browser with just my keyboard!
-
-   Then I opened a PDF… and realized I still couldn’t 😞
+> Then I opened a PDF… and realized I still couldn’t 😞
 
 ## Vimium C
 
@@ -183,8 +181,8 @@ Raycast Toolkit Written ✅
 [my raycast toolkit](/blog/raycast-toolkit/)
 
 > but what about when you take screenshots?
-
-   Racing to press `Cmd + C` before the preview disappears from the bottom corner? I was.
+>
+> Racing to press `Cmd + C` before the preview disappears from the bottom corner? I was.
 
 ## Shottr
 
@@ -206,8 +204,8 @@ It’s **NOT** faster. The only real benefit is quick editing right after captur
 F.Y.I [Take a screenshot on Mac - Apple Support](https://support.apple.com/en-us/102646)
 
 > with this build, I am not able to navigate around the entire computer with just computers.
-
-   so **I re-structured my data and task management.**
+>
+> so **I re-structured my data and task management.**
 
 ## Getting to Data Management… Notion
 
@@ -391,10 +389,10 @@ echo "To:   $TODAY_FILE"
 I only started using speech-to-text apps in 2026 but has helped me to develop and gather my thoughts much faster. Spokenly is a free and high-performing option I found amongst many competitors.
 
 > ok so now, was i satisfied? yes. yes I was! although i’m always on the search 🔎
-
-   so now I started to discover some shell tools🙂
-
-   **UPDATE: I transferred** **`Shell Tools`** **to** **[NEW PAGE](/blog/shell-toolkit-i/)**
+>
+> so now I started to discover some shell tools🙂
+>
+> **UPDATE: I transferred** **`Shell Tools`** **to** **[NEW PAGE](/blog/shell-toolkit-i/)**
 
 ## Unrelated to Optimization but in my workflow…
 

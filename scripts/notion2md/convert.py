@@ -196,7 +196,16 @@ class Converter:
         ]
 
     def _quote(self, block: Block, depth: int) -> list[str]:
-        return [f"{INDENT * depth}> {self._text(block)}", *self._children(block, depth + 1)]
+        text = self._text(block)
+        parts = ([text] if text else []) + self._children(block, 0)
+        return ["\n".join(self._quoted(parts, depth))] if parts else []
+
+    @staticmethod
+    def _quoted(parts: list[str], depth: int) -> list[str]:
+        """Prefix every line with "> " so the quote's text and nested blocks form one quote."""
+        ind = INDENT * depth
+        body = tidy("\n\n".join(parts)).rstrip("\n")  # tidy before quoting, so lists stay tight
+        return [f"{ind}>" if not line else f"{ind}> {line}" for line in body.split("\n")]
 
     def _callout(self, block: Block, depth: int) -> list[str]:
         """A quote tagged {: .callout}, which assets/css/blog.css draws as a gray box."""
@@ -209,12 +218,9 @@ class Converter:
         parts = ([first] if first else []) + self._children(block, 0)
         if emoji and not text and parts:
             parts[0] = f"{emoji} {parts[0]}"
-        ind = INDENT * depth
-        body = tidy("\n\n".join(parts)).rstrip("\n")  # tidy before quoting, so lists stay tight
-        quoted = [f"{ind}>" if not line else f"{ind}> {line}" for line in body.split("\n")]
         classes = ".callout .callout-link" if link_only else ".callout"
         # One entry, so no blank line separates the quote from the tag that styles it.
-        return ["\n".join([*quoted, f"{ind}{{: {classes}}}"])]
+        return ["\n".join([*self._quoted(parts, depth), f"{INDENT * depth}{{: {classes}}}"])]
 
     def _is_link_only(self, block: Block) -> bool:
         children = block.get("content") or []

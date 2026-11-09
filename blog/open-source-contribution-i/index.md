@@ -11,8 +11,8 @@ this is development log of my open-source contribution to [notion-assignment-imp
 i decided to build a better version of this for myself and others. after a few hours of digging into Chrome internals and TypeScript since midnight, I finally got it working.
 
 > *"In real open source, you have the right to control your own destiny"*
-
-   — Linus Torvalds (Creator of Linux, a.k.a open source legend👑)
+>
+> — Linus Torvalds (Creator of Linux, a.k.a open source legend👑)
 
 ## Where the heck do I start…
 
