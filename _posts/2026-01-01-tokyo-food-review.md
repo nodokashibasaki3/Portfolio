@@ -1,0 +1,144 @@
+---
+layout: post
+title: "Tokyo Food Review"
+---
+
+### Background
+
+2025年の7月から12月まで，インターンの関係で文京区に滞在していました．その期間の半分を過ぎたあたりで，自分なりにこの環境をどうすれば存分に生かせるのかを考えました．その中で浮かんだ一つの答えが，外食をできるだけ多くすることでした．限られた時間の中で，その土地の空気や生活のリズムを最も直接的に感じられる手段だと思ったからです．
+
+私が訪れた飲食店の多くは，SNSや知人に教えてもらった場所で，気づけば文京区や千代田区に集まっていますが，それは単純に，そのエリアに住んでいたからです．この資料では，その中でも特に印象に残った11個の飲食店を紹介しています．すでに帰国して一週間が経っているため記憶は少し曖昧ですが，心に残った場所はすべて記録したつもりです．
+
+<div class="callout">
+
+<span class="callout-icon" aria-hidden="true">☝</span>
+
+<div class="callout-body" markdown="1">
+
+個人的に飲食店にて重視しているもの：
+
+1. 具材の素材はいいか
+1. 出来立てであるか
+1. 接客はいいか
+
+</div>
+
+</div>
+
+### Food Reviews
+
+順番関係なく紹介します．
+
+1. Udon Yamacho Ebisu
+
+   {% include bookmark.html url="https://maps.app.goo.gl/p25oZ9ya9q1Kye5WA" title="Udon Yamacho Ebisu · Japan, 〒150-0013 Tokyo, Shibuya, Ebisu, 1 Chome−1−5 Ebisu Oak Bldg., 1F" description="★★★★☆ · Udon noodle restaurant" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+
+   予算：２０００円から３０００円
+
+   雰囲気：グループでも一人でも，ゆったりした雰囲気
+
+   ここは本当に美味しかった．麺から具材に至るまで，すべてが自然に調和していて，どこにも無理がなかった．特に麺はほどよいこしがあり，噛むたびに静かな満足感が残った．私は天ぷらうどんを注文したが，天ぷらは軽やかで，油っぽさをほとんど感じなかった．コースも５０００円弱で用意されており，次はゆっくりとそれを味わってみたいと思う．スタッフさんの対応も柔らかく，全体として非の打ち所がないお店だった．
+
+1. Tokyo Bombay Ebisu
+
+   {% include bookmark.html url="https://maps.app.goo.gl/LoNxxhcZCPFGAxiR8" title="Tokyo Bombay Ebisu · Japan, 〒150-0022 Tokyo, Shibuya, Ebisuminami, 1 Chome−23−1 １F ビル" description="★★★★☆ · Japanese curry restaurant" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+
+   予算：１０００円あたり
+
+   雰囲気：カウンター６席，一人がおすすめ
+
+   恵比寿ガーデンパレイスの真横にある，小さなカレー屋さん．現地の人が営んでいるようで，席は６席のカウンターのみ，立ち食いの形式だ．二人で来た客もそれぞれ一席ずつ座っていたことから，グループでの入店はあまり向いていないと感じた．だが，キーマカレーは驚くほど美味しかった．価格に対する満足度も高く，食後にチャイティーとチョコレートを出してくれるところも，小さな加点要素だった．
+
+1. Pizza Marumo
+
+   {% include bookmark.html url="https://maps.app.goo.gl/F7Gz1g7re8Z7Vubb9" title="pizza marumo · Japan, 〒150-0022 Tokyo, Shibuya, Ebisuminami, 1 Chome−11−13 恵比寿ヴェルソービル 1階" description="★★★★☆ · Pizza restaurant" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+
+   予算：２０００円から５０００円
+
+   雰囲気：一人でもグループでも
+
+   ここは海外のSNSで話題になったのか，店内にいる客のほとんどが国外の人だった．日本のピザは総じて美味しいが，ここでは想像していた以上に完成度の高いピザを，ゆっくりできる雰囲気の中で丁寧に味わうことができる．ピザの耳はさくっと軽く，生地は最後まで無理なく食べられる．チーズも重さがなく，全体としてとても食べやすい一枚だった．
+
+1. Yoshoku-ya Iseju
+
+   {% include bookmark.html url="https://maps.app.goo.gl/2owksP3z6BfLAhFUA" title="洋食屋伊勢十 丸の内店 · Japan, 〒100-0005 Tokyo, Chiyoda City, Marunouchi, 3 Chome−3−1 Shin-Tokyo Building, B1F" description="★★★★☆ · Japanized western restaurant" image="/assets/blog/tokyo-food-review/cover-1.jpg" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+
+   予算：１０００円から３０００円
+
+   雰囲気：飲んでいる大人が多い（忘年会シーズンに行きました）
+
+   丸の内あたりにあるので，まず間違いはないだろうと思い，足を運びました．実際に食べてみると，想像していた以上に美味しく，少し驚きました．ビーフシチューとメンチカツを注文して，値段は２０００円弱．お肉は柔らかく，味付けも強すぎず，それぞれの調味料が自然に馴染んでいました．価格を考えると，十分すぎる満足感がありました．
+
+1. Kinryu
+
+   {% include bookmark.html url="https://maps.app.goo.gl/TxvQP6ygZFY8LM2R9" title="Kinryu · Japan, 〒101-0048 Tokyo, Chiyoda City, Kanda Tsukasamachi, 2 Chome−１５−16 サトウビル 1階" description="★★★★☆ · Ramen restaurant" image="/assets/blog/tokyo-food-review/cover-2.jpg" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+
+   予算：１０００円から３０００円
+
+   雰囲気：８席カウンター席しか無く，二人までなら一緒に来ても良さそう．
+
+   [らぁめん小池](https://ramenkoike.com/)の一個．少し値段は高めではあるが，素材の良さがはっきりと伝わってきて，お店の雰囲気もとても良かった．店内は静かで，時間がゆっくり流れているような落ち着きがある．麺そのものも完成度が高く，小池グループの中でも，かなり美味しい部類に入る一杯だと思う．
+
+1. Tsukesoba Kanda Katsumoto
+
+   {% include bookmark.html url="https://maps.app.goo.gl/KRXAFfMxH9TE4Zcp7" title="Tsukesoba Kanda Katsumoto · 1 Chome-2-4 Sarugakucho, Chiyoda City, Tokyo 101-0064, Japan" description="★★★★☆ · Ramen restaurant" image="/assets/blog/tokyo-food-review/cover-3.jpg" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+
+   予算：１０００円から２０００円
+
+   雰囲気：一人常連客が多く，カウンターのみ．
+
+   １８５０円の上特製清湯つけそばを注文．ツケと麺が強く絡む印象はなかったが，値段を考えると具材が豊富で，どこか「わくわく」する感じがあった．一つ一つの具材はきちんと美味しく，店内に常連客が多い様子を見ると，十分におすすめできる一杯だと思う．
+
+1. Nikaido
+
+   {% include bookmark.html url="https://maps.app.goo.gl/iWNHHA6GEz9khuZt5" title="Nikaido · 101 1 Chome-9-14 Kudankita, Chiyoda City, Tokyo 102-0073, Japan" description="★★★★☆ · Ramen restaurant" image="/assets/blog/tokyo-food-review/cover-4.jpg" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+
+   予算：１０００円から２０００円
+
+   雰囲気：全カウンター席のため，一人か二人程度で行くのがおすすめ．
+
+   担々麺を食べた．華翔子がほどよく効いていて，深みのある味わいだったし，麺と汁も自然によく絡んでいた．盛り付けも美しく，野菜のシャキシャキとした食感が加わることで，全体に心地よいリズムが生まれていた．麺も十分に美味しかった．周りの人は明太子のうどんを食べていて，それも静かに惹かれるものがあった．
+
+1. Manryu 📍Ochanomizu
+
+   {% include bookmark.html url="https://maps.app.goo.gl/KKkwXqNtpYQruvFAA" title="Shin-Ochanomizu Manryu · Japan, 〒101-0062 Tokyo, Chiyoda City, Kanda Surugadai, 3 Chome−２−6" description="★★★★☆ · Chinese restaurant" image="/assets/blog/tokyo-food-review/cover-5.jpg" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+
+   予算：１０００円から２０００円
+
+   雰囲気：一人でも数名でも行きやすい雰囲気
+
+   列は少しあったが，平日１８：００ごろに行くと，１０分ほどで入店できた．店の人たちは互いに気心が知れている様子で，どこかローカルな空気が漂っている．肉玉チャーハンを食べたが，しっかりとした味付けで，食べ応えがあり美味しかった．シュウマイも餃子も一つ一つが大きめで，中はジューシーだった．ガッツリ食べたい時におすすめ．
+
+1. Nemuru 📍Honsan
+
+   {% include bookmark.html url="https://maps.app.goo.gl/Tfu8G3QKsnGXCt5h9" title="Ramen Nemuru · 4 Chome-3-2 Hongo, Bunkyo City, Tokyo 113-0033, Japan" description="★★★★☆ · Ramen restaurant" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+
+   予算：１０００円から２０００円
+
+   雰囲気：一人目しか二人で爆速がおすすめ（二人以上で来ているお客さんもいました）．
+
+   ここはオフィスから近く，夜遅くまで営業しているので，帰りが遅くなっても無理なく立ち寄れる．回転率が高く，行列ができることはほとんどないが，店内はいつも程よく埋まっている．魚介ベースのラーメンで，個人的にはエビのものがおすすめだ．全体としては，どちらかといえばあっさりした味わいで，疲れた日にちょうどいい一杯だった．
+
+1. Niso Nikomin 📍Honsan
+
+   {% include bookmark.html url="https://maps.app.goo.gl/vo2gAnPWzBHUZhQj9" title="Miso Niko Min · Japan, 〒113-0033 Tokyo, Bunkyo City, Hongo, 3 Chome−31−15 菅谷ビル" description="★★★★☆ · Udon noodle restaurant" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+
+   予算：１０００円ぐらい
+
+   雰囲気：誰かとゆっくりお話／一人飯でもおすすめ．一品一品丁寧に調理してくださる．
+
+   ここはオフィスからも近く，何度か足を運びました．味噌煮込みうどんとフレンチ味噌煮込みうどんを試しましたが，個人的には定番の味噌煮込みうどんがおすすめです．味噌の風味がしっかりと立っていて，うどん自体にも程よいこしがあり，安心して美味しいと思える一杯でした．
+
+1. Morikawa 📍Honsan
+
+   {% include bookmark.html url="https://maps.app.goo.gl/RD2VkgBqi4DXWyze6" title="Morikawa · 5 Chome-30-16 Hongo, Bunkyo City, Tokyo 113-0033, Japan" description="★★★★☆ · Syokudo and Teishoku restaurant" icon="https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" %}
+
+   **予算：**８５０円から２５００円
+
+   **雰囲気：混雑していて**長いはしずらいですが，サクッとご飯におすすめ．
+
+   ここはオフィスからも近く，かなりの頻度で通いました．いろいろ試して，海鮮丼や鰻重，銀鱈なども食べましたが，結局のところ日替わり定食がほとんど外れがなく，一番満足度が高いです．日替わりは入り口前に書いてあり，よく見かけるのはアジフライ，コロッケ，生姜焼き，マグロの刺身などです．お味噌汁，白米，サラダが付いてくるのも嬉しい．私はもともとコロッケが大好物なのですが，ここで食べるまでは，アジフライを大好物だと言えるほどではありませんでした．揚げたてで熱々，しっかりとしたサイズ感があり，素直に美味しいです．何より，店全体がアットホームな雰囲気で，お店の人たちがとても優しいのが印象に残っています．
+
+### Side Comment
+
+本郷には美味しい飲食店がいっぱいあります．皆さんも行ってみてください．

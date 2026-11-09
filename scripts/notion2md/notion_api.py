@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import json
 import logging
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from typing import Any
@@ -14,6 +16,8 @@ Block = dict[str, Any]
 
 USER_AGENT = "Mozilla/5.0"  # Notion rejects Python's default user agent with 403.
 TIMEOUT_S = 30
+MAX_ATTEMPTS = 3
+RETRY_DELAY_S = 2
 CHUNK_LIMIT = 100
 MAX_CHUNKS = 50
 MAX_FILL_ROUNDS = 10
@@ -126,5 +130,15 @@ class NotionClient:
             data=json.dumps(payload).encode(),
             headers={"content-type": "application/json", "user-agent": USER_AGENT},
         )
-        with urllib.request.urlopen(request, timeout=TIMEOUT_S) as response:
-            return json.load(response)
+        for attempt in range(1, MAX_ATTEMPTS + 1):
+            try:
+                with urllib.request.urlopen(request, timeout=TIMEOUT_S) as response:
+                    return json.load(response)
+            except urllib.error.HTTPError:
+                raise  # the server answered; retrying won't change a 4xx/5xx here
+            except OSError as err:  # connection resets and timeouts are usually transient
+                if attempt == MAX_ATTEMPTS:
+                    raise
+                log.info("%s failed (%s); retrying", endpoint, err)
+                time.sleep(RETRY_DELAY_S * attempt)
+        raise AssertionError("unreachable")

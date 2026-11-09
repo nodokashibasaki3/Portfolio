@@ -9,6 +9,7 @@ import unittest
 from typing import Any
 
 from .convert import Converter, liquid_str, tidy
+from .links import rewrite_post_links
 from .local_cache import LocalCache
 from .rich_text import first_url, plain_text, to_html, to_markdown
 
@@ -58,6 +59,27 @@ class RichTextTest(unittest.TestCase):
 
     def test_plain_text_ignores_marks(self):
         self.assertEqual(plain_text([["a", [["b"]]], ["b"]]), "ab")
+
+
+class MarkdownEdgeCaseTest(unittest.TestCase):
+    def test_spaces_stay_outside_emphasis(self):
+        segments = [["built by "], ["Mikker ", [["b"]]], ["also"]]
+        self.assertEqual(to_markdown(segments, str), "built by **Mikker** also")
+
+    def test_neighbors_with_the_same_marks_merge(self):
+        segments = [["Side Note: ", [["b"]]], ["Apple Calendar", [["b"]]]]
+        self.assertEqual(to_markdown(segments, str), "**Side Note: Apple Calendar**")
+
+    def test_whitespace_only_marked_text_is_left_plain(self):
+        self.assertEqual(to_markdown([["a"], ["  ", [["b"]]], ["b"]], str), "a  b")
+
+    def test_code_is_the_innermost_mark(self):
+        segments = [["ollama", [["b"], ["c"]]], [" "], ["q", [["a", "https://g.co"], ["c"]]]]
+        self.assertEqual(to_markdown(segments, str), "**`ollama`** [`q`](https://g.co)")
+
+    def test_pipes_are_escaped_outside_code(self):
+        segments = [["Emoji | Raycast", [["a", "https://r.co"]]], [" "], ["a|b", [["c"]]]]
+        self.assertEqual(to_markdown(segments, str), "[Emoji \\| Raycast](https://r.co) `a|b`")
 
 
 class ConvertTest(unittest.TestCase):
@@ -139,6 +161,16 @@ class ConvertTest(unittest.TestCase):
         self.assertTrue(md.startswith('<details markdown="1"><summary><strong>updates</strong></summary>'))
 
 
+class NestedContentTest(unittest.TestCase):
+    def test_numbered_item_children_stay_inside_the_item(self):
+        card = block("b", "bookmark", properties={"link": [["https://maps.app/x"]]}, nested=True)
+        note = block("t", "text", "budget", nested=True)
+        md = convert(block("n", "numbered_list", "Udon", content=["b", "t"]), card, note)
+        self.assertEqual(
+            md, '1. Udon\n\n   {% include bookmark.html url="https://maps.app/x" %}\n\n   budget\n'
+        )
+
+
 class TidyTest(unittest.TestCase):
     def test_lists_are_tight(self):
         self.assertEqual(tidy("- a\n\n- b\n\n  - c\n\ntext"), "- a\n- b\n  - c\n\ntext\n")
@@ -148,6 +180,32 @@ class TidyTest(unittest.TestCase):
 
     def test_blank_runs_collapse(self):
         self.assertEqual(tidy("a\n\n\n\nb"), "a\n\nb\n")
+
+
+class RewritePostLinksTest(unittest.TestCase):
+    TARGETS = {
+        "30ef432196de80b287f2e297420d1d46": "2026-02-21-macos-setup-i",
+        "shell-tools": "2026-04-29-shell",
+    }
+
+    def rewrite(self, markdown: str) -> str:
+        return rewrite_post_links(markdown, "nodokas.notion.site", self.TARGETS)
+
+    def test_page_id_links_become_post_urls(self):
+        md = "[my macos I](https://nodokas.notion.site/30ef432196de80b287f2e297420d1d46)"
+        self.assertEqual(self.rewrite(md), "[my macos I]({% post_url 2026-02-21-macos-setup-i %})")
+
+    def test_readable_title_urls_with_query_strings_match_by_id(self):
+        md = "(https://nodokas.notion.site/macOS-Optimization-30ef432196de80b287f2e297420d1d46?source=copy_link)"
+        self.assertEqual(self.rewrite(md), "({% post_url 2026-02-21-macos-setup-i %})")
+
+    def test_custom_slugs_match(self):
+        md = "[NEW PAGE](https://nodokas.notion.site/shell-tools?source=copy_link)"
+        self.assertEqual(self.rewrite(md), "[NEW PAGE]({% post_url 2026-04-29-shell %})")
+
+    def test_other_notion_pages_are_left_alone(self):
+        md = "[x](https://nodokas.notion.site/unrelated-page)"
+        self.assertEqual(self.rewrite(md), md)
 
 
 class LiquidStrTest(unittest.TestCase):

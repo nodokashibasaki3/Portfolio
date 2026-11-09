@@ -13,7 +13,7 @@ from collections.abc import Callable
 from typing import Any, Protocol
 
 from .local_cache import LocalCache
-from .rich_text import Mark, first_url, plain_text, to_html, to_markdown
+from .rich_text import Mark, escape_pipes, first_url, plain_text, to_html, to_markdown
 
 log = logging.getLogger(__name__)
 
@@ -34,7 +34,7 @@ FAVICON_URL = "https://www.google.com/s2/favicons?domain={domain}&sz=64"
 BOT_CHECK_TITLES = ("establishing a secure connection", "just a moment", "attention required")
 UNRESOLVED_LINK = "[link?]"
 UNRESOLVED_PERSON = "[person?]"
-INDENT = "  "
+INDENT = "   "  # 3 spaces: content under "1. " must line up with its text, not just "- "
 
 
 class PageLookup(Protocol):
@@ -121,13 +121,14 @@ class Converter:
     def _mention(self, mark: Mark) -> str:
         kind, value = mark[0], mark[1] if len(mark) > 1 else None
         if kind == "lm":
-            return f"[{value.get('title') or value['href']}]({value['href']})"
+            return f"[{escape_pipes(value.get('title') or value['href'])}]({value['href']})"
         if kind == "d":
             return value.get("start_date", "")
         if kind == "u":
             return self._person(value)
         if kind == "p":
-            return f"[{self.pages.page_title(value) or 'notion page'}]({self.pages.page_url(value)})"
+            title = escape_pipes(self.pages.page_title(value) or "notion page")
+            return f"[{title}]({self.pages.page_url(value)})"
         if kind == "eoi" and value in self.cache.link_urls:
             url = self.cache.link_urls[value]
             return f"[{url.rstrip('/').split('/')[-1] or url}]({url})"
@@ -317,10 +318,10 @@ def tidy(markdown: str) -> str:
     for i, line in enumerate(lines):
         if not line.strip():
             following = next((nxt for nxt in lines[i + 1 :] if nxt.strip()), "")
-            in_list = LIST_LINE.match(last_text_line()) and (
-                LIST_LINE.match(following) or following.startswith(INDENT)
-            )
-            if in_list or (out and not out[-1].strip()):
+            # Only list item -> list item stays tight; a paragraph or card under an item keeps
+            # its blank line, or Markdown would merge it into the item's text.
+            between_items = LIST_LINE.match(last_text_line()) and LIST_LINE.match(following)
+            if between_items or (out and not out[-1].strip()):
                 continue
         elif line.strip() == "---" and HEADING_LINE.match(last_text_line()):
             continue

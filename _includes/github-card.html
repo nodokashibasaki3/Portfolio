@@ -1,10 +1,12 @@
 {% comment %}
   GitHub link card: GitHub logo, repo (or profile) name, and owner.
   Params: url (required), e.g. https://github.com/owner/repo
+  Output is collapsed onto one line so Markdown never reads its indentation as a code block.
 {% endcomment %}
-{% assign gh_parts = include.url | split: 'github.com/' | last | split: '/' %}
-{% assign gh_owner = gh_parts[0] %}
-{% assign gh_repo = gh_parts[1] %}
+{%- assign gh_parts = include.url | split: 'github.com/' | last | split: '/' -%}
+{%- assign gh_owner = gh_parts[0] -%}
+{%- assign gh_repo = gh_parts[1] -%}
+{%- capture card -%}
 <a class="github-card" href="{{ include.url }}" target="_blank" rel="noopener noreferrer">
     <i class="fab fa-github github-card-icon" aria-hidden="true"></i>
     <span class="github-card-info">
@@ -12,3 +14,5 @@
         {% if gh_repo %}<span class="github-card-owner">{{ gh_owner }}</span>{% endif %}
     </span>
 </a>
+{%- endcapture -%}
+{{ card | strip_newlines }}

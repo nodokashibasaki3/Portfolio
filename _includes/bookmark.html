@@ -1,20 +1,21 @@
 {% comment %}
   Link preview card (Notion-style bookmark).
   Params: url (required), title, description, image (thumbnail), icon (site icon; falls back to favicon service).
+  Output is collapsed onto one line so Markdown never reads its indentation as a code block
+  (e.g. when the card sits inside a list item).
 {% endcomment %}
-{% assign bm_domain = include.url | split: '://' | last | split: '/' | first %}
-{% capture bm_favicon %}https://www.google.com/s2/favicons?sz=64&domain={{ bm_domain }}{% endcapture %}
-{% assign bm_icon = include.icon | default: bm_favicon %}
+{%- assign bm_domain = include.url | split: '://' | last | split: '/' | first -%}
+{%- capture bm_favicon %}https://www.google.com/s2/favicons?sz=64&domain={{ bm_domain }}{% endcapture -%}
+{%- assign bm_icon = include.icon | default: bm_favicon -%}
+{%- capture card -%}
 <a class="bookmark-card" href="{{ include.url }}" target="_blank" rel="noopener noreferrer">
-    {% if include.image %}
-    <span class="bookmark-thumbnail" style="background-image: url('{{ include.image }}');"></span>
-    {% endif %}
+    {% if include.image %}<span class="bookmark-thumbnail" style="background-image: url('{{ include.image }}');"></span>{% endif %}
     <span class="bookmark-info">
         <img class="bookmark-icon" src="{{ bm_icon }}" alt="" loading="lazy">
         <span class="bookmark-title">{{ include.title | default: bm_domain }}</span>
-        {% if include.description %}
-        <span class="bookmark-description">{{ include.description }}</span>
-        {% endif %}
+        {% if include.description %}<span class="bookmark-description">{{ include.description }}</span>{% endif %}
         <span class="bookmark-url">{{ include.url }}</span>
     </span>
 </a>
+{%- endcapture -%}
+{{ card | strip_newlines }}

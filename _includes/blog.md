@@ -1,15 +1,17 @@
 <h2 id="blog" style="margin: 60px 0px 15px;">Blog</h2>
 
 <div class="blog-container" style="display: flex; flex-direction: column; gap: 8px;">
-    <!-- External Links (from blog.yml) -->
+    <!-- Posts listed in _data/blog.yml: site paths (/2026/...) are posts here, http(s) URLs open in a new tab -->
     {% for post in site.data.blog %}
+    {% assign is_external = false %}
+    {% if post.url contains "://" %}{% assign is_external = true %}{% endif %}
     <div class="blog-post" style="display: flex; align-items: baseline; font-size: 0.95em;">
         <div class="date" style="color: #999; width: 65px; flex-shrink: 0; font-size: 0.9em;">{{ post.date }}</div>
         <div class="title-container" style="display: flex; flex-direction: column;">
             <div class="title" style="font-weight: 500;">
-                <a href="{{ post.url }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#FF7900'" onmouseout="this.style.color='inherit'">
+                <a href="{% if is_external %}{{ post.url }}{% else %}{{ post.url | relative_url }}{% endif %}"{% if is_external %} target="_blank" rel="noopener noreferrer"{% endif %} style="color: inherit; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#FF7900'" onmouseout="this.style.color='inherit'">
                     {{ post.title }}
-                    <span class="external-icon" style="font-size: 0.75em; margin-left: 4px; opacity: 0.3; vertical-align: middle;">↗</span>
+                    {% if is_external %}<span class="external-icon" style="font-size: 0.75em; margin-left: 4px; opacity: 0.3; vertical-align: middle;">↗</span>{% endif %}
                 </a>
                 {% if post.tag %}
                 <span style="font-size: 0.9em; font-weight: 400; font-style: italic; color: #999; margin-left: 6px;">#{{ post.tag }}</span>
