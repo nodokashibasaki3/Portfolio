@@ -4,8 +4,6 @@ title: "Introducing my Raycast Toolkit"
 date: 2026-03-10
 ---
 
-I am Nodoka, and I write for fun 🤓
-
 I was introduced to Raycast by my friend Alan Huang from my internship with OMRON. Today I will delve into what it is and how you can set it up to optimize and customize a seamless workflow on your MacBook.
 
 P.S. they released a Windows version in March, 2026  (and new version to come for macOS soon) 🎉

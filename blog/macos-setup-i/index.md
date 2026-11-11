@@ -4,8 +4,6 @@ title: "Introducing my macOS Setup I"
 date: 2026-02-21
 ---
 
-i’m Nodoka.
-
 my obsession with random apps probably started in elementary school when i made business cards in word just for fun. i liked exploring what software could do. in middle and high school i got into Google Sheets and Notion, then started experimenting with extensions and small scripts. i then used [Google Colab](https://colab.research.google.com/) to automate parts of it because i wanted custom functions that i could not find anywhere.
 
 in 2025 i learned `nvim` and spent HOURS on `linux` which pulled me into terminal tools and keyboard workflows. since then i’ve just kept exploring whatever catches my interest. today i’ll share my current flow, the result of years of being curious about software.

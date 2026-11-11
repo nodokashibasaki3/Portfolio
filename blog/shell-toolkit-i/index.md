@@ -4,8 +4,6 @@ title: "Introducing my Shell Toolkit I"
 date: 2026-04-29
 ---
 
-i am nodoka.
-
 this post introduces my current shell tool stack. it was originally part of my [my macos I](/blog/macos-setup-i/) blog, but that write-up became too long, so i moved the shell tooling into its own post.
 
 in the process, i lost the original draft from the [my macos I](/blog/macos-setup-i/). that is probably for the better… the tools i listed then were not particularly strong (and i may feel the same about this list in a few months). for now, i’m calling this *my shell toolkit i*, leaving room for a future *ii*.

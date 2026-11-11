@@ -8,7 +8,7 @@ from __future__ import annotations
 import unittest
 from typing import Any
 
-from .convert import Converter, liquid_str, tidy
+from .convert import Converter, drop_self_intro, liquid_str, tidy
 from .links import rewrite_post_links
 from .local_cache import LocalCache
 from .rich_text import plain_text, to_html, to_markdown
@@ -188,6 +188,41 @@ class NestedContentTest(unittest.TestCase):
         note = block("t", "text", "budget", nested=True)
         md = convert(block("n", "numbered_list", "Udon", content=["b", "t"]), card, note)
         self.assertEqual(md, '1. Udon\n\n   {% include card.html url="https://maps.app/x" %}\n\n   budget\n')
+
+
+class SelfIntroTest(unittest.TestCase):
+    def test_whole_intro_paragraphs_are_removed(self):
+        for intro in (
+            "i’m Nodoka.",
+            "i am nodoka.",
+            "i’m nodoka and i like to write for fun!",
+            "I am Nodoka, and I write for fun 🤓",
+            "i’m [Nodoka Shibasaki \\| Northeastern University](https://nodokas.com/).",
+        ):
+            with self.subTest(intro=intro):
+                self.assertEqual(drop_self_intro(intro), "")
+
+    def test_only_the_intro_sentence_is_removed(self):
+        paragraph = "i’m nodoka. this writing is my updated / continuation of [my macos I](/blog/x/) blog."
+        self.assertEqual(
+            drop_self_intro(paragraph),
+            "this writing is my updated / continuation of [my macos I](/blog/x/) blog.",
+        )
+
+    def test_other_openings_are_kept(self):
+        for text in ("I mentioned Nodoka's app.", "i am new to this.", "## Background"):
+            with self.subTest(text=text):
+                self.assertEqual(drop_self_intro(text), text)
+
+    def test_intro_after_an_empty_block_is_dropped(self):
+        md = convert(
+            block("e", "text", ""), block("a", "text", "I am Nodoka, and I write 🤓"), block("b", "text", "x")
+        )
+        self.assertEqual(md, "x\n")
+
+    def test_intro_is_dropped_from_the_post(self):
+        md = convert(block("a", "text", "i am nodoka."), block("b", "text", "this post introduces..."))
+        self.assertEqual(md, "this post introduces...\n")
 
 
 class TidyTest(unittest.TestCase):

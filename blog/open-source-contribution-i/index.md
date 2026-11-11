@@ -4,8 +4,6 @@ title: "Open Source Contribution I"
 date: 2026-02-22
 ---
 
-i’m [Nodoka Shibasaki \| Northeastern University](https://nodokas.com/).
-
 this is development log of my open-source contribution to [notion-assignment-import](https://github.com/JamesNZL/notion-assignment-import). in my Blog [my macos I](/blog/macos-setup-i/) I mentioned that I use [Notion Canvas Assignment Import - Chrome Web Store](https://chromewebstore.google.com/detail/notion-canvas-assignment/elbkjcjgakaoccocmbglokgmalkoacie) to pull Assignments from Canvas to Notion database.
 
 i decided to build a better version of this for myself and others. after a few hours of digging into Chrome internals and TypeScript since midnight, I finally got it working.

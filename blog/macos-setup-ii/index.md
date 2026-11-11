@@ -4,7 +4,7 @@ title: "Introducing my macOS Setup II"
 date: 2026-05-31
 ---
 
-i’m nodoka. this writing is my updated / continuation of [my macos I](/blog/macos-setup-i/) blog.
+this writing is my updated / continuation of [my macos I](/blog/macos-setup-i/) blog.
 
 i set up my `macos II blog` long time ago and i have been meaning to post this but i have not had enough updates worth to post. maybe now, i have enough to post, although not as volumetric as my first one.
 

@@ -4,8 +4,6 @@ title: "Setting up Qwen for Agentic Coding!"
 date: 2026-03-15
 ---
 
-i’m nodoka and i like to write for fun!
-
 coding agents are everywhere. but most of them depend on cloud GPUs and paid APIs. this lead me to wonder if i can use my macbook to run a useful coding model locally for free.
 
 i recently upgraded from an M1 pro (2020) to an M5 pro (2026), so this seemed like a good opportunity to test the specs of this as well. my goals were:

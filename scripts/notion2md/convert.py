@@ -30,6 +30,9 @@ SKIPPED_TYPES = {"table_of_contents"}
 
 # A heading that is only a greeting word plus punctuation/emoji, e.g. "hey 👋" or "hello."
 GREETING = re.compile(r"^(?:hey|hello|hi)\b[\W_]*$")
+# An opening "i'm nodoka ..." / "I am [Nodoka Shibasaki](...) ..." sentence: up to the first
+# . ! or ? followed by a space or the end (so a period inside a link URL doesn't end it).
+SELF_INTRO = re.compile(r"^i(?:['’]m| am)\s+\[?nodoka\b.*?(?:[.!?](?=\s|$)|$)\s*", re.IGNORECASE)
 # Titles Notion saves when a site shows a bot check instead of the real page.
 BOT_CHECK_TITLES = ("establishing a secure connection", "just a moment", "attention required")
 UNRESOLVED_LINK = "[link?]"
@@ -51,6 +54,11 @@ def liquid_str(value: str) -> str:
 
 def domain_of(url: str) -> str:
     return urllib.parse.urlparse(url).netloc
+
+
+def drop_self_intro(paragraph: str) -> str:
+    """Remove an opening "I'm Nodoka..." sentence; returns "" if nothing else is left."""
+    return SELF_INTRO.sub("", paragraph, count=1).strip()
 
 
 def link_preview(block: Block, url: str) -> dict[str, str]:
@@ -103,8 +111,10 @@ class Converter:
         children = self.blocks[page_id].get("content") or []
         if children and self._is_greeting(self.blocks.get(children[0], {})):
             children = children[1:]
-        lines = [line for child in children for line in self.render(child, 0)]
-        return tidy("\n\n".join(lines))
+        lines = [line for child in children for line in self.render(child, 0) if line.strip()]
+        if lines:
+            lines = [drop_self_intro(lines[0]), *lines[1:]]
+        return tidy("\n\n".join(line for line in lines if line))
 
     def page_title(self, page_id: str) -> str:
         return self._text(self.blocks[page_id])
