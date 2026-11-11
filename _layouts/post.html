@@ -2,7 +2,7 @@
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
 {% include head.html %}
-    <link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   </head>
   {% comment %}
     Use divs and custom classes, not <header>/<footer>/<section>/.wrapper:
@@ -33,7 +33,7 @@
         </span>
       </div>
     </div>
-    <script src="{{ '/assets/js/blog.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/blog.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 {% include analytics.html %}
   </body>
 </html>
