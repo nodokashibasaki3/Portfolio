@@ -66,9 +66,7 @@ i tried to force macOS to “wire” more memory to the GPU:
 sudo sysctl iogpu.wired_limit_mb=12288
 ```
 
-> ⚠️ ⚠️
->
-> **for obvious reasons, do not do this! it may break your computer. luckily for me, it only crashed the computer lol**
+> ⚠️ **for obvious reasons, do not do this! it may break your computer. luckily for me, it only crashed the computer lol**
 {: .callout}
 
 > why did it fail, you may ask. to understand why, i will tell you more about m5!

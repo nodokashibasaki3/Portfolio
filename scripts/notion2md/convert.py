@@ -214,10 +214,9 @@ class Converter:
         emoji = block.get("format", {}).get("page_icon", "")
         if emoji.startswith(("http", "/")) or link_only:  # custom image icons; cards have their own
             emoji = ""
-        first = f"{emoji} {text}".strip()
-        parts = ([first] if first else []) + self._children(block, 0)
-        if emoji and not text and parts:
-            parts[0] = f"{emoji} {parts[0]}"
+        parts = ([text] if text else []) + self._children(block, 0)
+        if emoji:  # lead with the emoji, whether the text is the callout's own or nested
+            parts = [f"{emoji} {parts[0]}" if parts else emoji, *parts[1:]]
         classes = ".callout .callout-link" if link_only else ".callout"
         # One entry, so no blank line separates the quote from the tag that styles it.
         return ["\n".join([*self._quoted(parts, depth), f"{INDENT * depth}{{: {classes}}}"])]

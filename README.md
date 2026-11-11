@@ -29,6 +29,7 @@ All formatting lives outside the posts:
 |---|---|
 | Page layout (title, date, footer) | `_layouts/post.html` |
 | Styles | `assets/css/blog.css` |
+| Callout icons (leading emoji, or the first link's site icon) | `assets/js/blog.js` |
 | Link cards | `_includes/card.html` → `bookmark.html` / `github-card.html` |
 | Card titles, descriptions, icons, thumbnails | `_data/link_previews.json` |
 | Homepage blog list | `_data/blog.yml` |

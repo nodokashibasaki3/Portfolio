@@ -10,9 +10,7 @@ my obsession with random apps probably started in elementary school when i made 
 
 in 2025 i learned `nvim` and spent HOURS on `linux` which pulled me into terminal tools and keyboard workflows. since then i’ve just kept exploring whatever catches my interest. today i’ll share my current flow, the result of years of being curious about software.
 
-> 📣 📣
->
-> I would like to make a special shoutout to my friend, Alan Huang from OMRON, who introduced me to many of the apps listed here.
+> 📣 I would like to make a special shoutout to my friend, Alan Huang from OMRON, who introduced me to many of the apps listed here.
 {: .callout}
 
 ### TLDR🤓
@@ -268,9 +266,7 @@ What makes Notion Calendar goated 🐐:
 - only read-only access to Microsoft Calendar
 - limited colors (this can be overcome by using GCal import)
 
-> 💬 💬
->
-> **Side Note:** **Apple Calendar**
+> 💬 **Side Note:** **Apple Calendar**
 >
 > It has pretty design and **CAN** edit Teams Calendar unlike Notion Calendar.
 >

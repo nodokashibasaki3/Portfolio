@@ -149,6 +149,11 @@ class ConvertTest(unittest.TestCase):
         md = convert(block("c", "callout", "note", format={"page_icon": "📣"}))
         self.assertEqual(md, "> 📣 note\n{: .callout}\n")
 
+    def test_emoji_appears_once_when_callout_text_is_nested(self):
+        child = block("t", "text", "shoutout", nested=True)
+        md = convert(block("c", "callout", content=["t"], format={"page_icon": "📣"}), child)
+        self.assertEqual(md, "> 📣 shoutout\n{: .callout}\n")
+
     def test_lists_inside_callouts_stay_tight(self):
         items = [block(f"i{n}", "bulleted_list", f"item {n}", nested=True) for n in (1, 2)]
         md = convert(block("c", "callout", "list", content=["i1", "i2"]), *items)

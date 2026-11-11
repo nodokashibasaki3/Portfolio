@@ -52,9 +52,7 @@ Since `Cmd + Space` is used by Spotlight by default, you will first need to disa
 
 After disabling it, set Raycast’s shortcut to `Cmd + Space`.
 
-> ☝ ☝
->
-> I recommend you install [Arc from The Browser Company](https://arc.net/) for the full keyboard optimization experience´. I talked about this in my other blog ([my macos I](/blog/macos-setup-i/))
+> ☝ I recommend you install [Arc from The Browser Company](https://arc.net/) for the full keyboard optimization experience´. I talked about this in my other blog ([my macos I](/blog/macos-setup-i/))
 {: .callout}
 
 ## Setup basic tools first

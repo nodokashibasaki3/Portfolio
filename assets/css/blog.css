@@ -80,9 +80,19 @@ body.blog {
     margin: 2px 0 0;
 }
 
+/* Quotes: upright text with a soft bar (the theme's default is italic with wide gaps). */
 .post blockquote {
-    color: #777;
-    border-left-color: #ddd;
+    font-style: normal;
+    color: #555;
+    line-height: 1.55;
+    border-left: 3px solid #d9d9d9;
+    padding: 2px 0 2px 16px;
+}
+
+.post blockquote p,
+.post blockquote ul,
+.post blockquote ol {
+    margin-bottom: 8px;
 }
 
 .post blockquote > :last-child {
@@ -145,12 +155,39 @@ body.blog {
     border-radius: 5px;
     padding: 14px 18px;
     color: inherit;
-    font-style: normal;
 }
 
 /* Link-only callouts ({: .callout .callout-link}) hold just a card. */
 .post blockquote.callout-link {
     padding: 12px;
+}
+
+/* Icon column added by assets/js/blog.js: the callout's leading emoji or its first link's site icon. */
+.post blockquote.callout.has-icon {
+    display: flex;
+    gap: 12px;
+}
+
+.post .callout-icon {
+    flex-shrink: 0;
+}
+
+.post .callout-icon img {
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: 4px 0 0;
+    border: 0;
+    border-radius: 3px;
+}
+
+.post .callout-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.post .callout-content > :last-child {
+    margin-bottom: 0;
 }
 
 /* ---- Link cards (_includes/bookmark.html, _includes/github-card.html) ---- */

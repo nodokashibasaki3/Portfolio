@@ -50,18 +50,14 @@ ReferenceError: window is not defined
 ReferenceError: document is not defined
 ```
 
-> ⚠️ ⚠️
->
-> **The DOM Dependencies**
+> ⚠️ **The DOM Dependencies**
 >
 > the original `exporttonotion` logic was tightly coupled to the UI. it assumed it was running in a popup and repeatedly tried to call `alert()` to handle errors. `service workers` don't have a `window` object (the browser window), so every time an error fired, the worker crashed instantly because it didn't know what an `alert` was.
 >
 > the real headache was [domparser](https://github.com/thednp/domparser). `domparser`is a high-level library that converts html strings to the DOM tree that can be queried. the original logic used it to scrape assignment data from canvas `html` strings. that works in a normal browser tab, but `service workers` are headless meaning they have no "page" to look at. since they have no `window` or `document`, `DOMParser` just doesn't exist there. i had to follow the export logic and strip out all browser-specific UI dependencies so it could run blindly in the background.
 {: .callout}
 
-> ✨ ✨
->
-> **Fix to DOM issue…**
+> ✨ **Fix to DOM issue…**
 > ultimately, the main fix was moving away from `domparser`. since i couldn't use the browser's built-in tools to read the canvas html, i had to find a way to parse the data "blindly." i ended up using a lightweight library called [cheerio](https://github.com/cheeriojs/cheerio) (or a similar html-to-json logic). it allowed me to treat the canvas assignments like a simple data structure rather than a live webpage.
 {: .callout}
 
@@ -71,9 +67,7 @@ right after solving that `refactor`, i hit the next wall 😞
 
 If you’re wondering what a bundler even is, don’t worry I also had no idea until last night. it basically compiles your `typescript` into `javascript` and packages all your files together so chrome can actually run the extension.
 
-> ⚠️ ⚠️
->
-> **ESM Module**
+> ⚠️ **ESM Module**
 >
 > to use modern imports in `background.ts`, i added `"type": "module"` to the manifest. but here’s the problem: the extension relies heavily on `moment-timezone`.
 >
@@ -82,9 +76,7 @@ If you’re wondering what a bundler even is, don’t worry I also had no idea u
 
 after hitting a dead end with the legacy tools, i decided to scrap the `gulp` and `browserify`pipeline entirely.
 
-> ✨ ✨
->
-> **fix? i switched to** [bun](https://github.com/oven-sh/bun)**.**
+> ✨ **fix? i switched to** [bun](https://github.com/oven-sh/bun)**.**
 >
 > *what is that? you may ask.* it’s actually sick! `bun` is an all-in-one toolchain (written in **zig**) that handles everything. coming from low-level dev, this felt way more natural. it’s basically the difference between a slow, clunky build script and a high-performance native compiler!!
 {: .callout}
