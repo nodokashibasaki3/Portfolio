@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Things I need on my terminal"
+title: "Terminal must-haves"
 date: 2026-04-29
 ---
 

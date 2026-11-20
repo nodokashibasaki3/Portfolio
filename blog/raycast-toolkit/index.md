@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The coolest tool I use (probably ever)"
+title: "Why I love Raycast"
 date: 2026-03-10
 ---
 

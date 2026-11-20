@@ -1,10 +1,10 @@
-- title: Recent finds for my mac workflow
+- title: More Mac finds
   url: /blog/macos-setup-ii/
   date: "2026.05"
   tag: tech
   description: Updates and improvements for my MacOS setup.
 
-- title: Things I need on my terminal
+- title: Terminal must-haves
   url: /blog/shell-toolkit-i/
   date: "2026.04"
   tag: tech
@@ -16,25 +16,25 @@
   tag: tech
   description: I explore if a MacBook can run useful local models, and the reasons why it can or can't.
 
-- title: The coolest tool I use (probably ever)
+- title: Why I love Raycast
   url: /blog/raycast-toolkit/
   date: "2026.03"
   tag: tech
   description: A collection of useful Raycast extensions and tools.
 
-- title: How I optimize workflow on my mac
+- title: Setting up my Mac
   url: /blog/macos-setup-i/
   date: "2026.02"
   tag: tech
   description: Notes and scripts on setting up macOS for an optimal development experience.
 
-- title: Contributed to an Open Source project
+- title: Shipping open source
   url: /blog/open-source-contribution-i/
   date: "2026.02"
   tag: tech
   description: Details on my open-source OS contribution for shipping a background synchronization feature.
 
-- title: My favorite restaurants in Tokyo
+- title: My Tokyo favorites
   url: /blog/tokyo-food-review/
   date: "2026.01"
   tag: life

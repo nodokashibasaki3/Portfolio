@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "My favorite restaurants in Tokyo"
+title: "My Tokyo favorites"
 date: 2026-01-01
 ---
 

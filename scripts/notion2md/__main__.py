@@ -53,13 +53,13 @@ POSTS = (
         "macos-setup-ii",
         "2026-05-31",
         "314f4321-96de-808e-8377-da577a5c4c3a",
-        "Recent finds for my mac workflow",
+        "More Mac finds",
     ),
     Post(
         "shell-toolkit-i",
         "2026-04-29",
         "314f4321-96de-8026-a052-f8f27fa643bf",
-        "Things I need on my terminal",
+        "Terminal must-haves",
         notion_slug="shell-tools",
     ),
     Post(
@@ -73,19 +73,19 @@ POSTS = (
         "raycast-toolkit",
         "2026-03-10",
         "312f4321-96de-8013-a2a7-e2e25b6e8164",
-        "The coolest tool I use (probably ever)",
+        "Why I love Raycast",
         notion_slug="raycast-toolkit",
     ),
     Post(
-        "macos-setup-i", "2026-02-21", "30ef4321-96de-80b2-87f2-e297420d1d46", "How I optimize workflow on my mac"
+        "macos-setup-i", "2026-02-21", "30ef4321-96de-80b2-87f2-e297420d1d46", "Setting up my Mac"
     ),
     Post(
         "open-source-contribution-i",
         "2026-02-22",
         "310f4321-96de-808e-92f9-f657c94c6f0d",
-        "Contributed to an Open Source project",
+        "Shipping open source",
     ),
-    Post("tokyo-food-review", "2026-01-01", "2d3f4321-96de-817b-8033-f41e42cf33ac", "My favorite restaurants in Tokyo"),
+    Post("tokyo-food-review", "2026-01-01", "2d3f4321-96de-817b-8033-f41e42cf33ac", "My Tokyo favorites"),
 )
 
 
