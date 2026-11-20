@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Introducing my macOS Setup II"
+title: "Recent finds for my mac workflow"
 date: 2026-05-31
 ---
 

@@ -53,13 +53,13 @@ POSTS = (
         "macos-setup-ii",
         "2026-05-31",
         "314f4321-96de-808e-8377-da577a5c4c3a",
-        "Introducing my macOS Setup II",
+        "Recent finds for my mac workflow",
     ),
     Post(
         "shell-toolkit-i",
         "2026-04-29",
         "314f4321-96de-8026-a052-f8f27fa643bf",
-        "Introducing my Shell Toolkit I",
+        "Things I need on my terminal",
         notion_slug="shell-tools",
     ),
     Post(
@@ -73,11 +73,11 @@ POSTS = (
         "raycast-toolkit",
         "2026-03-10",
         "312f4321-96de-8013-a2a7-e2e25b6e8164",
-        "Introducing my Raycast Toolkit",
+        "The coolest tool I use (probably ever)",
         notion_slug="raycast-toolkit",
     ),
     Post(
-        "macos-setup-i", "2026-02-21", "30ef4321-96de-80b2-87f2-e297420d1d46", "Introducing my macOS Setup I"
+        "macos-setup-i", "2026-02-21", "30ef4321-96de-80b2-87f2-e297420d1d46", "How I optimize workflow on my mac"
     ),
     Post(
         "open-source-contribution-i",

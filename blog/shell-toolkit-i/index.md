@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Introducing my Shell Toolkit I"
+title: "Things I need on my terminal"
 date: 2026-04-29
 ---
 

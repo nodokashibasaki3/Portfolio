@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Introducing my Raycast Toolkit"
+title: "The coolest tool I use (probably ever)"
 date: 2026-03-10
 ---
 

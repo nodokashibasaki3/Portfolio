@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Introducing my macOS Setup I"
+title: "How I optimize workflow on my mac"
 date: 2026-02-21
 ---
 
