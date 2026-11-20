@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tokyo Food Review"
+title: "My favorite restaurants in Tokyo"
 date: 2026-01-01
 ---
 

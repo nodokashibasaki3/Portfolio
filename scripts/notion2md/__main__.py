@@ -83,9 +83,9 @@ POSTS = (
         "open-source-contribution-i",
         "2026-02-22",
         "310f4321-96de-808e-92f9-f657c94c6f0d",
-        "Open Source Contribution I",
+        "Contributed to an Open Source project",
     ),
-    Post("tokyo-food-review", "2026-01-01", "2d3f4321-96de-817b-8033-f41e42cf33ac", "Tokyo Food Review"),
+    Post("tokyo-food-review", "2026-01-01", "2d3f4321-96de-817b-8033-f41e42cf33ac", "My favorite restaurants in Tokyo"),
 )
 
 

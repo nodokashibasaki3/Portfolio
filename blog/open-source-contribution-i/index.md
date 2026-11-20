@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Open Source Contribution I"
+title: "Contributed to an Open Source project"
 date: 2026-02-22
 ---
 
