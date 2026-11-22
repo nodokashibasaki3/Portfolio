@@ -17,6 +17,6 @@ In the past, I gained valuable industry research experience as a Research Intern
 
 {% include_relative _includes/projects.md %}
 
-{% include_relative _includes/motivation.md %}
+{% comment %}{% include_relative _includes/motivation.md %}{% endcomment %}
 
 {% include_relative _includes/blog.md %}
