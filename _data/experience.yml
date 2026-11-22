@@ -42,7 +42,10 @@
 #   highlight: true
 
 - duration: 2026
-  position: Research Assistant @ Northeastern, <a href="https://robot.neu.edu/people/" target="_blank" rel="noopener noreferrer">RIVeR Lab</a>
+  position: Software Engineer Intern @ The Linux Foundation
+
+- duration: 2026
+  position: Research Assistant @ Northeastern, RIVeR Lab
   highlight: true
 
 # - duration: 2026
@@ -51,8 +54,4 @@
 
 - duration: 2026
   position: Hardware Engineer Intern @ Amazon Robotics
-  highlight: true
-
-- duration: 2026
-  position: Software Engineer Intern @ The Linux Foundation
   highlight: true
