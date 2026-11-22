@@ -10,7 +10,7 @@
   ongoing: true
   institution: RIVeR Lab
   institution_url: https://robot.neu.edu/people/
-  description: Investigates imitation learning for contact-rich tasks using an xArm robot with a custom chopsticks gripper. The project explores mapping human teleoperation data to dexterous manipulation policies.
+  description: Investigates imitation learning for contact-rich tasks using an xArm robot with a custom chopsticks gripper. The project explores mapping human data to dexterous manipulation policies for articulated tools.
   image: assets/hashi.jpeg
   caption: Image from <a href="https://arxiv.org/abs/2311.02277" target="_blank">A. Allison et al.</a>
 
