@@ -1,3 +1,9 @@
+- title: My take on open sourcing
+  url: /blog/open-sourcing/
+  date: "2026.11"
+  tag: tech
+  description: What contributing to SONiC taught me about sharing code.
+
 - title: More Mac finds
   url: /blog/macos-setup-ii/
   date: "2026.05"
